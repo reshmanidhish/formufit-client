@@ -1,5 +1,5 @@
 # formufit-frontend
-FormuFit is an advanced diet planner app that empowers you to take control of your health and fitness journey. Through a comprehensive analysis of your healthstyle and body type, FormuFit offers a personalized approach to well-being. Experience a curated selection of customized food recipes and targeted workouts, all designed to help you sculpt a healthier, more vibrant you. 
+FormuFit is an advanced diet planner app that empowers you to take control of your health and fitness journey. Through a comprehensive analysis of your health style and body type, FormuFit offers a personalized approach to well-being. Experience a curated selection of customized food recipes and targeted workouts, all designed to help you sculpt a healthier, more vibrant you. 
 # MVP
 * User Registration and Login:-Users can create accounts and log in securely.
 * Questionnaire and Health Profile
@@ -15,11 +15,11 @@ Recommend workout routines based on the user's body type and lifestyle.
 Users can view their calculated BMI, body type, lifestyle score, and recommended recipes and workouts.
 * Admin users can log in and add recipes, edit, or delete them.
 # Technologies Used
-React.js
-Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine.
-Express.js: A fast and minimalist web application framework for Node.js.
-MongoDB Atlas: A cloud-based managed database service for MongoDB.
-Cloudinary: A cloud-based media management platform for image and video file storage.
-Mongoose: A Node.js library providing schema-based data modeling for MongoDB.
-Bootstrap: An open-source framework for developing responsive, mobile-first web projects.
+* React.js
+* Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine.
+* Express.js: A fast and minimalist web application framework for Node.js.
+* MongoDB Atlas: A cloud-based managed database service for MongoDB.
+* Cloudinary: A cloud-based media management platform for image and video file storage.
+* Mongoose: A Node.js library providing schema-based data modeling for MongoDB.
+* Bootstrap: An open-source framework for developing responsive, mobile-first web projects.
 Workflow
