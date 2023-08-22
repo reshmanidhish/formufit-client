@@ -15,11 +15,7 @@ Recommend workout routines based on the user's body type and lifestyle.
 Users can view their calculated BMI, body type, lifestyle score, and recommended recipes and workouts.
 * Admin users can log in and add recipes, edit, or delete them.
 # Technologies Used
-* React.js
-* Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine.
-* Express.js: A fast and minimalist web application framework for Node.js.
-* MongoDB Atlas: A cloud-based managed database service for MongoDB.
+* React.js-React is a JavaScript library for building user interfaces that enables developers to create reusable UI components and manage dynamic user interactions efficiently.
 * Cloudinary: A cloud-based media management platform for image and video file storage.
-* Mongoose: A Node.js library providing schema-based data modeling for MongoDB.
 * Bootstrap: An open-source framework for developing responsive, mobile-first web projects.
-Workflow
+  
