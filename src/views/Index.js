@@ -36,7 +36,7 @@ import {
   Container,
   Row,
   Col,
-  } from "reactstrap";
+} from "reactstrap";
 
 // core components
 import {

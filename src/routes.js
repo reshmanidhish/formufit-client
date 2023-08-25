@@ -1,86 +1,78 @@
 import Index from "views/Index.js";
-import Profile from "./pages/ProfilePage";
-import SignupPage from "./pages/SignupPage/SignupPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
+import Profile from "views/examples/Profile.js";
+import Register from "views/examples/Register.js";
+import Login from "views/examples/Login.js";
 import Tables from "views/examples/Tables.js";
-import Icons from "./pages/IconsPage";
-import Questionare from "./pages/QuestionarePage";
+import Icons from "views/examples/Icons.js";
+import QuestionarePage from "./pages/QuestionarePage/QuestionarePage";
 import React from "react";
 import MyAccount from "./pages/MyAccount";
-import CreateRecipes from "./pages/CreateRecipePage";
-import Recipes from "./pages/AllRecipesPage";
 
 const routes = [
   {
-    path: "/dashboard",
+    path: "/index",
     name: "Dashboard",
     icon: "fas fa-home",
     component: <Index />,
-    layout: "/main",
-  }, {
+    layout: "/admin",
+  },{
     path: "/workouts",
     name: "Workouts",
     icon: "fas fa-dumbbell",
     component: <Index />,
-    layout: "/main",
+    layout: "/admin",
   },{
-    path: "/recipes/create",
-    name: "Create recipes",
-    icon: "fas fa-utensils",
-    component: <CreateRecipes/>,
-    layout: "/main",
-  },{
-    path: "/recipes",
+    path: "/recipe",
     name: "Diet recipes",
     icon: "fas fa-utensils",
-    component: <Recipes/>,
-    layout: "/main",
+    component: <Index />,
+    layout: "/admin",
   },{
     path: "/account",
     name: "My Account 2",
     icon: "fas fa-user",
     component: <MyAccount />,
-    layout: "/main",
+    layout: "/admin",
   },{
     path: "/icons",
     name: "Icons",
     icon: "ni ni-planet text-blue",
     component: <Icons />,
-    layout: "/main",
+    layout: "/admin",
   },
   {
     path: "/user-profile",
     name: "User Profile",
     icon: "ni ni-single-02 text-yellow",
     component: <Profile />,
-    layout: "/main",
+    layout: "/admin",
   },
   {
     path: "/questionare",
     name: "Questionare",
     icon: "ni ni-single-02 text-yellow",
-    component: <Questionare />,
-    layout: "/main",
+    component: <QuestionarePage />,
+    layout: "/admin",
   },
   {
     path: "/tables",
     name: "Tables",
     icon: "ni ni-bullet-list-67 text-red",
     component: <Tables />,
-    layout: "/main",
+    layout: "/admin",
   },
   {
     path: "/login",
     name: "Login",
     icon: "ni ni-key-25 text-info",
-    component: <LoginPage />,
+    component: <Login />,
     layout: "/auth",
   },
   {
-    path: "/signup",
-    name: "Signup",
+    path: "/register",
+    name: "Register",
     icon: "ni ni-circle-08 text-pink",
-    component: <SignupPage />,
+    component: <Register />,
     layout: "/auth",
   },
 ];

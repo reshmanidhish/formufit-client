@@ -1,3 +1,22 @@
+/*!
+
+=========================================================
+* Argon Dashboard React - v1.2.3
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+
+// reactstrap components
 import {
   Button,
   Card,
@@ -12,39 +31,8 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-// import axios from "axios";
-import authService from "../../services/auth.service";
-// import Register from "../../views/examples";
-export default Register;
-function Register(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
 
-  const navigate = useNavigate();
-
-  const handleEmail = (e) => setEmail(e.target.value);
-  const handlePassword = (e) => setPassword(e.target.value);
-  const handleName = (e) => setName(e.target.value);
-
-
-  const handleSignupSubmit = (e) => {
-    // Send a Post request to our server 
-    e.preventDefault()
-debugger
-    const requestBody = {name, email,password}
-
-    authService.signup(requestBody)
-        .then(response => {
-            console.log('response', response)
-            navigate("/login")
-        })
-        .catch(err => console.log(err))
-  };
-
+const Register = () => {
   return (
     <>
       <Col lg="6" md="8">
@@ -95,7 +83,6 @@ debugger
               <small>Or sign up with credentials</small>
             </div>
             <Form role="form">
-
               <FormGroup>
                 <InputGroup className="input-group-alternative mb-3">
                   <InputGroupAddon addonType="prepend">
@@ -103,32 +90,9 @@ debugger
                       <i className="ni ni-hat-3" />
                     </InputGroupText>
                   </InputGroupAddon>
-                  <Input placeholder="Name" type="text" value={name}
-                  onChange={handleName} />
-                </InputGroup>
-
-
-              </FormGroup>
-
-
-              <FormGroup>
-                <InputGroup className="input-group-alternative mb-3">
-                  <InputGroupAddon addonType="prepend">
-                    <InputGroupText>
-                      <i className="ni ni-email-83" />
-                    </InputGroupText>
-                  </InputGroupAddon>
-                  <Input
-                    placeholder="Email"
-                    type="email"
-                    autoComplete="new-email"
-                       value={email}
-          onChange={handleEmail}
-                  />
+                  
                 </InputGroup>
               </FormGroup>
-
-
               <FormGroup>
                 <InputGroup className="input-group-alternative">
                   <InputGroupAddon addonType="prepend">
@@ -140,8 +104,6 @@ debugger
                     placeholder="Password"
                     type="password"
                     autoComplete="new-password"
-                    value={password}
-          onChange={handlePassword}
                   />
                 </InputGroup>
               </FormGroup>
@@ -174,9 +136,9 @@ debugger
                 </Col>
               </Row>
               <div className="text-center">
-              <Button className="mt-4" color="primary" type="button" onClick={handleSignupSubmit}>
-              Create account
-            </Button>
+                <Button className="mt-4" color="primary" type="button">
+                  Create account
+                </Button>
               </div>
             </Form>
           </CardBody>
@@ -186,3 +148,4 @@ debugger
   );
 };
 
+export default Register;
