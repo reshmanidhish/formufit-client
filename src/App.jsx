@@ -1,15 +1,14 @@
 import "./App.css";
-import {Routes, Route, Navigate} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import React, {useState} from 'react';
-import HomePage from "./pages/HomePage/HomePage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import ProfilePage from "./pages/ProfilePage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
-import QuestionarePage from "./pages/QuestionarePage/QuestionarePage";
-import AdminLayout from "./layouts/Admin";
+import MainLayout from "./layouts/Main";
 import AuthLayout from "./layouts/Auth";
+import Welcome from "./pages/Welcome";
 
 function App() {
     const [showQuestionare, setShowQuestionare] = useState(true);
@@ -21,12 +20,16 @@ function App() {
 
             {/* <Navbar /> */}
             <Routes>
-                <Route path="/admin/*" element={<AdminLayout/>}/>
+                {/* MainLayout contains many user pages*/}
+                <Route path="/*" element={<MainLayout/>}/>
+
+                {/* AdminLayout contains many auth pages*/}
                 <Route path="/auth/*" element={<AuthLayout/>}/>
-                <Route path="*" element={<Navigate to="/admin/index" replace/>}/>
-                <Route path="/" element={<HomePage/>}/>
-                <Route path="/questionare"
-                       element={<QuestionarePage onQuestionareComplete={handleQuestionareComplete}/>}/>
+
+                <Route path="*" element={<Navigate to="/" replace/>}/>
+                <Route path="/" element={<Welcome/>}/>
+
+                {/*The below code is from IronLauncher which we will be using it later for Auth Guard (page protection)*/}
                 <Route
                     path="/profile"
                     element={

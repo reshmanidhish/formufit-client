@@ -1,39 +1,26 @@
- /*body {*/
- /*   margin: 0;*/
- /*   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',*/
- /*     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',*/
- /*     sans-serif;*/
- /*   -webkit-font-smoothing: antialiased;*/
- /*   -moz-osx-font-smoothing: grayscale;*/
- /* }*/
- /* * {*/
- /*   font-family: "Verdana", cursive, sans-serif;*/
- /*   color: #000000;*/
- /* }*/
 
- /*body {*/
- /*   background-color: #7cc6fe;*/
- /*   display: flex;*/
- /*   justify-content: center;*/
- /*   align-items: center;*/
- /*   min-height: 100vh;*/
- /* }*/
- /* */
-  .questionare .card{
-    background-color: #252d4a;
-    width: 450px;
-    min-height: 200px;
-    height: min-content;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
-    display: flex;
-    /*justify-content: space-evenly;*/
-
-    /*display: flex;*/
+.questionare {
+  .section-left {
+    width: 50%; /* Fixed width */
+    background: url("../../assets/img/walking.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .section-right {
+    flex: 1;
+  }
+  .section {
+    width: 98%;
+    min-height: 82%;
+    height: 82%;
+    //padding: 20px;
+    box-shadow: 0 7px 42px 0 rgb(213 213 213 / 75%);
+    display: block;
     justify-content: center;
     align-items: center;
-    /*height: 100vh;*/
+  }
+  .section-body {
+    height: 100%;
   }
 
   .score-section {
@@ -101,19 +88,15 @@
     background-color: #ff3333;
   }
 
- .questionare-button:hover {
+  .questionare-button:hover {
     background-color: #555e7d;
   }
 
- .questionare-button:focus {
+  .questionare-button:focus {
     outline: none;
   }
 
- .questionare-button svg {
+  .questionare-button svg {
     margin-right: 5px;
   }
-
-
-.questionare {
-
 }
