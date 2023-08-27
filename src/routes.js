@@ -1,65 +1,65 @@
 import Index from "views/Index.js";
-import Profile from "views/examples/Profile.js";
+import Profile from "./pages/ProfilePage";
 import Register from "views/examples/Register.js";
 import Login from "views/examples/Login.js";
 import Tables from "views/examples/Tables.js";
-import Icons from "views/examples/Icons.js";
-import QuestionarePage from "./pages/QuestionarePage/QuestionarePage";
+import Icons from "./pages/IconsPage";
+import Questionare from "./pages/QuestionarePage";
 import React from "react";
 import MyAccount from "./pages/MyAccount";
 
 const routes = [
   {
-    path: "/index",
+    path: "/dashboard",
     name: "Dashboard",
     icon: "fas fa-home",
     component: <Index />,
-    layout: "/admin",
-  },{
+    layout: "/main",
+  }, {
     path: "/workouts",
     name: "Workouts",
     icon: "fas fa-dumbbell",
     component: <Index />,
-    layout: "/admin",
+    layout: "/main",
   },{
     path: "/recipe",
     name: "Diet recipes",
     icon: "fas fa-utensils",
     component: <Index />,
-    layout: "/admin",
+    layout: "/main",
   },{
     path: "/account",
     name: "My Account 2",
     icon: "fas fa-user",
     component: <MyAccount />,
-    layout: "/admin",
+    layout: "/main",
   },{
     path: "/icons",
     name: "Icons",
     icon: "ni ni-planet text-blue",
     component: <Icons />,
-    layout: "/admin",
+    layout: "/main",
   },
   {
     path: "/user-profile",
     name: "User Profile",
     icon: "ni ni-single-02 text-yellow",
     component: <Profile />,
-    layout: "/admin",
+    layout: "/main",
   },
   {
     path: "/questionare",
     name: "Questionare",
     icon: "ni ni-single-02 text-yellow",
-    component: <QuestionarePage />,
-    layout: "/admin",
+    component: <Questionare />,
+    layout: "/main",
   },
   {
     path: "/tables",
     name: "Tables",
     icon: "ni ni-bullet-list-67 text-red",
     component: <Tables />,
-    layout: "/admin",
+    layout: "/main",
   },
   {
     path: "/login",
