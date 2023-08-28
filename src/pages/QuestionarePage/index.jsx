@@ -1,8 +1,31 @@
 import React, {useState} from "react";
 import "./questionare-page.scss"
-import {Card, CardBody, CardText, CardTitle} from "reactstrap";
+import {Card, CardBody} from "reactstrap";
+import bmiUnderweightImage from "../../assets/img/BMI-Underweight.png";
+import bmiNormalImage from "../../assets/img/BMI-Normal.png";
+import bmiOverweightImage from "../../assets/img/BMI-Overweight.png";
+import bmiObeseImage from "../../assets/img/BMI-Obese.png";
 
-function Index({onQuestionareComplete}) {
+function Questionare() {
+    const [showQuestionare, setShowQuestionare] = useState(true);
+    const[bmi,setBmi]=useState(0)
+    const[height,setHeight]=useState(0)
+    const [weight,setWeight]=useState(0)
+    const handleQuestionareComplete = () => {
+        setShowQuestionare(false); // Set showQuestionare to false to transition to the next component/page
+   const bmi=(height, weight) => {
+       const heightInMeters = height / 100; // Convert height to meters
+       const bmi = weight / (heightInMeters * heightInMeters);
+      // setBMI(bmi.toFixed(2)); // Set BMI with 2 decimal places
+   };
+
+    };
+
+    const lifeStyleScore ={
+        s: 12,
+        ect:10
+
+    }
     const questions = [
         {
             questionText: "What is your height?",
@@ -75,7 +98,7 @@ function Index({onQuestionareComplete}) {
                 {answerText: "Fairly regularly (2 points)", score: 2},
                 {
                     answerText: "Very regularly and enjoy staying active (3 points",
-                    iscore: 3,
+                    score: 3,
                 },
             ],
         },
@@ -105,7 +128,7 @@ function Index({onQuestionareComplete}) {
         if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
         } else {
-            onQuestionareComplete(); // Transition to the next component/page
+            handleQuestionareComplete(); // Transition to the next component/page
         }
     };
 
@@ -114,6 +137,7 @@ function Index({onQuestionareComplete}) {
             setCurrentQuestion(currentQuestion - 1);
         }
     };
+
 
     return (
         <div className="questionare">
@@ -129,8 +153,22 @@ function Index({onQuestionareComplete}) {
                                 <CardBody>
                                     {showScore ? (
                                         <div className="score-section">
-                                            You scored {totalScore} out of{" "}
-                                            {questions.reduce((total, q) => total + q.score, 0)}
+                                            {/*You scored {totalScore}*/}
+                                            <center>
+                                                <div className="bmiChartImage">
+                                                    <img id="BMI-Underweight" className="bmiChartImageElement"
+                                                         src={bmiUnderweightImage} alt="BMI Body Mass Index Chart"/>
+                                                    <img id="BMI-Normal" className="active bmiChartImageElement"
+                                                         src={bmiNormalImage} alt="BMI Body Mass Index Chart"/>
+                                                    <img id="BMI-Overweight" className="bmiChartImageElement"
+                                                         src={bmiOverweightImage}
+                                                         alt="BMI Body Mass Index Chart"/>
+                                                    <img id="BMI-Obese" className="bmiChartImageElement"
+                                                         src={bmiObeseImage}
+                                                         alt="BMI Body Mass Index Chart"/>
+                                                </div>
+                                            </center>
+                                            {/*{questions.reduce((total, q) => total + q.score, 0)}*/}
                                         </div>
                                     ) : (
                                         <>
@@ -142,7 +180,8 @@ function Index({onQuestionareComplete}) {
                                                 <div className="question-text">
                                                     {questions[currentQuestion].questionText}
                                                 </div>
-                                                {questions[currentQuestion].answerInput ? (
+                                                {questions[currentQuestion].answerInput
+                                                    ? (
                                                     <input
                                                         type="text"
                                                         // value={
@@ -154,8 +193,8 @@ function Index({onQuestionareComplete}) {
                                                                 e.target.value
                                                             )
                                                         }
-                                                    />
-                                                ) : (
+                                                    />)
+                                                    : (
                                                     <div className="answer-section">
                                                         {questions[currentQuestion].answerOptions.map(
                                                             (answerOption) => (
@@ -192,4 +231,4 @@ function Index({onQuestionareComplete}) {
     );
 }
 
-export default Index;
+export default Questionare;
