@@ -1,5 +1,24 @@
 
 .questionare {
+  .bmiChartImage {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 15px;
+    max-width: 800px;
+  }
+  .bmiChartImageElement {
+    width: 20%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    opacity: 0.5;
+  }
+
+  .bmiChartImage .active {
+    width: 25%;
+    border: 5px solid #FFFFFF !important;
+    opacity: 1 !important;
+  }
+
   .section-left {
     width: 50%; /* Fixed width */
     background: url("../../assets/img/walking.png");
@@ -89,7 +108,8 @@
   }
 
   .questionare-button:hover {
-    background-color: #555e7d;
+    background-color: rgba(85, 94, 125, 0.47);
+    color: white;
   }
 
   .questionare-button:focus {

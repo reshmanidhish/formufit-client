@@ -11,10 +11,6 @@ import AuthLayout from "./layouts/Auth";
 import Welcome from "./pages/Welcome";
 
 function App() {
-    const [showQuestionare, setShowQuestionare] = useState(true);
-    const handleQuestionareComplete = () => {
-        setShowQuestionare(false); // Set showQuestionare to false to transition to the next component/page
-    };
     return (
         <div className="App">
 
