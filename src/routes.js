@@ -1,12 +1,14 @@
 import Index from "views/Index.js";
 import Profile from "./pages/ProfilePage";
-import Register from "views/examples/Register.js";
-import Login from "views/examples/Login.js";
+import SignupPage from "./pages/SignupPage/SignupPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 import Tables from "views/examples/Tables.js";
 import Icons from "./pages/IconsPage";
 import Questionare from "./pages/QuestionarePage";
 import React from "react";
 import MyAccount from "./pages/MyAccount";
+import CreateRecipes from "./pages/CreateRecipePage";
+import Recipes from "./pages/AllRecipesPage";
 
 const routes = [
   {
@@ -22,10 +24,16 @@ const routes = [
     component: <Index />,
     layout: "/main",
   },{
-    path: "/recipe",
+    path: "/recipes/create",
+    name: "Create recipes",
+    icon: "fas fa-utensils",
+    component: <CreateRecipes/>,
+    layout: "/main",
+  },{
+    path: "/recipes",
     name: "Diet recipes",
     icon: "fas fa-utensils",
-    component: <Index />,
+    component: <Recipes/>,
     layout: "/main",
   },{
     path: "/account",
@@ -65,14 +73,14 @@ const routes = [
     path: "/login",
     name: "Login",
     icon: "ni ni-key-25 text-info",
-    component: <Login />,
+    component: <LoginPage />,
     layout: "/auth",
   },
   {
-    path: "/register",
-    name: "Register",
+    path: "/signup",
+    name: "Signup",
     icon: "ni ni-circle-08 text-pink",
-    component: <Register />,
+    component: <SignupPage />,
     layout: "/auth",
   },
 ];
