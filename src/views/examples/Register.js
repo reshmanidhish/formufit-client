@@ -21,26 +21,26 @@ export default Register;
 function Register(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [username, setUserName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
-  const handleName = (e) => setName(e.target.value);
+  const handleUserName = (e) => setUserName(e.target.value);
 
 
   const handleSignupSubmit = (e) => {
     // Send a Post request to our server 
     e.preventDefault()
-debugger
-    const requestBody = {name, email,password}
+
+    const requestBody = {username, email,password}
 
     authService.signup(requestBody)
         .then(response => {
             console.log('response', response)
-            navigate("/login")
+            navigate("/auth/login")
         })
         .catch(err => console.log(err))
   };
@@ -103,8 +103,8 @@ debugger
                       <i className="ni ni-hat-3" />
                     </InputGroupText>
                   </InputGroupAddon>
-                  <Input placeholder="Name" type="text" value={name}
-                  onChange={handleName} />
+                  <Input placeholder="username" type="text" value={username}
+                  onChange={handleUserName} />
                 </InputGroup>
 
 

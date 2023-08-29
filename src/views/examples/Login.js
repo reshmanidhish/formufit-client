@@ -1,22 +1,4 @@
-/*!
 
-=========================================================
-* Argon Dashboard React - v1.2.3
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
-// reactstrap components
 import {
   Button,
   Card,
@@ -32,7 +14,48 @@ import {
   Col,
 } from "reactstrap";
 
-const Login = () => {
+
+import { useState, useContext } from "react";
+// import axios from "axios";
+import authService from "../../services/auth.service";
+import { AuthContext } from "./../../context/auth.context";
+import { Link, useNavigate } from "react-router-dom";
+
+
+// const API_URL = "http://localhost:5005";
+
+
+function Login(props) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(undefined);
+  const [successMessage, setSuccessMessage] = useState(undefined);
+
+  const { storeToken, authenticateUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const handleEmail = (e) => setEmail(e.target.value);
+  const handlePassword = (e) => setPassword(e.target.value);
+
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+
+    const requestBody = { email, password };
+
+    authService.login(requestBody)
+        .then(response => {
+            console.log('response data', response.data)
+            storeToken(response.data.authToken)
+            authenticateUser()// update my state variables
+            // response.data.message --> "Login was successful"
+            // setSuccessMessage(response.data.message)
+            navigate("/questionare")
+        })
+  };
+
+
   return (
     <>
       <Col lg="5" md="7" className="container-body">
@@ -82,7 +105,8 @@ const Login = () => {
             <div className="text-center text-muted mb-4">
               <small>Or sign in with credentials</small>
             </div>
-            <Form role="form">
+
+            <Form onSubmit={handleLoginSubmit} role="form">
               <FormGroup className="mb-3">
                 <InputGroup className="input-group-alternative">
                   <InputGroupAddon addonType="prepend">
@@ -94,6 +118,8 @@ const Login = () => {
                     placeholder="Email"
                     type="email"
                     autoComplete="new-email"
+                    value={email}
+                    onChange={handleEmail}
                   />
                 </InputGroup>
               </FormGroup>
@@ -104,10 +130,13 @@ const Login = () => {
                       <i className="ni ni-lock-circle-open" />
                     </InputGroupText>
                   </InputGroupAddon>
+
                   <Input
                     placeholder="Password"
                     type="password"
                     autoComplete="new-password"
+                    value={password}
+          onChange={handlePassword}
                   />
                 </InputGroup>
               </FormGroup>
@@ -125,8 +154,8 @@ const Login = () => {
                 </label>
               </div>
               <div className="text-center">
-                <Button className="my-4" color="primary" type="button">
-                  Sign in
+                <Button className="my-4" color="primary" type="submit" >
+                  Login
                 </Button>
               </div>
             </Form>
