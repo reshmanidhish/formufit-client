@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import {Navigate, Route, Routes, useLocation} from "react-router-dom";
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
 import AdminFooter from "components/Footers/AdminFooter.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "routes.js";
+import { AuthContext } from "../context/auth.context";
 
 const Main = (props) => {
     const mainContent = React.useRef(null);
     const location = useLocation();
+    
+    const { user } = useContext(AuthContext);
 
     React.useEffect(() => {
         document.documentElement.scrollTop = 0;
@@ -16,8 +19,14 @@ const Main = (props) => {
         mainContent.current.scrollTop = 0;
     }, [location]);
 
+    const getFilteredRoutes = (routes) => {
+        return routes
+        .filter(route => user.bodyType === 1 ? route.bodyTypeAvailable : !route.bodyTypeAvailable)
+    }
+
     const getRoutes = (routes) => {
-        return routes.map((prop, key) => {
+        return getFilteredRoutes(routes)
+        .map((prop, key) => {
             if (prop.layout === "/main") {
                 return (
                     <Route path={prop.path} element={prop.component} key={key} exact/>
@@ -44,7 +53,7 @@ const Main = (props) => {
         <>
             <Sidebar
                 {...props}
-                routes={routes}
+                routes={getFilteredRoutes(routes)}
                 logo={{
                     innerLink: "/admin/index",
                     imgSrc: require("../assets/img/brand/formufit1.png"),

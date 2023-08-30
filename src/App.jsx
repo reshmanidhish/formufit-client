@@ -1,18 +1,12 @@
 import "./App.css";
 import {Navigate, Route, Routes} from "react-router-dom";
-import React, {useState} from 'react';
+import React from 'react';
 import ProfilePage from "./pages/ProfilePage";
-import SignupPage from "./pages/SignupPage/SignupPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import MainLayout from "./layouts/Main";
 import AuthLayout from "./layouts/Auth";
 import Welcome from "./pages/Welcome";
-import CreateRecipePage from "./pages/CreateRecipePage"
-import AllRecipes from "pages/AllRecipesPage";
-import Login from "views/examples/Login";
-import Register from "views/examples/Register";
 
 function App() {
     return (
@@ -56,23 +50,6 @@ function App() {
                         <IsPrivate>
                             <ProfilePage/>
                         </IsPrivate>
-                    }
-                />
-
-                <Route
-                    path="/signup"
-                    element={
-                        <IsAnon>
-                            <SignupPage/>
-                        </IsAnon>
-                    }
-                />
-                <Route
-                    path="/login"
-                    element={
-                        <IsAnon>
-                            <LoginPage/>
-                        </IsAnon>
                     }
                 />
             </Routes>

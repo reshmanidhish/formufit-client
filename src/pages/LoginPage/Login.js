@@ -18,7 +18,7 @@ import {
 import { useState, useContext } from "react";
 // import axios from "axios";
 import authService from "../../services/auth.service";
-import { AuthContext } from "./../../context/auth.context";
+import { AuthContext } from "../../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
 
 
@@ -52,6 +52,7 @@ function Login(props) {
             // response.data.message --> "Login was successful"
             // setSuccessMessage(response.data.message)
             navigate("/questionare")
+            
         })
   };
 

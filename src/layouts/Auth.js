@@ -4,9 +4,8 @@ import {Container, Row} from "reactstrap";
 
 import AuthNavbar from "components/Navbars/AuthNavbar.js";
 import AuthFooter from "components/Footers/AuthFooter.js";
-
-import Register from "views/examples/Register";
-import Login from "views/examples/Login";
+import Login from "components/Footers/AuthFooter";
+import Register from "pages/RegisterPage/Register";
 
 const Auth = (props) => {
   const mainContent = React.useRef(null);
