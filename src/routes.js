@@ -1,7 +1,7 @@
 import Index from "views/Index.js";
 import Profile from "./pages/ProfilePage";
-import SignupPage from "./pages/SignupPage/SignupPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
+import Register from "views/examples/Register.js";
+import Login from "views/examples/Login.js";
 import Tables from "views/examples/Tables.js";
 import Icons from "./pages/IconsPage";
 import Questionare from "./pages/QuestionarePage";
@@ -73,14 +73,14 @@ const routes = [
     path: "/login",
     name: "Login",
     icon: "ni ni-key-25 text-info",
-    component: <LoginPage />,
+    component: <Login />,
     layout: "/auth",
   },
   {
-    path: "/signup",
+    path: "/register",
     name: "Signup",
     icon: "ni ni-circle-08 text-pink",
-    component: <SignupPage />,
+    component: <Register />,
     layout: "/auth",
   },
 ];

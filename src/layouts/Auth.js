@@ -41,7 +41,6 @@ const Auth = (props) => {
         <AuthNavbar />
         <div className="header bg-gradient-info py-3 py-lg-7">
         </div>
-         Page content
         <Container className="mt--8 pb-5">
           <Row className="justify-content-center">
             <Routes>
