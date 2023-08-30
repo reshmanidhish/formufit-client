@@ -24,7 +24,7 @@ const routes = [
     layout: "/main",
     bodyTypeAvailable: true
   },{
-    path: "/recipe/create",
+    path: "/recipes/create",
     name: "Create recipes",
     icon: "fas fa-utensils",
     component: <CreateRecipes/>,
