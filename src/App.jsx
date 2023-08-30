@@ -11,6 +11,8 @@ import AuthLayout from "./layouts/Auth";
 import Welcome from "./pages/Welcome";
 import CreateRecipePage from "./pages/CreateRecipePage"
 import AllRecipes from "pages/AllRecipesPage";
+import Login from "views/examples/Login";
+import Register from "views/examples/Register";
 
 function App() {
     return (
@@ -19,13 +21,33 @@ function App() {
             {/* <Navbar /> */}
             <Routes>
                 {/* MainLayout contains many user pages*/}
-                <Route path="/*" element={<MainLayout/>}/>
+                <Route path="/*" 
+                        element={
+                            <IsPrivate>
+                                <MainLayout/>
+                            </IsPrivate>
+                }/>
 
                 {/* AdminLayout contains many auth pages*/}
-                <Route path="/auth/*" element={<AuthLayout/>}/>
+                <Route path="/auth/*" 
+                        element={
+                            <IsAnon>
+                                <AuthLayout/>
+                            </IsAnon>
+                        }
+                />
+
+                <Route path="/" 
+                        element={
+                            <IsAnon>
+                                <Welcome/>
+                            </IsAnon>
+                        }
+                />
+               
 
                 <Route path="*" element={<Navigate to="/" replace/>}/>
-                <Route path="/" element={<Welcome/>}/>
+                
 
                 {/*The below code is from IronLauncher which we will be using it later for Auth Guard (page protection)*/}
                 <Route

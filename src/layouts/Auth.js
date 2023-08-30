@@ -5,7 +5,8 @@ import {Container, Row} from "reactstrap";
 import AuthNavbar from "components/Navbars/AuthNavbar.js";
 import AuthFooter from "components/Footers/AuthFooter.js";
 
-import routes from "routes.js";
+import Register from "views/examples/Register";
+import Login from "views/examples/Login";
 
 const Auth = (props) => {
   const mainContent = React.useRef(null);
@@ -23,18 +24,6 @@ const Auth = (props) => {
     mainContent.current.scrollTop = 0;
   }, [location]);
 
-  const getRoutes = (routes) => {
-    return routes.map((prop, key) => {
-      if (prop.layout === "/auth") {
-        return (
-          <Route path={prop.path} element={prop.component} key={key} exact />
-        );
-      } else {
-        return null;
-      }
-    });
-  };
-
   return (
     <>
       <div className="main-cosntent" ref={mainContent}>
@@ -44,7 +33,8 @@ const Auth = (props) => {
         <Container className="mt--8 pb-5">
           <Row className="justify-content-center">
             <Routes>
-              {getRoutes(routes)}
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
               <Route path="*" element={<Navigate to="/auth/login" replace />} />
             </Routes>
           </Row>
