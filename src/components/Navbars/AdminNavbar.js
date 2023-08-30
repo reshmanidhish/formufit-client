@@ -1,3 +1,5 @@
+import { AuthContext } from "../../context/auth.context";
+import { useContext } from "react";
 import {Link} from "react-router-dom";
 // reactstrap components
 import {
@@ -12,7 +14,7 @@ import {
 } from "reactstrap";
 
 const AdminNavbar = (props) => {
-
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
       // <Navbar className="navbar-top navbar-expand border-bottom navbar-dark bg-gradient-default fixed-top">
       // <Navbar className="navbar-expand-md navbar-dark bg-gradient-default fixed-top" expand="md" id="navbar-main">
@@ -56,7 +58,7 @@ const AdminNavbar = (props) => {
                   </span>
                   <Media className="ml-2 d-none d-lg-block">
                     <span className="mb-0 text-sm font-weight-bold">
-                      Jessica Jones
+                    {user.username}
                     </span>
                   </Media>
                 </Media>
@@ -84,7 +86,7 @@ const AdminNavbar = (props) => {
                 <DropdownItem divider />
                 <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                   <i className="ni ni-user-run" />
-                  <span>Logout</span>
+                  <span onClick={logOutUser}>Logout</span>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
