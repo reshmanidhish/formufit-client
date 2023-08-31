@@ -7,9 +7,15 @@ function AllRecipes() {
   const [isLoading, setIsLoading]= useState(false);
 
   useEffect(()=> {
+
     async function fetchRecipes() {
       try {
-        const response = await axios.get("http://localhost:5005/recipes");
+        const storedToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU5Y2MyMzg2ZWQ3ZjM2ZjM3NTE0ZTAiLCJlbWFpbCI6ImRpZGVtQHRlc3QuY29tIiwidXNlcm5hbWUiOiJkaWRvIiwidXQiOjEsImJvZHlUeXBlIjoxLCJpYXQiOjE2OTM1MTUyNzEsImV4cCI6MTY5MzUzNjg3MX0.XcvMZ5zYwGs8Yu2AUdHSwtVHznw6dXCJc3C_Ffbj42U"; 
+        const headers = {
+        Authorization: `Bearer ${storedToken}`,
+        };
+
+        const response = await axios.get("http://localhost:5005/recipes", {headers});
         setRecipes(response.data)
         setIsLoading(true);
       } catch (error) {

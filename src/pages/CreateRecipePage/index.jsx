@@ -12,7 +12,7 @@ import "./recipe.css";
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import Header from "components/Headers/Header";
 
 function CreateRecipePage () { 
   const [title, setTitle] = useState("");
@@ -53,6 +53,9 @@ function CreateRecipePage () {
     }
           
     return (
+      <>
+      <Header breadcrumbName="Icon" breadcrumbIcon="fas fa-user"/>
+      <Container fluid className="container-body"> 
         <div className = "form-container"> 
       <Form onSubmit={handleSubmit}>
         <FormGroup row>
@@ -92,6 +95,8 @@ function CreateRecipePage () {
         </FormGroup>
       </Form>
       </div>
+      </Container>
+      </>
     );
   }
 
