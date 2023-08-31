@@ -27,11 +27,28 @@
   }
   .section-right {
     flex: 1;
+
+    background: url(https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 152%;
+
+    .card-body{
+      padding: 10.5rem
+    }
+    .card {
+      background-color: #ffffff00;
+      text-align: center;
+      color: #000;
+      background-clip: border-box;
+      border: 0px solid rgb(255 255 255 / 5%);
+    }
   }
   .section {
-    width: 98%;
-    min-height: 82%;
-    height: 82%;
+    width: 100%;
+    min-height: 85%;
+    height: 85%;
     //padding: 20px;
     box-shadow: 0 7px 42px 0 rgb(213 213 213 / 75%);
     display: block;

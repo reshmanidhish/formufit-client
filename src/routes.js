@@ -7,7 +7,8 @@ import React from "react";
 import MyAccount from "./pages/MyAccount";
 import CreateRecipes from "./pages/CreateRecipePage";
 import Recipes from "./pages/AllRecipesPage";
-
+import AllWorkoutPage from"./pages/AllWorkoutPage";
+import WorkoutVideoUploadPage from "./pages/WorkoutVideoUploadPage";
 const routes = [
   {
     path: "/dashboard",
@@ -20,7 +21,7 @@ const routes = [
     path: "/workouts",
     name: "Workouts",
     icon: "fas fa-dumbbell",
-    component: <Index />,
+    component: <AllWorkoutPage />,
     layout: "/main",
     bodyTypeAvailable: true
   },{
@@ -73,6 +74,14 @@ const routes = [
     name: "Tables",
     icon: "ni ni-bullet-list-67 text-red",
     component: <Tables />,
+    layout: "/main",
+    bodyTypeAvailable: true
+  },
+  {
+    path: "/workout/create",
+    name: "Create workout",
+    icon: "ni ni-bullet-list-67 text-red",
+    component: <WorkoutVideoUploadPage/>,
     layout: "/main",
     bodyTypeAvailable: true
   }
