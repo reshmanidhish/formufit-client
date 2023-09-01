@@ -44,16 +44,16 @@ function App() {
 
                 <Route path="*" element={<Navigate to="/" replace/>}/>
                 
-
+               
                 {/*The below code is from IronLauncher which we will be using it later for Auth Guard (page protection)*/}
-                <Route
+                {/* <Route
                     path="/profile"
                     element={
                         <IsPrivate>
-                            <ProfilePage/>
+                             <Profile />
                         </IsPrivate>
                     }
-                />
+                /> */}
             </Routes>
         </div>
     );

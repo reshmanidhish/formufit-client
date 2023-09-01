@@ -26,10 +26,11 @@ const Main = (props) => {
 
     const getRoutes = (routes) => {
         return getFilteredRoutes(routes)
-        .map((prop, key) => {
-            if (prop.layout === "/main") {
+        .filter(route => user.ut >= route.ut )
+        .map((route, key) => {
+            if (route.layout === "/main") {
                 return (
-                    <Route path={prop.path} element={prop.component} key={key} exact/>
+                    <Route path={route.path} element={route.component} key={key} exact/>
                 );
             } else {
                 return null;

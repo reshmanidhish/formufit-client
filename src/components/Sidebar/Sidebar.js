@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {Link, NavLink as NavLinkRRD} from "react-router-dom";
 import {PropTypes} from "prop-types";
 
@@ -23,10 +23,14 @@ import {
   Row,
   UncontrolledDropdown,
 } from "reactstrap";
+import { AuthContext } from "context/auth.context";
 
 
 const Sidebar = (props) => {
   const [collapseOpen, setCollapseOpen] = useState();
+  const { bgColor, routes, logo } = props;
+  const { user } = useContext(AuthContext);
+
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
     return props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
@@ -41,7 +45,10 @@ const Sidebar = (props) => {
   };
   // creates the links that appear in the left menu / Sidebar
   const createLinks = (routes) => {
-    return routes.map((prop, key) => {
+    return routes
+    .filter(route => !route?.hidden)
+    .filter(route => user.ut >= route.ut )
+    .map((prop, key) => {
       return (
         <NavItem key={key}>
           <NavLink
@@ -57,7 +64,7 @@ const Sidebar = (props) => {
     });
   };
 
-  const { bgColor, routes, logo } = props;
+
   let navbarBrandProps;
   if (logo && logo.innerLink) {
     navbarBrandProps = {
@@ -128,7 +135,7 @@ const Sidebar = (props) => {
               <DropdownItem className="noti-title" header tag="div">
                 <h6 className="text-overflow m-0">Welcome!</h6>
               </DropdownItem>
-              <DropdownItem to="/admin/user-profile" tag={Link}>
+              <DropdownItem to="/user-profile" tag={Link}>
                 <i className="ni ni-single-02" />
                 <span>My profile</span>
               </DropdownItem>

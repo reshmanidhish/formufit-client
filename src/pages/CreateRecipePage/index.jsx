@@ -32,7 +32,7 @@ function CreateRecipePage () {
     formData.append("recipeImage", image);
     formData.append("bodyType", bodyType);
       
-      axios.post("http://localhost:5005/recipes", formData)
+      axios.post("http://localhost:5005/recipes/create", formData)
       .then(({data}) => {
         alert("Recipe created");
         console.log("post response data", data)
