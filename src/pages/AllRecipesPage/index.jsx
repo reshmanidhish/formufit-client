@@ -4,6 +4,7 @@ import axios from "axios";
 import { Container } from "reactstrap";
 import Header from "components/Headers/Header";
 import { Card } from "reactstrap";
+import "./allrecipe.css";
 
 function AllRecipes() {
   const [recipes, setRecipes] = useState([]);
@@ -13,7 +14,7 @@ function AllRecipes() {
 
     async function fetchRecipes() {
       try {
-        const storedToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU5Y2MyMzg2ZWQ3ZjM2ZjM3NTE0ZTAiLCJlbWFpbCI6ImRpZGVtQHRlc3QuY29tIiwidXNlcm5hbWUiOiJkaWRvIiwidXQiOjEsImJvZHlUeXBlIjoxLCJpYXQiOjE2OTM1Njk0MjAsImV4cCI6MTY5MzU5MTAyMH0.8nFczZ0CZvAupNNTq4ijMvkp95XsJGdIvMHzXZJ1xgY"
+        const storedToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU5Y2MyMzg2ZWQ3ZjM2ZjM3NTE0ZTAiLCJlbWFpbCI6ImRpZGVtQHRlc3QuY29tIiwidXNlcm5hbWUiOiJkaWRvIiwidXQiOjEsImJvZHlUeXBlIjoxLCJpYXQiOjE2OTM1OTg3MDMsImV4cCI6MTY5MzYyMDMwM30.LIehvjmXJ5Qc9miUOMaJN3m2vxbjFHjui8UnxTyv-EU"
         const headers = {
         Authorization: `Bearer ${storedToken}`,
         };
@@ -35,7 +36,7 @@ function AllRecipes() {
        
     {recipes.length ===0 ? 
     <p> No recipe found </p>:
-  (<div>
+  (<div className="all_recipes">
     <h1> Recipes</h1>
     {recipes.map(recipe => {
       return <div key={recipe._id}>

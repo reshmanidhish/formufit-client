@@ -1,0 +1,6 @@
+.all_recipes {
+    grid-template-columns: 280px 320px;
+    align-items:first baseline;
+    display: grid;
+    margin-top: 24px;
+    }

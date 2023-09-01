@@ -7,6 +7,8 @@ import IsAnon from "./components/IsAnon/IsAnon";
 import MainLayout from "./layouts/Main";
 import AuthLayout from "./layouts/Auth";
 import Welcome from "./pages/Welcome";
+import SingleRecipe from "pages/SingleRecipePage";
+
 
 function App() {
     return (

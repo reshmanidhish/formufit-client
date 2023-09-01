@@ -7,8 +7,10 @@ import React from "react";
 import MyAccount from "./pages/MyAccount";
 import CreateRecipes from "./pages/CreateRecipePage";
 import Recipes from "./pages/AllRecipesPage";
+import SingleRecipe from "pages/SingleRecipePage";
 import AllWorkoutPage from"./pages/AllWorkoutPage";
 import WorkoutVideoUploadPage from "./pages/WorkoutVideoUploadPage";
+
 const routes = [
   {
     path: "/dashboard",
@@ -36,6 +38,13 @@ const routes = [
     name: "Diet recipes",
     icon: "fas fa-utensils",
     component: <Recipes/>,
+    layout: "/main",
+    bodyTypeAvailable: true
+  },{
+    path: "/recipes/:recipeId",
+    name: "Single recipe",
+    icon: "fas fa-utensils",
+    component: <SingleRecipe/>,
     layout: "/main",
     bodyTypeAvailable: true
   },{
