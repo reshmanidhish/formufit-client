@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import "./questionare-page.scss";
-import { Card, CardBody } from "reactstrap";
+import { Card, CardBody, Input } from "reactstrap";
 import bmiUnderweightImage from "../../assets/img/BMI-Underweight.png";
 import bmiNormalImage from "../../assets/img/BMI-Normal.png";
 import bmiOverweightImage from "../../assets/img/BMI-Overweight.png";
 import bmiObeseImage from "../../assets/img/BMI-Obese.png";
+import formufitService from "../../services/formufit.service";
 
 function Questionare() {
-  const [userWeightAndHeight, setUserWeightAndHeight] = useState({});
+  const [userWeightAndHeight, setUserWeightAndHeight] = useState({height: "", weight: ""});
   const [showQuestionare, setShowQuestionare] = useState(true);
-
   const [bmi, setBmi] = useState(0);
   const [userBodyType, setUserBodyType] = useState("");
   const [userLifestyle, setUserLifestyle] = useState("");
+
   const handleQuestionareComplete = () => {
     setShowQuestionare(false); // Set showQuestionare to false to transition to the next component/page
     const { height, weight } = userWeightAndHeight;
@@ -35,7 +36,6 @@ function Questionare() {
       bodyType = "Obese";
     }
     setUserBodyType(bodyType);
-    console.log(`Your body type: ${bodyType}`);
 
     let lifestyle = "";
 
@@ -49,43 +49,46 @@ function Questionare() {
       lifestyle = "Very Active"; // High activity level
     }
     setUserLifestyle(lifestyle);
-    console.log(`Your lifestyle: ${lifestyle}`);
-
     setShowScore(true);
 
-    // Set BMI with 2 decimal places
+    const dataToUpdate = {
+      lifestyle,
+      bodyType,
+      bmi:calculatedBmi, 
+      weight: userWeightAndHeight.weight, 
+      height: userWeightAndHeight.height
+    }
+    formufitService
+      .updateWellnessProfile(dataToUpdate)
+      .then((updatedProfile) => {
+       
+      })
+      .catch((error) => {
+        // If the server sends an error response (invalid token) ❌
+      });
   };
 
   const questions = [
     {
-      questionText: "What is your height?",
-      answerInput: "height", // Use a unique identifier for the input
-    },
-    {
-      questionText: "What is your weight?",
-      answerInput: "weight", // Use a unique identifier for the input
-    },
-
-    {
       questionText:
         "How often do you engage in physical activities or exercise during the week?",
       answerOptions: [
-        { answerText: " Rarely or never (0 points)", score: 0 },
-        { answerText: "1-2 days a week (1 point)", score: 1 },
-        { answerText: "3-4 days a week (2 points)", score: 2 },
-        { answerText: "5 or more days a week (3 points)", score: 3 },
+        { answerText: " Rarely or never", score: 0 },
+        { answerText: "1-2 days a week", score: 1 },
+        { answerText: "3-4 days a week", score: 2 },
+        { answerText: "5 or more days a week", score: 3 },
       ],
     },
     {
       questionText:
         "How much time do you spend sitting or being inactive during a typical workday?",
       answerOptions: [
-        { answerText: " Most of the time (0 points)", score: 0 },
-        { answerText: "About half the time (1 point)", score: 1 },
-        { answerText: "Occasional breaks from sitting (2 points)", score: 2 },
+        { answerText: " Most of the time", score: 0 },
+        { answerText: "About half the time", score: 1 },
+        { answerText: "Occasional breaks from sitting", score: 2 },
         {
           answerText:
-            "Very little sitting, often standing or moving (3 points)",
+            "Very little sitting, often standing or moving",
           score: 3,
         },
       ],
@@ -94,14 +97,14 @@ function Questionare() {
       questionText: "How do you commute to work or travel short distances?",
       answerOptions: [
         {
-          answerText: " Drive or use public transportation (0 points)",
+          answerText: " Drive or use public transportation",
           score: 0,
         },
-        { answerText: "Walk or cycle occasionally (1 point)", score: 1 },
-        { answerText: "Walk or cycle most of the time (2 points", score: 2 },
+        { answerText: "Walk or cycle occasionally", score: 1 },
+        { answerText: "Walk or cycle most of the time", score: 2 },
         {
           answerText:
-            "Always walk or cycle, no motorized transportation (3 points)",
+            "Always walk or cycle, no motorized transportation",
           score: 3,
         },
       ],
@@ -110,11 +113,11 @@ function Questionare() {
       questionText:
         "How active are you during leisure time (e.g., playing sports, going for walks)?",
       answerOptions: [
-        { answerText: "Rarely or never (0 points)", score: 0 },
-        { answerText: "Sometimes, but not regularly (1 point)", score: 1 },
-        { answerText: "Fairly regularly (2 points)", score: 2 },
+        { answerText: "Rarely or never", score: 0 },
+        { answerText: "Sometimes, but not regularly", score: 1 },
+        { answerText: "Fairly regularly", score: 2 },
         {
-          answerText: "Very regularly and enjoy staying active (3 points",
+          answerText: "Very regularly and enjoy staying active",
           score: 3,
         },
       ],
@@ -123,15 +126,23 @@ function Questionare() {
       questionText:
         "How often do you engage in activities that involve moderate to vigorous physical effort?",
       answerOptions: [
-        { answerText: "Rarely or never (0 points)", score: 0 },
-        { answerText: "Sometimes, but not regularly (1 point)", score: 1 },
-        { answerText: "Fairly regularly (2 points)", score: 2 },
+        { answerText: "Rarely or never", score: 0 },
+        { answerText: "Sometimes, but not regularly", score: 1 },
+        { answerText: "Fairly regularly", score: 2 },
         {
-          answerText: "Very regularly and enjoy staying active (3 points",
+          answerText: "Very regularly and enjoy staying active",
           score: 3,
         },
       ],
     },
+    {
+      questionText: "What is your height?",
+      answerInput: "height", // Use a unique identifier for the input
+    },
+    {
+      questionText: "What is your weight?",
+      answerInput: "weight", // Use a unique identifier for the input
+    }
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -142,8 +153,9 @@ function Questionare() {
   const handleAnswerInput = (identifier, value) => {
     setUserWeightAndHeight((prevState) => ({
       ...prevState,
-      [identifier]: value,
+      [identifier]: parseInt(value),
     }));
+    console.log(userWeightAndHeight)
     // setUserAnswers({ ...userAnswers, [identifier]: value });
   };
 
@@ -170,6 +182,11 @@ function Questionare() {
     if (currentQuestion > 0 && currentQuestion < questions.length) {
       setCurrentQuestion(currentQuestion - 1);
     }
+  };
+
+  const inputStyle = {
+    color: "black",
+    fontSize: "18px",
   };
 
   return (
@@ -229,10 +246,11 @@ function Questionare() {
                           />
                         </div>
                         <li>
-                        <b>Your calculated BMI: {bmi}</b></li>
+                          <b>Your calculated BMI: {bmi}</b>
+                        </li>
                         <li>
-                             <b>Your Lifestyle: {userLifestyle}</b>  
-                          </li>
+                          <b>Your Lifestyle: {userLifestyle}</b>
+                        </li>
                       </center>
                       {/*{questions.reduce((total, q) => total + q.score, 0)}*/}
                     </div>
@@ -247,20 +265,32 @@ function Questionare() {
                         <div className="question-text">
                           {questions[currentQuestion].questionText}
                         </div>
-                        {questions[currentQuestion].answerInput ? (
-                          <input
-                            type="text"
-                            // input for height and weight
 
-                            // value={
-                            //   userAnswers[questions[currentQuestion].answerInput] || ""
-                            // }
+                        {questions[currentQuestion].answerInput ? (
+                          // <input
+                          //   type="text"
+                          // input for height and weight
+
+                          // value={
+                          //   userAnswers[questions[currentQuestion].answerInput] || ""
+                          // }
+
+                          // />
+
+                          <Input
+                            type="number"
+                            name="numberField"
+                            id="numberField"
+                            style={inputStyle}
+                            placeholder={`Enter your ${questions[currentQuestion].answerInput}`}
+                            value={userWeightAndHeight[questions[currentQuestion].answerInput]}
                             onChange={(e) =>
                               handleAnswerInput(
                                 questions[currentQuestion].answerInput,
                                 e.target.value
                               )
                             }
+                            step="1"
                           />
                         ) : (
                           <div className="answer-section">
@@ -281,21 +311,21 @@ function Questionare() {
                         )}
                       </div>
                       {questions[currentQuestion].answerInput && (
-                      <div className="answer-section">
-                        <button
-                          className="questionare-button"
-                          onClick={handlePrevQuestion}
-                        >
-                          Prev
-                        </button>
-                        <button
-                          className="questionare-button"
-                          onClick={handleNextQuestion}
-                        >
-                          Next
-                        </button>
-                      </div>)
-}
+                        <div className="answer-section">
+                          <button
+                            className="questionare-button"
+                            onClick={handlePrevQuestion}
+                          >
+                            Prev
+                          </button>
+                          <button
+                            className="questionare-button"
+                            onClick={handleNextQuestion}
+                          >
+                            Next
+                          </button>
+                        </div>
+                      )}
                     </>
                   )}
                 </CardBody>

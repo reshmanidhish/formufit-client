@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios from "axios";
 
 class FormuFitService {
   constructor() {
     this.api = axios.create({
-      baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
+      baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:5005",
     });
 
     // Automatically set JWT token in the headers for every request
@@ -21,43 +21,45 @@ class FormuFitService {
 
   // POST /api/examples
   createOne = async (requestBody) => {
-    return this.api.post('/api/examples', requestBody);
-  }
+    return this.api.post("/api/examples", requestBody);
+  };
 
   // GET /api/examples
   getAll = async () => {
-    return this.api.get('/api/examples');
-  }
+    return this.api.get("/api/examples");
+  };
 
   // GET /api/examples/:id
   getOne = async (id) => {
     return this.api.get(`/api/examples/${id}`);
-  }
+  };
 
   // PUT /api/examples/:id
   updateOne = async (id, requestBody) => {
     return this.api.put(`/api/examples/${id}`, requestBody);
-  }
+  };
 
   // DELETE /api/examples/:id
   deleteProject = async (id) => {
     return this.api.delete(`/api/examples/${id}`);
-  } 
+  };
 
+  // GET /workouts
+  getWorkouts = async () => {
+    return this.api.get("/workouts");
+  };
 
-
-   // GET /workouts
-   getWorkouts = async () => {
-    return this.api.get('/workouts');
-  }
+  // GET /workouts/upload
   createWorkouts = async (requestBody) => {
-    return this.api.post('/workouts/upload', requestBody);
-  }
+    return this.api.post("/workouts/upload", requestBody);
+  };
 
-
+  // PUT /profile/wellness/anwers
+  updateWellnessProfile = async (requestBody) => {
+    return this.api.put("/profile/wellness/answers", requestBody);
+  };
 }
 
-// Create one instance of the service
 const formuFitService = new FormuFitService();
 
 export default formuFitService;

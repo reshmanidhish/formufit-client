@@ -29,8 +29,6 @@ function WorkoutVideoUploadPage() {
 
    
     if (validateForm()) {
-      console.log("title", title);
-      console.log("Video URL:", videoUrl);
       formufitService
       .createWorkouts({title:title, videoUrl,bodyType })
       .then((allWorkouts) => {
@@ -42,7 +40,6 @@ function WorkoutVideoUploadPage() {
       .catch((error) => {
         // If the server sends an error response (invalid token) ❌
       });
-      // You can use these values to make an API call to upload the workout
     }
   };
 
