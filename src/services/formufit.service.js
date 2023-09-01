@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class ExampleService {
+class FormuFitService {
   constructor() {
     this.api = axios.create({
       baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
@@ -45,9 +45,19 @@ class ExampleService {
   } 
 
 
+
+   // GET /workouts
+   getWorkouts = async () => {
+    return this.api.get('/workouts');
+  }
+  createWorkouts = async (requestBody) => {
+    return this.api.post('/workouts/upload', requestBody);
+  }
+
+
 }
 
 // Create one instance of the service
-const exampleService = new ExampleService();
+const formuFitService = new FormuFitService();
 
-export default exampleService;
+export default formuFitService;
