@@ -1,5 +1,6 @@
 import Header from "components/Headers/Header";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Col,
   Button,
@@ -18,24 +19,25 @@ import formufitService from "../../services/formufit.service";
 
 
 function WorkoutVideoUploadPage() {
-  const [workoutName, setWorkoutName] = useState("");
+  const [title, setTitle] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
   const [bodyType, setBodyType] = useState("");
   const [formErrors, setFormErrors] = useState({});
-
+  const navigate = useNavigate(); 
   const handleSubmit = (e) => {
     e.preventDefault();
 
    
     if (validateForm()) {
-      console.log("Workout Name:", workoutName);
+      console.log("title", title);
       console.log("Video URL:", videoUrl);
       formufitService
-      .createWorkouts({name:workoutName, videoUrl,bodyType })
+      .createWorkouts({title:title, videoUrl,bodyType })
       .then((allWorkouts) => {
-        setWorkoutName("")
+        setTitle("")
         setVideoUrl("")
         setBodyType("")
+        navigate('/workouts');
       })
       .catch((error) => {
         // If the server sends an error response (invalid token) ❌
@@ -48,7 +50,7 @@ function WorkoutVideoUploadPage() {
     let isValid = true;
     const errors = {};
 
-    if (!workoutName.trim()) {
+    if (!title.trim()) {
       isValid = false;
       errors.workoutName = "Workout name is required";
     }
@@ -69,13 +71,13 @@ function WorkoutVideoUploadPage() {
         <div className="form-container">
           <Form onSubmit={handleSubmit}>
             <FormGroup>
-              <Label for="workoutName">Workout Name</Label>
+              <Label for="title">Workout Name</Label>
               <Input
                 type="text"
                 id="workoutName"
-                value={workoutName}
-                onChange={(e) => setWorkoutName(e.target.value)}
-                invalid={formErrors.workoutName !== undefined}
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                invalid={formErrors.title !== undefined}
               />
               <FormFeedback>{formErrors.workoutName}</FormFeedback>
             </FormGroup>
