@@ -29,7 +29,7 @@ const routes = [
     bodyTypeAvailable: true,
     ut: 0
   },{
-    path: "/recipes/create",
+    path: "/recipe/create",
     name: "Create recipes",
     icon: "fas fa-utensils",
     component: <CreateRecipes/>,
@@ -42,14 +42,16 @@ const routes = [
     icon: "fas fa-utensils",
     component: <Recipes/>,
     layout: "/main",
-    bodyTypeAvailable: true
+    bodyTypeAvailable: true,
+     ut:0
   },{
     path: "/recipes/:recipeId",
     name: "Single recipe",
     icon: "fas fa-utensils",
     component: <SingleRecipe/>,
     layout: "/main",
-    bodyTypeAvailable: true
+    bodyTypeAvailable: true,
+     ut:0
   },{
     path: "/account",
     name: "My Account 2",
@@ -57,14 +59,6 @@ const routes = [
     component: <MyAccount />,
     layout: "/main",
     bodyTypeAvailable: true
-  },{
-    path: "/icons",
-    name: "Icons",
-    icon: "ni ni-planet text-blue",
-    component: <Icons />,
-    layout: "/main",
-    bodyTypeAvailable: true,
-    ut: 0
   },
   // {
   //   path: "/account",

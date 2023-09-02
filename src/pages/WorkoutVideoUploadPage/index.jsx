@@ -14,10 +14,6 @@ import {
 import "./WorkoutVideoUploadPage.css";
 import formufitService from "../../services/formufit.service";
 
-
-
-
-
 function WorkoutVideoUploadPage() {
   const [title, setTitle] = useState("");
   const [videoUrl, setVideoUrl] = useState("");

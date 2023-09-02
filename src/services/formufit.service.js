@@ -58,6 +58,16 @@ class FormuFitService {
   updateWellnessProfile = async (requestBody) => {
     return this.api.put("/profile/wellness/answers", requestBody);
   };
+
+  // GET /recipes
+  getAllRecipes = async () => {
+    return this.api.get("/recipes");
+  };
+
+  // GET /recipes
+  getRecipe = async (recipeId) => {
+    return this.api.get(`/recipes/${recipeId}`);
+  };
 }
 
 const formuFitService = new FormuFitService();

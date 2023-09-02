@@ -54,7 +54,7 @@ function CreateRecipePage () {
           
     return (
       <>
-      <Header breadcrumbName="Icon" breadcrumbIcon="fas fa-user"/>
+      <Header breadcrumbName="Create Recipe" breadcrumbIcon="fas fa-utensils"/>
       <Container fluid className="container-body"> 
         <div className = "form-container"> 
       <Form onSubmit={handleSubmit}>

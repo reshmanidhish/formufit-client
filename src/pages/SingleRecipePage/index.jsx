@@ -4,31 +4,25 @@ import axios from "axios";
 import { Container } from "reactstrap";
 import Header from "components/Headers/Header";
 import "./singleRecipe.css";
+import formufitService from "../../services/formufit.service";
 
 function SingleRecipe() {
   const [recipe, setRecipe] = useState([]);
   const [isLoading, setIsLoading]= useState(false);
-  const {recipeId} =useParams();
+  const {recipeId} = useParams();
 
-  useEffect(()=> {
-
-    async function fetchRecipes() {
-      try {
-        const storedToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU5Y2MyMzg2ZWQ3ZjM2ZjM3NTE0ZTAiLCJlbWFpbCI6ImRpZGVtQHRlc3QuY29tIiwidXNlcm5hbWUiOiJkaWRvIiwidXQiOjEsImJvZHlUeXBlIjoxLCJpYXQiOjE2OTM1OTg3MDMsImV4cCI6MTY5MzYyMDMwM30.LIehvjmXJ5Qc9miUOMaJN3m2vxbjFHjui8UnxTyv-EU"
-        const headers = {
-        Authorization: `Bearer ${storedToken}`,
-        };
-
-        const response = await axios.get(`http://localhost:5005/recipes/${recipeId}`, {headers});
+  useEffect(() => {
+    formufitService
+      .getRecipe(recipeId)
+      .then((response) => {
         setRecipe(response.data)
         setIsLoading(true);
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    fetchRecipes()
+      })
+      .catch((error) => {
+        // If the server sends an error response (invalid token) ❌
+      });
   }, [recipeId]);
+
 
   if(!isLoading) {
     return <p>Loading...</p>;
