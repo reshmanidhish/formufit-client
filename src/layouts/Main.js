@@ -21,7 +21,7 @@ const Main = (props) => {
 
     const getFilteredRoutes = (routes) => {
         return routes
-        .filter(route => user.bodyType === 1 ? route.bodyTypeAvailable : !route.bodyTypeAvailable)
+        .filter(route => user?.bodyType ? route.bodyTypeAvailable : !route.bodyTypeAvailable)
     }
 
     const getRoutes = (routes) => {
