@@ -17,7 +17,8 @@ const routes = [
     path: "/dashboard",
     name: "Dashboard",
     icon: "fas fa-home",
-    component: <Index />,
+    // component: <Index />,
+    component: <Profile/>,
     layout: "/main",
     bodyTypeAvailable: true,
     ut: 0

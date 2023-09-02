@@ -13,11 +13,8 @@ import {
 } from "reactstrap";
 // core components
 import UserHeader from "components/Headers/UserHeader.js";
-import { AuthContext } from "../../context/auth.context";
-import { useContext } from "react";
 
 const Profile = () => {
-    const { user } = useContext(AuthContext);
     return (
         <>
             <UserHeader />
@@ -80,12 +77,38 @@ const Profile = () => {
                                         </div>
                                     </div>
                                 </Row>
-                             
+                                <div className="text-center">
+                                    <h3>
+                                       {user.name}
+                                        <span className="font-weight-light">, 27</span>
+                                    </h3>
+                                    <div className="h5 font-weight-300">
+                                        <i className="ni location_pin mr-2" />
+                                        Bucharest, Romania
+                                    </div>
+                                    <div className="h5 mt-4">
+                                        <i className="ni business_briefcase-24 mr-2" />
+                                        Solution Manager - Creative Tim Officer
+                                    </div>
+                                    <div>
+                                        <i className="ni education_hat mr-2" />
+                                        University of Computer Science
+                                    </div>
+                                    <hr className="my-4" />
+                                    <p>
+                                        Ryan — the name taken by Melbourne-raised, Brooklyn-based
+                                        Nick Murphy — writes, performs and records all of his own
+                                        music.
+                                    </p>
+                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                                        Show more
+                                    </a>
+                                </div>
                             </CardBody>
                         </Card>
                     </Col>
                     <Col className="order-xl-1" xl="8">
-                        <Card className="">
+                        <Card className="bg-secondary shadow">
                             <CardHeader className="bg-white border-0">
                                 <Row className="align-items-center">
                                     <Col xs="8">
@@ -104,35 +127,6 @@ const Profile = () => {
                                 </Row>
                             </CardHeader>
                             <CardBody>
-                                   <div className="text-center">
-                                    <h3>
-                                       {user.username}
-                                        <span className="font-weight-light">, 27</span>
-                                    </h3>
-                                    <div className="h5 font-weight-300">
-                                        <i className="ni location_pin mr-2" />
-                                     bodyWeight: {user.weight}
-                                    </div>
-                                    <div className="h5 mt-4">
-                                        <i className="ni business_briefcase-24 mr-2" />
-                                        bodyHeight:{user.height}
-                                    </div>
-                                    <div>
-                                        <i className="ni education_hat mr-2" />
-                                     bodyType:{user.bodyType}
-                                    </div>
-                                    <div>
-                                        <i className="ni education_hat mr-2" />
-                                     Lifestyle:{user.lifestyle}
-                                    </div>
-                                    <hr className="my-4" />
-                                    <p>
-                                       We have a personalised dietplan as well as workoutplans for you to achieve your target weight
-                                    </p>
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        Show more
-                                    </a>
-                                </div>
                                 <Form>
                                     <h6 className="heading-small text-muted mb-4">
                                         User information

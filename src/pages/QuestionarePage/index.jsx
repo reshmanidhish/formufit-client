@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./questionare-page.scss";
-import { Card, CardBody, Input } from "reactstrap";
+import { Button, Card, CardBody, Input } from "reactstrap";
 import bmiUnderweightImage from "../../assets/img/BMI-Underweight.png";
 import bmiNormalImage from "../../assets/img/BMI-Normal.png";
 import bmiOverweightImage from "../../assets/img/BMI-Overweight.png";
 import bmiObeseImage from "../../assets/img/BMI-Obese.png";
 import formufitService from "../../services/formufit.service";
+import { useNavigate } from "react-router-dom";
+import authService from "services/auth.service";
+import { AuthContext } from "context/auth.context";
+
 
 function Questionare() {
   const [userWeightAndHeight, setUserWeightAndHeight] = useState({height: "", weight: ""});
@@ -13,6 +17,20 @@ function Questionare() {
   const [bmi, setBmi] = useState(0);
   const [userBodyType, setUserBodyType] = useState("");
   const [userLifestyle, setUserLifestyle] = useState("");
+  const navigate = useNavigate();
+  const { storeToken, authenticateUser } = useContext(AuthContext);
+  
+  
+  const handleAnswerSubmit=()=>{
+
+    authService.refresh()
+    .then(response => {
+        storeToken(response.data.authToken)
+        authenticateUser()// update my state variables
+        navigate("/profile")
+        })
+    };
+      
 
   const handleQuestionareComplete = () => {
     setShowQuestionare(false); // Set showQuestionare to false to transition to the next component/page
@@ -251,6 +269,7 @@ function Questionare() {
                         <li>
                           <b>Your Lifestyle: {userLifestyle}</b>
                         </li>
+                        <Button onClick={() => handleAnswerSubmit()} color="success"> continue</Button>
                       </center>
                       {/*{questions.reduce((total, q) => total + q.score, 0)}*/}
                     </div>
