@@ -8,6 +8,7 @@ import MyAccount from "./pages/MyAccount";
 import CreateRecipes from "./pages/CreateRecipePage";
 import Recipes from "./pages/AllRecipesPage";
 import SingleRecipe from "pages/SingleRecipePage";
+import EditRecipePage from "pages/editRecipePage";
 import AllWorkoutPage from"./pages/AllWorkoutPage";
 import WorkoutVideoUploadPage from "./pages/WorkoutVideoUploadPage";
 
@@ -52,6 +53,15 @@ const routes = [
     layout: "/main",
     bodyTypeAvailable: true,
      ut:0,
+     hidden: true,
+  },{
+    path: "/recipes/edit/:recipeId",
+    name: "Edit recipe",
+    icon: "fas fa-utensils",
+    component: <EditRecipePage/>,
+    layout: "/main",
+    bodyTypeAvailable: true,
+     ut:1,
      hidden: true,
   },{
     path: "/account",

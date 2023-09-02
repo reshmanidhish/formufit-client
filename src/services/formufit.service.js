@@ -64,10 +64,21 @@ class FormuFitService {
     return this.api.get("/recipes");
   };
 
-  // GET /recipes
+  // GET one recipes
   getRecipe = async (recipeId) => {
     return this.api.get(`/recipes/${recipeId}`);
   };
+
+  // PUT /recipes/edit/:recipeId
+  updateRecipe = async (recipeId, requestBody) => {
+    return this.api.put(`/recipes/edit/${recipeId}`, requestBody);
+  };
+
+  // DELETE /recipes/delete/:recipeId
+  deleteRecipe = async (recipeId) => {
+    return this.api.delete(`/recipes/delete/${recipeId}`);
+  };
+
 }
 
 const formuFitService = new FormuFitService();

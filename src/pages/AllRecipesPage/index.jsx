@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Col, Container, Row } from "reactstrap";
 import Header from "components/Headers/Header";
@@ -11,6 +11,7 @@ import Loading from "components/Loading/Loading";
 function AllRecipes() {
   const [recipes, setRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     formufitService
@@ -23,6 +24,23 @@ function AllRecipes() {
         // If the server sends an error response (invalid token) ❌
       });
   }, []);
+
+  const handleDeleteRecipe = (recipeId) => {
+    formufitService
+    .deleteRecipe(recipeId)
+    .then((response) => {
+      setRecipes((otherRecipes) => 
+      otherRecipes.filter((recipe) => recipe._id !== recipeId)
+      );
+    })
+    .catch((error) => {
+
+    });
+  };
+
+  const handleEditRecipe = (recipeId) => {
+    navigate(`/recipes/edit/${recipeId}`);
+  };
   
   return (
     <>
@@ -45,9 +63,9 @@ function AllRecipes() {
           ) : (
             recipes?.map((recipe, index) => (
               <Col md="4" key={index}>
+                
                 <Link to={`/recipes/${recipe._id}`}>
                     <h2>{recipe.title}</h2>
-                  
                   <img
                     src={recipe.recipeImage}
                     alt="recipe_image"
@@ -55,6 +73,10 @@ function AllRecipes() {
                     style={{ width: "430px", height: "290px" }}
                   />
                   </Link>
+                  <div className="recipe-buttons">
+                    <button className="edit-button" onClick={()=> handleEditRecipe(recipe._id)}>Edit</button>
+                    <button className="delete-button" onClick={()=> handleDeleteRecipe(recipe._id)}>Delete</button>
+                  </div>
                 {/* <div className="video-container">
                   <iframe
                     className="embed-responsive-item"
