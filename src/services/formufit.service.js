@@ -78,7 +78,9 @@ class FormuFitService {
   deleteRecipe = async (recipeId) => {
     return this.api.delete(`/recipes/delete/${recipeId}`);
   };
-
+  getWellness = async () => {
+    return this.api.get(`/profile/wellness`);
+  };
 }
 
 const formuFitService = new FormuFitService();

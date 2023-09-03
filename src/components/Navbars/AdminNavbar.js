@@ -20,13 +20,13 @@ const AdminNavbar = (props) => {
       // <Navbar className="navbar-expand-md navbar-dark bg-gradient-default fixed-top" expand="md" id="navbar-main">
         <Navbar className="navbar-top navbar-expand border-bottom navbar-light fixed-top"  id="navbar-main">
           <Container fluid>
-            <button
+            {/* <button
                 className="navbar-toggler d-block"
                 type="button"
                 onClick={props.toggleCollapse}
             >
               <span className="navbar-toggler-icon" />
-            </button>
+            </button> */}
           <Link
               className="navbar-brand"
               to="/"
@@ -34,18 +34,6 @@ const AdminNavbar = (props) => {
 
             {/*{props.brandText}*/}
           </Link>
-          {/*<Form className="navbar-search  form-inline mr-3 d-none d-md-flex ml-lg-auto">*/}
-          {/*  <FormGroup className="mb-0">*/}
-          {/*    <InputGroup className="input-group-alternative">*/}
-          {/*      <InputGroupAddon addonType="prepend">*/}
-          {/*        <InputGroupText>*/}
-          {/*          <i className="fas fa-search" />*/}
-          {/*        </InputGroupText>*/}
-          {/*      </InputGroupAddon>*/}
-          {/*      <Input placeholder="Search" type="text" />*/}
-          {/*    </InputGroup>*/}
-          {/*  </FormGroup>*/}
-          {/*</Form>*/}
           <Nav className="align-items-center d-none d-md-flex" navbar>
             <UncontrolledDropdown nav>
               <DropdownToggle className="pr-0" nav>

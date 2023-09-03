@@ -10,8 +10,10 @@
     right: 0;
     left: 250px;
     z-index: 1002;
-    background-color: #fff;
-    box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
+    // background-color: #fff;
+    background-color: #fff0;
+    border-bottom-width: 0px !important;
+    // box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
 }
 
 #navbar-main::before{

@@ -1,0 +1,395 @@
+/* .all_recipes {
+    grid-template-columns: 280px 320px;
+    align-items:first baseline;
+    display: grid;
+    margin-top: 24px;
+    } */
+
+
+
+
+.wellness_container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20px
+}
+
+@media only screen and (min-width:768px) {
+	.wellness_container {
+		padding: 0 44px
+	}
+}
+
+.wellness_container.container_sm {
+	max-width: 720px
+}
+
+@media only screen and (min-width:768px) {
+	.wellness_container.container_sm {
+		max-width: 768px
+	}
+}
+
+@media only screen and (min-width:1024px) {
+	.wellness_container.container_sm {
+		max-width: 800px
+	}
+}
+
+
+.wellness-plan_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start
+}
+
+.wellness-plan_selectedDate {
+	display: block;
+	margin-bottom: 16px;
+	color: #6b7487;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
+	text-transform: uppercase
+}
+
+
+.general-workout-card_mainWrapper {
+	margin-bottom: 32px
+}
+
+@media only screen and (min-width:768px) {
+	.general-workout-card_mainWrapper {
+		margin-bottom: 16px
+	}
+}
+
+
+.general-wellness-card_wrapper {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	transition: scale .4s ease;
+	cursor: pointer
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_wrapper {
+		flex-direction: row;
+		border: 1px solid #e6e9f0;
+		border-radius: 16px;
+		background-color: #f7f8fa;
+		padding-right: 24px
+	}
+}
+
+.general-wellness-card_wrapper:not(.general-workout-card_locked__LWqll, .general-workout-card_logged__mR5m_):active {
+	transform: scale(.98)
+}
+
+.general-wellness-card_wrapper.general-workout-card_trainingProgramWrapper__f1lzm:active {
+	transform: scale(1);
+	scale: 1
+}
+
+
+.general-wellness-card_wrapper:not(.general-workout-card_locked__LWqll, .general-workout-card_logged__mR5m_):hover .general-wellness-card_image {
+	transform: scale(1.06)
+}
+
+.general-wellness-card_wrapper:not(.general-workout-card_locked__LWqll):hover .general-wellness-card_iconWrapper {
+	color: #0e1014
+}
+
+
+
+.general-wellness-card_iconWrapper {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	margin-bottom: 8px;
+	border-radius: 20px;
+	padding: 4px;
+	color: #fff
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_iconWrapper {
+		position: relative;
+		top: inherit;
+		right: inherit;
+		margin-bottom: 0;
+		margin-left: 16px;
+		background: transparent;
+		color: #8f96a3
+	}
+}
+
+
+.general-wellness-card_imageContainer {
+	display: flex;
+	flex-shrink: 0;
+	border-radius: 12px;
+	aspect-ratio: 1.42;
+	width: 100%;
+	height: 100%;
+	overflow: hidden
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_imageContainer {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		aspect-ratio: 1.25;
+		width: 220px;
+		height: 176px
+	}
+}
+
+@media only screen and (max-width:767px) {
+	.general-wellness-card_imageContainer:before {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		border-radius: 12px;
+		background: linear-gradient(0deg, rgba(0, 0, 0, .72), transparent);
+		content: "";
+		display: none
+	}
+}
+
+.general-wellness-card_image {
+	transition: all .4s ease;
+	max-width: 100%;
+	object-fit: cover
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_image {
+		border-top-left-radius: 16px;
+		border-bottom-left-radius: 16px
+	}
+}
+
+
+
+
+.general-wellness-card_content {
+	width: 100%;
+	line-height: 0
+}
+
+@media only screen and (max-width:767px) {
+	.general-wellness-card_content {
+		display: none;
+		position: absolute;
+		bottom: 8px;
+		left: 16px;
+		z-index: 2;
+		width: auto;
+		color: #fff
+	}
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_content {
+		padding-left: 24px
+	}
+}
+
+
+
+.general-wellness-card_title {
+	margin-bottom: 8px;
+	font-weight: 600;
+	line-height: 20px
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_title {
+		font-size: 20px;
+		line-height: 24px
+	}
+}
+
+
+.general-wellness-card_iconWrapper .general-wellness-card_title {
+	margin-bottom: 0;
+	margin-left: 8px
+}
+
+
+
+.general-wellness-card_labels {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: center;
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	margin-right: 8px;
+	border-radius: 4px;
+	background: hsla(0, 0%, 100%, .2);
+	letter-spacing: .02em
+}
+
+@media only screen and (max-width:767px) {
+	.general-wellness-card_labels {
+		margin-bottom: 8px;
+		padding: 4px 8px
+	}
+}
+
+.general-wellness-card_labels .general-wellness-card_labelDivider:before {
+	display: flex;
+	margin: 2px 8px;
+	background-color: #ced4e0;
+	width: 1px;
+	height: 12px;
+	content: ""
+}
+
+.general-workout-card_logWorkoutContent__NPC6Q .general-workout-card_logWorkoutLabels__yz_wq .general-wellness-card_labelDivider:before {
+	display: flex;
+	margin: 2px 8px;
+	background-color: #ced4e0;
+	width: 1px;
+	height: 12px;
+	content: ""
+}
+
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_labels .general-wellness-card_labelsCapitalized:first-child:before {
+		display: flex;
+		margin: 2px 8px;
+		background-color: #ced4e0;
+		width: 1px;
+		height: 12px;
+		content: ""
+	}
+}
+
+.general-workout-card_logWorkoutContent__NPC6Q .general-workout-card_logWorkoutLabels__yz_wq span.general-wellness-card_labelsCapitalized svg {
+	margin-right: 8px
+}
+
+
+.general-wellness-card_labels .general-wellness-card_commaDivider:not(:last-child):after {
+	display: inline-block;
+	content: ", ";
+	white-space: pre
+}
+
+.general-workout-card_logWorkoutContent__NPC6Q .general-workout-card_logWorkoutLabels__yz_wq .general-wellness-card_commaDivider:not(:last-child):after {
+	display: inline-block;
+	content: ", ";
+	white-space: pre
+}
+
+
+.general-wellness-card_labels .general-wellness-card_duration,
+.general-wellness-card_labels .general-workout-card_kkal__iyZqK {
+	flex-shrink: 0
+}
+
+.general-workout-card_logWorkoutContent__NPC6Q .general-workout-card_logWorkoutLabels__yz_wq .general-wellness-card_duration {
+	text-transform: lowercase
+}
+
+
+@media only screen and (min-width:768px) {
+
+	.general-wellness-card_labels .general-wellness-card_duration,
+	.general-wellness-card_labels .general-workout-card_kkal__iyZqK {
+		text-transform: lowercase
+	}
+}
+
+.general-wellness-card_labels span.general-wellness-card_labelsCapitalized {
+	text-transform: uppercase
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_labels span.general-wellness-card_labelsCapitalized {
+		text-transform: capitalize
+	}
+}
+
+.general-wellness-card_labels span.general-wellness-card_labelsCapitalized svg {
+	margin-right: 8px
+}
+
+.general-wellness-card_labels span {
+	display: flex;
+	align-items: center;
+	color: #6b7487;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px
+}
+
+@media only screen and (max-width:767px) {
+	.general-wellness-card_labels span {
+		color: #fff;
+		font-weight: 700;
+		font-size: 11px;
+		line-height: 16px;
+		letter-spacing: .02em
+	}
+}
+
+.general-wellness-card_startWorkoutWrapper {
+	margin-top: 16px
+}
+
+
+.general-workout-card_btnWrapper__46ZDt .general-wellness-card_startWorkoutWrapper {
+	margin-top: 0
+}
+
+.general-workout-card_btnWrapper__46ZDt .general-wellness-card_startWorkoutWrapper:first-child {
+	flex: 1 1;
+	margin-right: 16px
+}
+
+.general-workout-card_trainingProgramButtons__oCVUK .general-wellness-card_startWorkoutWrapper {
+	display: flex;
+	align-items: center;
+	padding-top: 8px
+}
+
+.general-workout-card_trainingProgramButtons__oCVUK .general-wellness-card_startWorkoutWrapper button:first-child {
+	margin-right: 16px
+}
+
+
+.button-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-right: 4px;
+    margin-top: 2px;
+  }
+  
+  .edit-button,
+  .delete-button {
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 4px 8px;
+	border: none;
+	border-radius: 4px;
+	margin: 4px;
+  }
+  
+
+  .edit-button i,
+  .delete-button i {
+	margin-right: 4px;
+  }
+  

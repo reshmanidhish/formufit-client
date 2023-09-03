@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./questionare-page.scss";
 import { Button, Card, CardBody, Input } from "reactstrap";
 import bmiUnderweightImage from "../../assets/img/BMI-Underweight.png";
@@ -20,7 +20,7 @@ function Questionare() {
   const navigate = useNavigate();
   const { storeToken, authenticateUser } = useContext(AuthContext);
   
-  
+
   const handleAnswerSubmit=()=>{
 
     authService.refresh()

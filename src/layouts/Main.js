@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import {Navigate, Route, Routes, useLocation} from "react-router-dom";
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
-import AdminFooter from "components/Footers/AdminFooter.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "routes.js";
@@ -12,7 +11,7 @@ const Main = (props) => {
     const location = useLocation();
     
     const { user } = useContext(AuthContext);
-
+        
     React.useEffect(() => {
         document.documentElement.scrollTop = 0;
         document.scrollingElement.scrollTop = 0;
@@ -57,7 +56,7 @@ const Main = (props) => {
                 routes={getFilteredRoutes(routes)}
                 logo={{
                     innerLink: "/admin/index",
-                    imgSrc: require("../assets/img/brand/formufit1.png"),
+                    imgSrc: require("../assets/img/brand/formufit.png"),
                     imgAlt: "...",
                 }}
             />
@@ -70,7 +69,7 @@ const Main = (props) => {
                     {getRoutes(routes)}
                     <Route path="*" element={<Navigate to="/" replace/>}/>
                 </Routes>
-                <AdminFooter/>
+                {/* <AdminFooter/> */}
             </div>
         </>
     );

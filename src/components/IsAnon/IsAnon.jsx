@@ -13,7 +13,7 @@ function IsAnon({ children }) {
 
   if (isLoggedIn) {
     // If the user is logged in, navigate to home page ❌
-    if(user.bodyType === 0) {
+    if(user?.bodyType === '') {
       return <Navigate to="/questionare" />;
     }
     return <Navigate to="/dashboard" />;

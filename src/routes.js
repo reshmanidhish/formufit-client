@@ -98,15 +98,15 @@ const routes = [
     hidden: true,
     ut: 0
   },
-  {
-    path: "/questionare",
-    name: "Questionare",
-    icon: "ni ni-single-02 text-yellow",
-    component: <Questionare />,
-    layout: "/main",
-    bodyTypeAvailable: false,
-    ut: 0
-  },
+  // {
+  //   path: "/questionare",
+  //   name: "Questionare",
+  //   icon: "ni ni-single-02 text-yellow",
+  //   component: <Questionare />,
+  //   layout: "/main",
+  //   bodyTypeAvailable: false,
+  //   ut: 0
+  // },
   // {
   //   path: "/tables",
   //   name: "Tables",

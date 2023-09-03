@@ -12,6 +12,7 @@ import {
   InputGroup,
   Row,
   Col,
+  Alert,
 } from "reactstrap";
 
 
@@ -28,9 +29,7 @@ import { Link, useNavigate } from "react-router-dom";
 function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
-  const [successMessage, setSuccessMessage] = useState(undefined);
-
+  const [errorMessage, setErrorMessage] = useState(false);
   const { storeToken, authenticateUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -46,13 +45,12 @@ function Login(props) {
 
     authService.login(requestBody)
         .then(response => {
-            console.log('response data', response.data)
             storeToken(response.data.authToken)
             authenticateUser()// update my state variables
-            // response.data.message --> "Login was successful"
-            // setSuccessMessage(response.data.message)
             navigate("/questionare")
-            
+        })
+        .catch(error => {
+            setErrorMessage(true)
         })
   };
 
@@ -106,6 +104,9 @@ function Login(props) {
             <div className="text-center text-muted mb-4">
               <small>Or sign in with credentials</small>
             </div>
+            <Alert color="danger" isOpen={errorMessage}>
+              Incorrect email or password!
+            </Alert>
 
             <Form onSubmit={handleLoginSubmit} role="form">
               <FormGroup className="mb-3">

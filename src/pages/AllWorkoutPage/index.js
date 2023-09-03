@@ -1,15 +1,20 @@
-import Header from "components/Headers/Header";
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "reactstrap";
+import {
+  Container,
+  Card,
+  CardBody,
+  CardTitle,
+  Button,
+} from "reactstrap";
 import formufitService from "../../services/formufit.service";
 import Loading from "components/Loading/Loading";
+import "./styles.scss";
 
 function WorkoutList() {
   const [workouts, setWorkouts] = useState([]);
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    // Fetch the list of workouts from the server using an API call
     formufitService
       .getWorkouts()
       .then((allWorkouts) => {
@@ -17,42 +22,54 @@ function WorkoutList() {
         setLoader(false);
       })
       .catch((error) => {
-        // Handle error here
       });
   }, []);
 
-  function extractVideoId(url) {
-    const match = url.match(/(?:\/|%3D|v=|vi=)([0-9A-Za-z_-]{11})(?:[%#?&]|$)/);
-    return match ? match[1] : null;
-  }
-
   return (
     <>
-      <Header breadcrumbName="Icon" breadcrumbIcon="fas fa-user" />
-      <Container fluid className="container-body">
-        <h2>Workout List</h2>
-        <Row>
-          {loader ? (
-            <Loading />
-          ) : (
-            workouts?.map((workout, index) => (
-              <Col key={index}>
-                <h3>Workout: {workout.title}</h3>
-                <div className="video-container">
-                  <iframe
-                    className="embed-responsive-item"
-                    src={`https://www.youtube.com/embed/${extractVideoId(
-                      workout.videoUrl
-                    )}`}
-                    title={`Embedded YouTube Video for ${workout.name}`}
-                    frameBorder="0"
-                    allowFullScreen
-                  ></iframe>
+      <Container className="challenges_section">
+        <div className="page-title-header_wrapper page-title-header_hasProfileLink">
+          <div className="page-title-header_titleWrapper">
+            <h1 className="page-title-header_title">Challenges</h1>
+          </div>
+        </div>
+        <h4 className="workouts_subtitle">Your workouts</h4>
+        {loader ? <Loading/> : 
+        <div className="challenges_cardsContainer">
+          {workouts?.map((workout, index) => (
+            <div>
+              <Card className="card_container">
+                <div className="card_imageContainerOuter">
+                  <div className="card_imageContainer__kgi1d">
+                    <video controls width="350">
+                      <source src={workout.videoUrl} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
                 </div>
-              </Col>
-            ))
-          )}
-        </Row>
+                <CardBody className="card_content">
+                  <div className="card_info">
+                    <CardTitle className="card_title">
+                      {workout.title}
+                    </CardTitle>
+                    <div className="calendar-icon_container">
+                      <div className="calendar-icon_inner">
+                        <span>28</span> days
+                      </div>
+                    </div>
+                  </div>
+                  <Button
+                    className="button_button"
+                    data-test="btn-challenge-start"
+                  >
+                    START CHALLENGE
+                  </Button>
+                </CardBody>
+              </Card>
+            </div>
+          ))}
+        </div>
+}
       </Container>
     </>
   );

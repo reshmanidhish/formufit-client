@@ -78,8 +78,8 @@
             position: relative;
             &.active {
                 position: relative;
-                color: #0B2A97;
-                background: rgba(11, 42, 151, 0.1);
+                color: #0c0807;
+                background: rgb(255 255 255);
                 &:before {
                     content: '';
                     position: absolute;
@@ -88,6 +88,9 @@
                     bottom: $nav-link-padding-y;
                     //border-left: 2px solid $primary;
                 }
+            }
+            :hover {
+                color: white !important;
             }
 
 
@@ -231,7 +234,7 @@
                         margin-left: -$navbar-vertical-padding-x;
                         margin-right: -$navbar-vertical-padding-x;
                     }
-
+                   
                     .navbar-nav .nav-link {
                         //padding: $navbar-vertical-nav-link-padding-y $navbar-vertical-nav-link-padding-x;
 
@@ -249,7 +252,7 @@
                                 bottom: 1px; /* Replace with your desired padding value */
                                 left: auto; /* Move the element to the right */
                                 right: 0;
-                                border-left: 6px solid #0B2A97;; /* Replace with your desired border color */
+                                border-left: 6px solid #302724;; /* Replace with your desired border color */
                                 border-bottom: 0;
                                 border-radius: 4px;
 
