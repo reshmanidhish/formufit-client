@@ -1,3 +1,103 @@
-.App {
-  text-align: center;
+.alert-danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+.bg-darkbrown {
+    background-color: #1b110d !important
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(255 255 255);
+}
+
+@font-face {
+    font-family: 'FormuFit-Bold';
+    src: url('./assets/fonts/gilroy-bold.woff2') format('woff2');
+    /* You can also specify other font formats here */
+  }
+  @font-face {
+    font-family: 'FormuFit-Medium';
+    src: url('./assets/fonts/gilroy-medium.woff2') format('woff2');
+    /* You can also specify other font formats here */
+  }
+  @font-face {
+    font-family: 'FormuFit-Regular';
+    src: url('./assets/fonts/gilroy-regular.woff2') format('woff2');
+    /* You can also specify other font formats here */
+  }
+  @font-face {
+    font-family: 'FormuFit-Semibold';
+    src: url('./assets/fonts/gilroy-semibold.woff2') format('woff2');
+    /* You can also specify other font formats here */
+  }
+
+  body {
+    font-family: 'FormuFit-Regular', sans-serif;
+  }
+
+
+.formufit-button.button_accent {
+    box-shadow: 0 4px 20px rgba(224,63,63,.3);
+    background-color: #e03f3f;
+    color: #fff;
+}
+.formufit-button.button_sm {
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.formufit-button {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    transition: .4s;
+    cursor: pointer;
+    border-radius: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
+button {
+    border: none;
+    background-color: transparent;
+}
+
+.button_leftIcon {
+    margin-right: 8px;
+}
+.button_leftIcon, .button_rightIcon {
+    display: flex;
+    align-self: center;
+}
+
+.button_children {
+    display: inline-flex;
+}
+
+
+.workouts_subtitle {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 24px;
+}
+
+
+.nav-link:hover {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.274) !important 
+}
+.nav-link.active:hover {
+    color: black !important;
+    background-color: white !important;
+    
+}
+
+.nav-link.active .fas:hover {
+    color: black !important;
 }

@@ -1,56 +1,67 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import React, { useState } from 'react';
-import HomePage from "./pages/HomePage/HomePage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import SignupPage from "./pages/SignupPage/SignupPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
-
-import Navbar from "./components/Navbar/Navbar";
+import { Navigate, Route, Routes } from "react-router-dom";
+import React from "react";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
-import QuestionarePage from "./pages/QuestionarePage/QuestionarePage";
+import MainLayout from "./layouts/Main";
+import AuthLayout from "./layouts/Auth";
+import Welcome from "./pages/Welcome";
+import SingleRecipe from "pages/SingleRecipePage";
+import Questionare from "pages/QuestionarePage";
 
 function App() {
-  const [showQuestionare, setShowQuestionare] = useState(true); 
-  const handleQuestionareComplete = () => {
-    setShowQuestionare(false); // Set showQuestionare to false to transition to the next component/page
-  };
   return (
     <div className="App">
-
       {/* <Navbar /> */}
-
-
       <Routes>
-        <Route path="/" element={<HomePage />} />
-<Route path="/questionare" element={<QuestionarePage onQuestionareComplete={handleQuestionareComplete} />} />
-     
+        {/* MainLayout contains many user pages*/}
         <Route
-          path="/profile"
+          path="/*"
           element={
             <IsPrivate>
-              <ProfilePage />
+              <MainLayout />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/questionare"
+          element={
+            <IsPrivate path="/questionare">
+              <Questionare />
             </IsPrivate>
           }
         />
 
+        {/* AdminLayout contains many auth pages*/}
         <Route
-          path="/signup"
+          path="/auth/*"
           element={
             <IsAnon>
-              <SignupPage />
+              <AuthLayout />
             </IsAnon>
           }
         />
+
         <Route
-          path="/login"
+          path="/"
           element={
             <IsAnon>
-              <LoginPage />
+              <Welcome />
             </IsAnon>
           }
         />
+
+        <Route path="*" element={<Navigate to="/" replace />} />
+
+        {/*The below code is from IronLauncher which we will be using it later for Auth Guard (page protection)*/}
+        {/* <Route
+                    path="/profile"
+                    element={
+                        <IsPrivate>
+                             <Profile />
+                        </IsPrivate>
+                    }
+                /> */}
       </Routes>
     </div>
   );
