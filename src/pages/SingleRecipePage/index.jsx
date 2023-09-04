@@ -5,6 +5,7 @@ import { Container } from "reactstrap";
 import Header from "components/Headers/Header";
 import "./singleRecipe.css";
 import formufitService from "../../services/formufit.service";
+import CommentForm from "pages/CreateCommentPage/Comments";
 
 function SingleRecipe() {
   const [recipe, setRecipe] = useState([]);
@@ -39,6 +40,7 @@ function SingleRecipe() {
         <img src={recipe.recipeImage} alt="recipe_image" className="img-thumbnail" style={{ width: "200px", height: "150px" }}/>
         <p>{recipe.ingredients}</p>
         <p>{recipe.instructions}</p>
+        <CommentForm recipeId={recipe._id}/>
     </div>
    </Container>  
 </>
