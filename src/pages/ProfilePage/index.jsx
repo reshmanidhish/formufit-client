@@ -101,7 +101,7 @@ const Profile = () => {
                       </div>
                       <div>
                         <span className="heading">{user.lifestyle}</span>
-                        <span className="description">Lifestyle</span>
+                        <span className="description"></span>
                       </div>
                     </div>
                   </div>

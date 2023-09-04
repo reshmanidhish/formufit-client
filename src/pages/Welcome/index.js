@@ -2,14 +2,18 @@ import videoBg from '../../assets/videos/formufit-food.mp4'
 import React from "react";
 import AuthNavbar from "../../components/Navbars/AuthNavbar";
 import "./weclome.scss"
+
+// import welcomeImg from "./../../assets/img/brand/welcome.jpg"
 const Welcome = () => {
     return (
         <div className="welcome-page">
             <AuthNavbar />
             <div className='main d-flex'>
                 <section className="section-left">
+
                     <div className="title-content-wrapper">
-                        <h1 className="title lg">
+                        {/* <img src ={welcomeImg}/> */}
+                        {/* <h1 className="title lg">
                     <span className="_escape_up-wrapper">
                         <span className="_escape_up-em">Creating</span>
                     </span>
@@ -19,16 +23,16 @@ const Welcome = () => {
                             <span className="_escape_up-wrapper">
                         <span className="_escape_up-em">Within</span>
                     </span>
-                        </h1>
-                        <h3 className="sub-title title subhead-2">
+                        </h1> */}
+                        {/* <h3 className="sub-title title subhead-2">
                             <span className="_escape_up-fade-in"> Holistic approach to</span>
                             <span className="_escape_up-fade-in"> physical well-being</span>
                             <span className="_escape_up-fade-in"> and mental health</span>
-                        </h3>
+                        </h3> */}
                     </div>
                     <a className="btn-lg title md _anim-scale" href="/dashboard">
                         <div className="_escape_up-wrapper">
-                            <div className="_anim-outer _escape_up"> Go to Dashboard</div>
+                            {/* <div className="_anim-outer _escape_up"> Go to Dashboard</div> */}
                         </div>
                         <div className="btn-arrow _anim-start _scale-up">
                             <div className="icon">
