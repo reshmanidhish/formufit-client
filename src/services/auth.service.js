@@ -36,6 +36,10 @@ class AuthService {
     // same as
     // return axios.post("http://localhost:5005/auth/verify");
   };
+
+  refresh = () => {
+    return this.api.get("/auth/refresh");
+  };
 }
 
 // Create one instance (object) of the service

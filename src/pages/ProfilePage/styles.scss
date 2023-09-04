@@ -1,0 +1,3917 @@
+
+.wellness_container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20px
+}
+
+@media only screen and (min-width:768px) {
+	.wellness_container {
+		padding: 0 44px
+	}
+}
+
+.wellness_container.container_sm {
+	max-width: 720px
+}
+
+@media only screen and (min-width:768px) {
+	.wellness_container.container_sm {
+		max-width: 768px
+	}
+}
+
+@media only screen and (min-width:1024px) {
+	.wellness_container.container_sm {
+		max-width: 800px
+	}
+}
+
+
+.wellness-plan_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start
+}
+
+.wellness-plan_selectedDate {
+	display: block;
+	margin-bottom: 16px;
+	color: #6b7487;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
+	text-transform: uppercase
+}
+
+
+.general-workout-card_mainWrapper {
+	margin-bottom: 32px
+}
+
+@media only screen and (min-width:768px) {
+	.general-workout-card_mainWrapper {
+		margin-bottom: 16px
+	}
+}
+
+
+.general-wellness-card_wrapper {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	transition: scale .4s ease;
+	cursor: pointer
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_wrapper {
+		flex-direction: row;
+		border: 1px solid #e6e9f0;
+		border-radius: 16px;
+		background-color: #f7f8fa;
+		padding-right: 24px
+	}
+}
+
+.general-wellness-card_wrapper:not(.general-workout-card_locked__LWqll, .general-workout-card_logged__mR5m_):active {
+	transform: scale(.98)
+}
+
+.general-wellness-card_wrapper.general-workout-card_trainingProgramWrapper__f1lzm:active {
+	transform: scale(1);
+	scale: 1
+}
+
+
+.general-wellness-card_wrapper:not(.general-workout-card_locked__LWqll, .general-workout-card_logged__mR5m_):hover .general-wellness-card_image {
+	transform: scale(1.06)
+}
+
+.general-wellness-card_wrapper:not(.general-workout-card_locked__LWqll):hover .general-wellness-card_iconWrapper {
+	color: #0e1014
+}
+
+
+
+.general-wellness-card_iconWrapper {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	margin-bottom: 8px;
+	border-radius: 20px;
+	padding: 4px;
+	color: #fff
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_iconWrapper {
+		position: relative;
+		top: inherit;
+		right: inherit;
+		margin-bottom: 0;
+		margin-left: 16px;
+		background: transparent;
+		color: #8f96a3
+	}
+}
+
+
+.general-wellness-card_imageContainer {
+	display: flex;
+	flex-shrink: 0;
+	border-radius: 12px;
+	aspect-ratio: 1.42;
+	width: 100%;
+	height: 100%;
+	overflow: hidden
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_imageContainer {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		aspect-ratio: 1.25;
+		width: 220px;
+		height: 176px
+	}
+}
+
+@media only screen and (max-width:767px) {
+	.general-wellness-card_imageContainer:before {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		border-radius: 12px;
+		background: linear-gradient(0deg, rgba(0, 0, 0, .72), transparent);
+		content: "";
+		display: none
+	}
+}
+
+.general-wellness-card_image {
+	transition: all .4s ease;
+	max-width: 100%;
+	object-fit: cover
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_image {
+		border-top-left-radius: 16px;
+		border-bottom-left-radius: 16px
+	}
+}
+
+
+
+
+.general-wellness-card_content {
+	width: 100%;
+	line-height: 0
+}
+
+@media only screen and (max-width:767px) {
+	.general-wellness-card_content {
+		display: none;
+		position: absolute;
+		bottom: 8px;
+		left: 16px;
+		z-index: 2;
+		width: auto;
+		color: #fff
+	}
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_content {
+		padding-left: 24px
+	}
+}
+
+
+
+.general-wellness-card_title {
+	margin-bottom: 8px;
+	font-weight: 600;
+	line-height: 20px
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_title {
+		font-size: 20px;
+		line-height: 24px
+	}
+}
+
+
+.general-wellness-card_iconWrapper .general-wellness-card_title {
+	margin-bottom: 0;
+	margin-left: 8px
+}
+
+
+
+.general-wellness-card_labels {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: center;
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	margin-right: 8px;
+	border-radius: 4px;
+	background: hsla(0, 0%, 100%, .2);
+	letter-spacing: .02em
+}
+
+@media only screen and (max-width:767px) {
+	.general-wellness-card_labels {
+		margin-bottom: 8px;
+		padding: 4px 8px
+	}
+}
+
+.general-wellness-card_labels .general-wellness-card_labelDivider:before {
+	display: flex;
+	margin: 2px 8px;
+	background-color: #ced4e0;
+	width: 1px;
+	height: 12px;
+	content: ""
+}
+
+.general-workout-card_logWorkoutContent__NPC6Q .general-workout-card_logWorkoutLabels__yz_wq .general-wellness-card_labelDivider:before {
+	display: flex;
+	margin: 2px 8px;
+	background-color: #ced4e0;
+	width: 1px;
+	height: 12px;
+	content: ""
+}
+
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_labels .general-wellness-card_labelsCapitalized:first-child:before {
+		display: flex;
+		margin: 2px 8px;
+		background-color: #ced4e0;
+		width: 1px;
+		height: 12px;
+		content: ""
+	}
+}
+
+.general-workout-card_logWorkoutContent__NPC6Q .general-workout-card_logWorkoutLabels__yz_wq span.general-wellness-card_labelsCapitalized svg {
+	margin-right: 8px
+}
+
+
+.general-wellness-card_labels .general-wellness-card_commaDivider:not(:last-child):after {
+	display: inline-block;
+	content: ", ";
+	white-space: pre
+}
+
+.general-workout-card_logWorkoutContent__NPC6Q .general-workout-card_logWorkoutLabels__yz_wq .general-wellness-card_commaDivider:not(:last-child):after {
+	display: inline-block;
+	content: ", ";
+	white-space: pre
+}
+
+
+.general-wellness-card_labels .general-wellness-card_duration,
+.general-wellness-card_labels .general-workout-card_kkal__iyZqK {
+	flex-shrink: 0
+}
+
+.general-workout-card_logWorkoutContent__NPC6Q .general-workout-card_logWorkoutLabels__yz_wq .general-wellness-card_duration {
+	text-transform: lowercase
+}
+
+
+@media only screen and (min-width:768px) {
+
+	.general-wellness-card_labels .general-wellness-card_duration,
+	.general-wellness-card_labels .general-workout-card_kkal__iyZqK {
+		text-transform: lowercase
+	}
+}
+
+.general-wellness-card_labels span.general-wellness-card_labelsCapitalized {
+	text-transform: uppercase
+}
+
+@media only screen and (min-width:768px) {
+	.general-wellness-card_labels span.general-wellness-card_labelsCapitalized {
+		text-transform: capitalize
+	}
+}
+
+.general-wellness-card_labels span.general-wellness-card_labelsCapitalized svg {
+	margin-right: 8px
+}
+
+.general-wellness-card_labels span {
+	display: flex;
+	align-items: center;
+	color: #6b7487;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px
+}
+
+@media only screen and (max-width:767px) {
+	.general-wellness-card_labels span {
+		color: #fff;
+		font-weight: 700;
+		font-size: 11px;
+		line-height: 16px;
+		letter-spacing: .02em
+	}
+}
+
+.general-wellness-card_startWorkoutWrapper {
+	margin-top: 16px
+}
+
+
+.general-workout-card_btnWrapper__46ZDt .general-wellness-card_startWorkoutWrapper {
+	margin-top: 0
+}
+
+.general-workout-card_btnWrapper__46ZDt .general-wellness-card_startWorkoutWrapper:first-child {
+	flex: 1 1;
+	margin-right: 16px
+}
+
+.general-workout-card_trainingProgramButtons__oCVUK .general-wellness-card_startWorkoutWrapper {
+	display: flex;
+	align-items: center;
+	padding-top: 8px
+}
+
+.general-workout-card_trainingProgramButtons__oCVUK .general-wellness-card_startWorkoutWrapper button:first-child {
+	margin-right: 16px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .userpic_wrapper__9_HJS {
+// 	position: relative;
+// 	width: 40px;
+// 	height: 40px;
+// 	overflow: hidden;
+// 	border: 2px solid #fff;
+// 	border-radius: 50%;
+// 	box-shadow: 0 1px 2px rgba(36, 36, 36, .05);
+// 	transition: all .4s
+// }
+
+// .userpic_wrapper__9_HJS:before {
+// 	content: "";
+// 	position: absolute;
+// 	top: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	left: 0;
+// 	border-radius: 50%;
+// 	border: 1px solid rgba(36, 36, 36, .04)
+// }
+
+// .userpic_wrapper__9_HJS img {
+// 	max-width: 100%;
+// 	transition: all .4s
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.userpic_wrapper__9_HJS {
+// 		width: 48px;
+// 		height: 48px
+// 	}
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.userpic_wrapper__9_HJS {
+// 		width: 72px;
+// 		height: 72px
+// 	}
+
+// 	.userpic_wrapper__9_HJS:active {
+// 		transform: none
+// 	}
+// }
+
+// .userpic_wrapper__9_HJS.userpic_sm__Lr_C_ {
+// 	width: 40px;
+// 	height: 40px
+// }
+
+// .userpic_wrapper__9_HJS.userpic_md__x8ekW {
+// 	width: 48px;
+// 	height: 48px
+// }
+
+// .userpic_wrapper__9_HJS.userpic_lg__OIMq0 {
+// 	width: 72px;
+// 	height: 72px
+// }
+
+// .user-profile_accountLink__JOQ_R {
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	border-radius: 50%;
+// 	text-decoration: none;
+// 	transition: all .4s
+// }
+
+// .user-profile_accountLink__JOQ_R:hover {
+// 	background-color: #f7f9fc
+// }
+
+// .user-profile_accountLink__JOQ_R:hover img {
+// 	transform: scale(1.06)
+// }
+
+// .user-profile_accountLink__JOQ_R:active {
+// 	transform: scale(.94)
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.user-profile_accountLink__JOQ_R {
+// 		width: 100%;
+// 		padding: 12px 0;
+// 		margin-bottom: 24px;
+// 		border-radius: 12px
+// 	}
+// }
+
+// .user-profile_accountLink__JOQ_R .user-profile_small__GtKJg {
+// 	text-align: center
+// }
+
+// .user-profile_accountLabel__Da6Gw {
+// 	margin-top: 8px;
+// 	color: #6b7487;
+// 	font-weight: 500
+// }
+
+// .badge_wrapper__Dq2Yw {
+// 	display: flex;
+// 	overflow: hidden
+// }
+
+// .badge_badge__yyYO5 {
+// 	display: flex;
+// 	position: relative;
+// 	font-weight: 600;
+// 	text-transform: uppercase;
+// 	border-radius: 6px;
+// 	padding: 4px 8px
+// }
+
+// .badge_badge__yyYO5.badge_primary__mG12h {
+// 	background-color: #f3ae54;
+// 	color: #fff
+// }
+
+// .badge_badge__yyYO5.badge_green__CuGoC {
+// 	background-color: #4ed09a;
+// 	color: #fff
+// }
+
+// .badge_badge__yyYO5.badge_grey__x2ztW {
+// 	background-color: #dfe3eb;
+// 	color: #525764
+// }
+
+// .badge_badge__yyYO5.badge_sm__EY_jz {
+// 	font-size: 11px;
+// 	line-height: 16px;
+// 	letter-spacing: .02em
+// }
+
+// .badge_badge__yyYO5.badge_md__w6fef {
+// 	font-size: 14px;
+// 	line-height: 16px;
+// 	letter-spacing: .03em
+// }
+
+// .badge_badge__yyYO5.badge_outline__KBH02 {
+// 	background-color: transparent;
+// 	padding: 0;
+// 	font-weight: 700
+// }
+
+// .badge_badge__yyYO5.badge_outline__KBH02.badge_primary__mG12h {
+// 	color: #f3ae54
+// }
+
+// .badge_badge__yyYO5.badge_outline__KBH02.badge_green__CuGoC {
+// 	color: #4ed09a
+// }
+
+// @keyframes badge_shine__RspLl {
+// 	0% {
+// 		left: -70%
+// 	}
+
+// 	to {
+// 		left: 70%
+// 	}
+// }
+
+// .badge_shining__ZehmZ:after {
+// 	content: "";
+// 	position: absolute;
+// 	top: 50%;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 10px;
+// 	background: linear-gradient(hsla(0, 0%, 100%, 0) 13.4%, #fff 39.46%, #fff 57.89%, hsla(0, 0%, 100%, 0) 80.07%);
+// 	opacity: .4;
+// 	filter: blur(1px);
+// 	transform: rotate(130deg);
+// 	animation-name: badge_shine__RspLl;
+// 	animation-duration: 2s;
+// 	animation-iteration-count: infinite;
+// 	animation-timing-function: ease-in-out
+// }
+
+// .badge_leftIcon__8QGjD {
+// 	display: flex;
+// 	align-self: center;
+// 	margin-right: 4px
+// }
+
+// .web-app-promo_wrapper__4K99i {
+// 	position: relative;
+// 	width: 208px;
+// 	margin: 0 auto 24px;
+// 	padding: 12px 20px 24px;
+// 	border: 1px solid #edeff4;
+// 	border-radius: 16px;
+// 	text-decoration: none;
+// 	overflow: hidden;
+// 	transition: .2s
+// }
+
+// .web-app-promo_wrapper__4K99i:hover {
+// 	background-color: #f7f9fc
+// }
+
+// .web-app-promo_wrapper__4K99i:before {
+// 	content: "";
+// 	display: block;
+// 	width: 260px;
+// 	height: 240px;
+// 	position: absolute;
+// 	top: 50%;
+// 	left: 40%;
+// 	background: radial-gradient(50% 50% at 50% 50%, rgba(243, 174, 84, .7) 0, rgba(243, 174, 84, 0) 69.92%);
+// 	filter: blur(35px);
+// 	transform: rotate(45deg)
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.web-app-promo_wrapper__4K99i {
+// 		display: block
+// 	}
+// }
+
+// .web-app-promo_img__KU_9e {
+// 	display: flex;
+// 	width: 82px;
+// 	margin: 0 auto 8px
+// }
+
+// .web-app-promo_badgeWrapper__Ek07Y {
+// 	display: flex;
+// 	justify-content: center;
+// 	margin-bottom: 8px
+// }
+
+// .web-app-promo_description__lS8V1 {
+// 	font-weight: 600;
+// 	font-size: 16px;
+// 	line-height: 22px;
+// 	text-align: center;
+// 	margin-bottom: 8px
+// }
+
+// .web-app-promo_listItem__vSPAy {
+// 	display: flex;
+// 	align-items: flex-start;
+// 	font-size: 14px;
+// 	line-height: 18px;
+// 	color: #6b7487;
+// 	margin-bottom: 8px
+// }
+
+// .web-app-promo_listItem__vSPAy img {
+// 	margin-right: 4px
+// }
+
+// .download-buttons_downloadButtons__LaYVJ {
+// 	margin-top: 20px;
+// 	height: 82px
+// }
+
+// .download-buttons_downloadButton__E3O1X {
+// 	display: flex;
+// 	cursor: pointer;
+// 	margin-bottom: 12px;
+// 	max-width: 108px
+// }
+
+// .download-buttons_tabletAndDesktopOnly__JqmJw {
+// 	display: none
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.download-buttons_tabletAndDesktopOnly__JqmJw {
+// 		display: block
+// 	}
+// }
+
+// .download-buttons_qrCodeImage__9MGWs {
+// 	width: 108px;
+// 	height: 32px
+// }
+
+// .web-to-app-popup_wrapper__1Bv4p {
+// 	background-color: #fff
+// }
+
+// .web-to-app-popup_tabletAndDesktopOnly__MUkqG {
+// 	display: none
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.web-to-app-popup_tabletAndDesktopOnly__MUkqG {
+// 		display: block
+// 	}
+// }
+
+// .web-to-app-popup_content__2vcHg {
+// 	padding: 0 20px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.web-to-app-popup_content__2vcHg {
+// 		padding: 0 48px
+// 	}
+// }
+
+// .web-to-app-popup_stepsList__PP9wj {
+// 	margin: 5px auto 24px;
+// 	counter-reset: step 0;
+// 	list-style-type: none
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.web-to-app-popup_stepsList__PP9wj {
+// 		margin: 5px auto 32px
+// 	}
+// }
+
+// .web-to-app-popup_stepsList__PP9wj li .web-to-app-popup_stepNumber__0TLKJ:before {
+// 	counter-increment: step;
+// 	content: counter(step)
+// }
+
+// .web-to-app-popup_stepNumber__0TLKJ {
+// 	margin-top: -20px;
+// 	margin-right: 12px;
+// 	border-radius: 50%;
+// 	background: #edeff4;
+// 	padding-top: 2px;
+// 	width: 24px;
+// 	height: 24px;
+// 	font-weight: 700;
+// 	font-size: 14px;
+// 	text-align: center
+// }
+
+// .web-to-app-popup_step__mBGzp {
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: space-between;
+// 	color: #6b7487;
+// 	font-size: 16px;
+// 	line-height: 22px
+// }
+
+// .web-to-app-popup_step__mBGzp:not(:last-child) {
+// 	margin-bottom: 24px;
+// 	border-bottom: 1px solid #edeff4;
+// 	padding-bottom: 24px
+// }
+
+// .web-to-app-popup_step__mBGzp:not(:last-child) .web-to-app-popup_stepNumber__0TLKJ {
+// 	margin-top: 0
+// }
+
+// .web-to-app-popup_step__mBGzp:last-child .web-to-app-popup_stepDescription__gFfvQ {
+// 	margin-bottom: 20px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.web-to-app-popup_step__mBGzp {
+// 		flex-direction: row
+// 	}
+// }
+
+// .web-to-app-popup_stepTitle___jQek {
+// 	color: #242424;
+// 	font-weight: 600
+// }
+
+// .web-to-app-popup_alignCenter__BM1Fx {
+// 	align-items: center
+// }
+
+// .web-to-app-popup_stepDescription__gFfvQ {
+// 	display: flex;
+// 	flex-direction: row
+// }
+
+// .web-to-app-popup_stepText__IyMFR {
+// 	display: block;
+// 	position: relative;
+// 	padding-left: 32px;
+// 	color: #242424;
+// 	font-weight: 500;
+// 	font-size: 12px;
+// 	line-height: 1.25
+// }
+
+// .web-to-app-popup_stepIcon__e4yv7 {
+// 	display: flex;
+// 	position: absolute;
+// 	top: 50%;
+// 	left: 0;
+// 	transform: translateY(-50%);
+// 	text-align: center
+// }
+
+// .web-to-app-popup_stepIconImage__v7_YB {
+// 	width: 15px;
+// 	height: 15px
+// }
+
+// .web-to-app-popup_qrCodeArea__tt4OD {
+// 	display: flex;
+// 	justify-content: space-around;
+// 	align-items: center;
+// 	margin-left: 16px;
+// 	border-radius: 16px;
+// 	background: #f7f9fc;
+// 	width: 186px;
+// 	height: 186px
+// }
+
+// .web-to-app-popup_image__Qbrrx {
+// 	display: block;
+// 	width: 100%;
+// 	height: auto
+// }
+
+// .web-to-app-popup_email__HD_UF {
+// 	display: block;
+// 	margin-top: 4px;
+// 	padding-left: 32px;
+// 	color: #29d3a9;
+// 	font-weight: 600;
+// 	font-size: 14px;
+// 	line-height: 1.43
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.web-to-app-popup_mobilePreviewWrapper__SyGFo {
+// 		height: 186px
+// 	}
+// }
+
+// .web-to-app-popup_buttonContainer__hTSkk {
+// 	position: -webkit-sticky;
+// 	position: sticky;
+// 	bottom: 0;
+// 	box-shadow: 0 0 3px rgba(36, 36, 36, .04), 0 2px 32px rgba(36, 36, 36, .08);
+// 	border-top: 1px solid #edeff4;
+// 	background-color: #fff;
+// 	padding: 20px;
+// 	width: 100%;
+// 	text-align: center
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.web-to-app-popup_buttonContainer__hTSkk {
+// 		padding: 24px 72px
+// 	}
+// }
+
+// .web-to-app-popup_mobileImageBox__3ZpoR {
+// 	margin: 30px auto 24px;
+// 	border-radius: 12px;
+// 	background: #f7f9fc;
+// 	padding: 24px;
+// 	text-align: center
+// }
+
+// .web-to-app-popup_phoneImage___Qln_ {
+// 	display: block;
+// 	margin: auto;
+// 	width: 100%;
+// 	max-width: 132px;
+// 	height: auto
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.web-to-app-popup_phoneImage___Qln_ {
+// 		margin: 0
+// 	}
+// }
+
+// .web-to-app-popup_header___NlvZ {
+// 	padding: 56px 20px 20px;
+// 	text-align: center
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.web-to-app-popup_header___NlvZ {
+// 		padding: 68px 48px 24px
+// 	}
+// }
+
+// .web-to-app-popup_title__ZxVxi {
+// 	margin-bottom: 0;
+// 	padding-right: 24px;
+// 	color: #242424;
+// 	font-weight: 700;
+// 	font-size: 24px;
+// 	line-height: 1.33
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.web-to-app-popup_title__ZxVxi {
+// 		padding-right: 0
+// 	}
+// }
+
+// .web-to-app-popup_subtitle__4PGJE {
+// 	margin-top: 8px;
+// 	color: #6b7487;
+// 	font-size: 14px;
+// 	line-height: 20px
+// }
+
+// .web-to-app-promo_container__gyz_M {
+// 	position: relative;
+// 	padding-top: 24px;
+// 	overflow: hidden
+// }
+
+// .web-to-app-promo_content__PTcYY {
+// 	background: #f7f9fc;
+// 	padding: 24px 24px 24px 188px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.web-to-app-promo_content__PTcYY {
+// 		padding: 24px 24px 24px 208px
+// 	}
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.web-to-app-promo_content__PTcYY {
+// 		padding: 24px 24px 24px 124px
+// 	}
+// }
+
+// .web-to-app-promo_textContent___N4Bt {
+// 	width: 100%;
+// 	max-width: 146px
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.web-to-app-promo_textContent___N4Bt {
+// 		max-width: 116px
+// 	}
+// }
+
+// .web-to-app-promo_text__31AIF {
+// 	margin-bottom: 12px;
+// 	color: #6b7487;
+// 	font-weight: 500;
+// 	font-size: 12px;
+// 	line-height: 1.25
+// }
+
+// .web-to-app-promo_buttonIcon__wv6Ps {
+// 	fill: #e04141;
+// 	width: 16px;
+// 	height: 16px
+// }
+
+// .web-to-app-promo_image__G8wIJ {
+// 	display: block;
+// 	position: absolute;
+// 	top: 0;
+// 	left: 24px;
+// 	width: 140px;
+// 	height: auto
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.web-to-app-promo_image__G8wIJ {
+// 		left: 44px
+// 	}
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.web-to-app-promo_image__G8wIJ {
+// 		left: 24px;
+// 		width: 78px
+// 	}
+// }
+
+// .navigation-menu-desktop_navigationMenu__It5g1 {
+// 	display: none
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.navigation-menu-desktop_navigationMenu__It5g1 {
+// 		position: -webkit-sticky;
+// 		position: sticky;
+// 		top: 0;
+// 		left: 0;
+// 		width: 248px;
+// 		height: 100vh;
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: space-between;
+// 		flex-shrink: 0;
+// 		overflow-y: scroll;
+// 		box-shadow: 0 0 3px rgba(36, 36, 36, .04), 0 2px 32px rgba(36, 36, 36, .08);
+// 		z-index: 3
+// 	}
+// }
+
+// .navigation-menu-desktop_navigationMenu__It5g1.navigation-menu-desktop_small__iVjMd {
+// 	width: 80px
+// }
+
+// .navigation-menu-desktop_containerTop__8GYsB {
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	padding: 44px 16px 16px
+// }
+
+// .navigation-menu-desktop_containerTop__8GYsB.navigation-menu-desktop_small__iVjMd {
+// 	padding: 32px 8px
+// }
+
+// .navigation-menu-desktop_logo__reyiQ {
+// 	margin-bottom: 60px
+// }
+
+// .navigation-menu-desktop_pagesList__Ylzh0 {
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: stretch;
+// 	width: 100%;
+// 	padding-top: 32px;
+// 	border-top: 1px solid #dfe3eb
+// }
+
+// .navigation-menu-desktop_pagesList__Ylzh0.navigation-menu-desktop_small__iVjMd {
+// 	border-top: none;
+// 	padding-top: 92px
+// }
+
+// .navigation-menu-desktop_navItem__GB9Z7 {
+// 	display: flex;
+// 	align-items: center;
+// 	text-decoration: none;
+// 	padding: 12px;
+// 	border-radius: 6px;
+// 	font-weight: 500;
+// 	transition: background-color .35s;
+// 	cursor: pointer
+// }
+
+// .navigation-menu-desktop_navItem__GB9Z7:hover {
+// 	background-color: #f7f9fc
+// }
+
+// .navigation-menu-desktop_navItem__GB9Z7 svg {
+// 	color: #6b7487
+// }
+
+// .navigation-menu-desktop_navItem__GB9Z7.navigation-menu-desktop_isActive__HZ2Ke {
+// 	background-color: #faf6f7;
+// 	color: #e04141
+// }
+
+// .navigation-menu-desktop_navItem__GB9Z7.navigation-menu-desktop_isActive__HZ2Ke svg {
+// 	color: #e04141
+// }
+
+// .navigation-menu-desktop_navItem__GB9Z7.navigation-menu-desktop_small__iVjMd {
+// 	height: 66px;
+// 	padding: 12px 0;
+// 	flex-direction: column;
+// 	justify-content: space-between;
+// 	font-weight: 400;
+// 	font-size: 10px;
+// 	line-height: 12px;
+// 	margin-top: 8px
+// }
+
+// .navigation-menu-desktop_navItem__GB9Z7:not(:last-child) {
+// 	margin-bottom: 4px
+// }
+
+// .navigation-menu-desktop_navText___QEsV {
+// 	margin-left: 8px
+// }
+
+// .navigation-menu-desktop_navText___QEsV.navigation-menu-desktop_isActive__HZ2Ke {
+// 	color: #e04141
+// }
+
+// .navigation-menu-desktop_navText___QEsV.navigation-menu-desktop_small__iVjMd {
+// 	margin-left: 0
+// }
+
+// .navigation-menu-mobile_container__Bu3Jv {
+// 	position: fixed;
+// 	left: 0;
+// 	bottom: 0;
+// 	display: flex;
+// 	justify-content: space-around;
+// 	width: 100%;
+// 	box-shadow: 0 0 3px rgba(36, 36, 36, .04), 0 2px 32px rgba(36, 36, 36, .08);
+// 	background-color: #fff;
+// 	padding: 8px 0;
+// 	height: calc(56px + env(safe-area-inset-bottom));
+// 	z-index: 3
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.navigation-menu-mobile_container__Bu3Jv {
+// 		display: none
+// 	}
+// }
+
+// .navigation-menu-mobile_navItem__y0nMm {
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	text-decoration: none;
+// 	cursor: pointer
+// }
+
+// .navigation-menu-mobile_navItem__y0nMm.navigation-menu-mobile_isActive__03oIs {
+// 	color: #e04141
+// }
+
+// .navigation-menu-mobile_navItem__y0nMm svg {
+// 	width: 24px
+// }
+
+// .navigation-menu-mobile_navText__C7SzO {
+// 	font-weight: 600;
+// 	font-size: 11px;
+// 	line-height: 16px
+// }
+
+// .page_page__G0G_z {
+// 	display: flex;
+// 	min-height: 100vh
+// }
+
+// .page_page__G0G_z .page_children__qkJR3 {
+// 	width: 100%
+// }
+
+// .page_page__G0G_z.page_hasNavigation__G0VPZ {
+// 	flex-direction: row;
+// 	padding-bottom: 56px
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.page_page__G0G_z.page_hasNavigation__G0VPZ {
+// 		flex-direction: row;
+// 		padding-bottom: 0
+// 	}
+
+// 	.page_page__G0G_z.page_hasNavigation__G0VPZ .page_children__qkJR3 {
+// 		width: calc(100% - 248px)
+// 	}
+
+// 	.page_page__G0G_z.page_smallNavigation__lvvnq .page_children__qkJR3 {
+// 		width: calc(100% - 80px)
+// 	}
+// }
+
+// .page_page__G0G_z.page_stretchHeight__Ohey_ .page_children__qkJR3 {
+// 	display: flex;
+// 	flex-grow: 1
+// }
+
+// .bodyModalOpen .page_page__G0G_z {
+// 	filter: blur(7px)
+// }
+
+// .zendesk-widget_container___Z6IA {
+// 	position: fixed;
+// 	right: 16px;
+// 	bottom: calc(72px + env(safe-area-inset-bottom));
+// 	z-index: 333
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.zendesk-widget_container___Z6IA {
+// 		right: 24px;
+// 		bottom: calc(80px + env(safe-area-inset-bottom))
+// 	}
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.zendesk-widget_container___Z6IA {
+// 		right: 24px;
+// 		bottom: 24px
+// 	}
+// }
+
+// .zendesk-widget_container___Z6IA.zendesk-widget_unsubscribe__PS7bh {
+// 	bottom: 20px
+// }
+
+// .zendesk-widget_button__j9_98 {
+// 	cursor: pointer;
+// 	outline: none;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	padding: 12px;
+// 	background: #000;
+// 	font-weight: 600;
+// 	font-size: 17px;
+// 	line-height: 25px;
+// 	box-shadow: 0 6px 14px rgba(11, 18, 27, .16), 0 2px 8px rgba(14, 18, 22, .12);
+// 	border-radius: 27px;
+// 	text-transform: uppercase;
+// 	color: #fff
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.zendesk-widget_button__j9_98 {
+// 		padding: 12px 20px
+// 	}
+// }
+
+// .zendesk-widget_buttonText__vu80Q {
+// 	-webkit-user-select: none;
+// 	-moz-user-select: none;
+// 	user-select: none;
+// 	display: none;
+// 	margin-left: 6px;
+// 	height: 24px
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.zendesk-widget_buttonText__vu80Q {
+// 		display: block
+// 	}
+// }
+
+// .zendesk-widget_loading__xg30S .zendesk-widget_buttonText__vu80Q {
+// 	display: none
+// }
+
+// .zendesk-widget_buttonIcon__JFf6i,
+// .zendesk-widget_buttonIcon__JFf6i path {
+// 	fill: #fff
+// }
+
+// .zendesk-widget_button__j9_98.zendesk-widget_loading__xg30S {
+// 	padding: 12px
+// }
+
+// .zendesk-widget_spinner__AK120 {
+// 	stroke: #c6ccd6;
+// 	transform: translateZ(0) scale(1);
+// 	animation: zendesk-widget_spinning__2g8zV 1s linear infinite
+// }
+
+// @keyframes zendesk-widget_spinning__2g8zV {
+// 	0% {
+// 		transform: rotate(0deg)
+// 	}
+
+// 	to {
+// 		transform: rotate(1turn)
+// 	}
+// }
+
+// .meal-plan-popup_wrapper___JJ8u {
+// 	background-color: #fff
+// }
+
+// .meal-plan-popup_wrapper___JJ8u button {
+// 	border-width: 2px
+// }
+
+// .meal-plan-popup_header__QM9sw {
+// 	padding: 28px 20px;
+// 	border-bottom: 1px solid #edeff4;
+// 	display: flex
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan-popup_header__QM9sw {
+// 		padding: 24px;
+// 		justify-content: center;
+// 		text-align: center
+// 	}
+// }
+
+// .meal-plan-popup_body__KXEbr {
+// 	padding: 20px 20px 0
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan-popup_body__KXEbr {
+// 		padding: 24px 48px 0
+// 	}
+// }
+
+// .meal-plan-popup_footer__S6NVi {
+// 	padding: 20px;
+// 	display: flex;
+// 	justify-content: center
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan-popup_footer__S6NVi {
+// 		padding: 24px 48px
+// 	}
+// }
+
+// .meal-plan-popup_closeBtnWrapper__xMhhR {
+// 	position: absolute;
+// 	top: 20px;
+// 	right: 20px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan-popup_closeBtnWrapper__xMhhR {
+// 		top: 20px
+// 	}
+// }
+
+// .meal-plan-popup_title__MeBjZ {
+// 	font-weight: 600;
+// 	font-size: 20px;
+// 	line-height: 24px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan-popup_title__MeBjZ {
+// 		text-align: center;
+// 		font-size: 24px;
+// 		line-height: 32px
+// 	}
+// }
+
+// .meal-plan-popup_description__Sk78m {
+// 	margin-bottom: 12px
+// }
+
+// .meal-plan-popup_calories__iBRvg {
+// 	margin-bottom: 16px;
+// 	text-align: left
+// }
+
+// .meal-plan-popup_calories__iBRvg span {
+// 	font-weight: 600;
+// 	text-transform: lowercase
+// }
+
+// .meal-plan-popup_infoWrapper__vAeMx {
+// 	border: 1px solid #f3ae54;
+// 	background: hsla(45, 89%, 93%, .3);
+// 	color: #f3ae54;
+// 	border-radius: 12px;
+// 	padding: 16px;
+// 	display: flex;
+// 	margin-bottom: 16px
+// }
+
+// .meal-plan-popup_infoText__U0QGt {
+// 	margin-left: 8px;
+// 	font-weight: 500;
+// 	font-size: 14px;
+// 	line-height: 16px;
+// 	color: #be7200
+// }
+
+// .meal-plan-popup_source__XgWiF {
+// 	font-size: 12px;
+// 	line-height: 16px;
+// 	color: #6b7487;
+// 	display: flex;
+// 	justify-content: center;
+// 	text-decoration: none
+// }
+
+// .meal-plan-popup_source__XgWiF:hover {
+// 	text-decoration: none
+// }
+
+// .meal-plan-details_buttonWrapper__Q9I9T {
+// 	display: flex;
+// 	justify-content: center;
+// 	padding-top: 24px
+// }
+
+
+
+
+// .page-title-header_secondaryButton__gKBU4,
+// .page-title-header_uButton__kWPLy {
+// 	border-radius: 32px;
+// 	background: #ccc;
+// 	padding: 12px 24px;
+// 	border: 0;
+// 	color: #fff;
+// 	text-transform: uppercase;
+// 	text-decoration: none;
+// 	font-size: 16px;
+// 	font-weight: 800;
+// 	letter-spacing: 1px;
+// 	text-align: center;
+// 	transition: all .2s;
+// 	outline: 0;
+// 	cursor: pointer;
+// 	line-height: 1.5
+// }
+
+// .page-title-header_primaryButton__J85S_ {
+// 	background: #e04141;
+// 	border-radius: 32px;
+// 	font-weight: 600;
+// 	font-size: 16px;
+// 	line-height: 1.5;
+// 	text-align: center;
+// 	letter-spacing: .7px;
+// 	text-transform: uppercase;
+// 	color: #fff;
+// 	text-shadow: 0 1px 1px rgba(157, 46, 46, .2);
+// 	padding: 12px;
+// 	width: 100%;
+// 	max-width: 240px;
+// 	margin: auto;
+// 	cursor: pointer;
+// 	box-shadow: 0 12px 23px rgba(224, 65, 65, .3);
+// 	transition: transform .35s
+// }
+
+// .page-title-header_primaryButton__J85S_:hover {
+// 	background: #ca3536;
+// 	transform: scale(.97)
+// }
+
+// .page-title-header_primaryButton__J85S_:active {
+// 	background: #9d2e2e
+// }
+
+// .page-title-header_secondaryButton__gKBU4 {
+// 	width: 100%;
+// 	padding: 12px;
+// 	font-weight: 600;
+// 	font-size: 16px;
+// 	line-height: 1.5;
+// 	letter-spacing: .7px;
+// 	text-transform: uppercase;
+// 	color: #e04141;
+// 	background-color: #edeff4;
+// 	transition: background-color .35s
+// }
+
+// .page-title-header_secondaryButton__gKBU4:hover {
+// 	background-color: #dfe3eb
+// }
+
+// .page-title-header_wrapper__u1v3j {
+// 	width: 100%;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	padding: 24px 0;
+// 	background-color: #fff
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.page-title-header_wrapper__u1v3j {
+// 		padding: 32px 0
+// 	}
+// }
+
+// .page-title-header_wrapper__u1v3j.page-title-header_hasBackButton__V43k5 {
+// 	padding: 20px 0
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.page-title-header_wrapper__u1v3j.page-title-header_hasBackButton__V43k5 {
+// 		padding: 32px 0
+// 	}
+// }
+
+// .page-title-header_wrapper__u1v3j.page-title-header_hasProfileLink__jcoqE {
+// 	padding: 20px 0
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.page-title-header_wrapper__u1v3j.page-title-header_hasProfileLink__jcoqE {
+// 		padding: 28px 0
+// 	}
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.page-title-header_wrapper__u1v3j.page-title-header_hasProfileLink__jcoqE {
+// 		padding: 32px 0
+// 	}
+// }
+
+// .page-title-header_wrapper__u1v3j.page-title-header_sticky__SUclb {
+// 	position: -webkit-sticky;
+// 	position: sticky;
+// 	top: 0;
+// 	z-index: 1
+// }
+
+// .page-title-header_titleWrapper__McfjF {
+// 	display: flex;
+// 	align-items: center;
+// 	flex-grow: 1
+// }
+
+// .page-title-header_title__ejBG2 {
+// 	font-weight: 600;
+// 	font-size: 24px;
+// 	line-height: 32px;
+// 	flex-shrink: 0
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.page-title-header_title__ejBG2 {
+// 		font-size: 32px;
+// 		line-height: 40px
+// 	}
+// }
+
+// .page-title-header_backBtnWrapper__QXvE_ {
+// 	margin-right: 16px
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.page-title-header_profileLinkWrapper__xDtWo {
+// 		display: none
+// 	}
+// }
+
+// .calendar_wrapper__pzOYm {
+// 	display: flex;
+// 	justify-content: space-evenly;
+// 	padding: 16px 0
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.calendar_wrapper__pzOYm {
+// 		align-items: center
+// 	}
+// }
+
+// .calendar_previousWeekBtn__WQejY {
+// 	transform: rotate(-180deg);
+// 	margin-left: -12px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.calendar_previousWeekBtn__WQejY {
+// 		margin-left: 0
+// 	}
+// }
+
+// .calendar_nextWeekBtn__fUzEz {
+// 	margin-right: -12px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.calendar_nextWeekBtn__fUzEz {
+// 		margin-right: 0
+// 	}
+// }
+
+// .calendar_nextWeekBtn__fUzEz,
+// .calendar_previousWeekBtn__WQejY {
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	flex-shrink: 0;
+// 	padding: 0 12px 0 8px;
+// 	cursor: pointer
+// }
+
+// .calendar_nextWeekBtn__fUzEz:disabled,
+// .calendar_previousWeekBtn__WQejY:disabled {
+// 	cursor: not-allowed
+// }
+
+// @media only screen and (min-width:768px) {
+
+// 	.calendar_nextWeekBtn__fUzEz,
+// 	.calendar_previousWeekBtn__WQejY {
+// 		padding: 0;
+// 		width: 40px;
+// 		height: 40px;
+// 		border-radius: 50%;
+// 		border: 1px solid rgba(223, 227, 235, .72)
+// 	}
+
+// 	.calendar_nextWeekBtn__fUzEz:not(:disabled):hover,
+// 	.calendar_previousWeekBtn__WQejY:not(:disabled):hover {
+// 		background-color: rgba(223, 227, 235, .64)
+// 	}
+// }
+
+// .calendar_weekDays__tsCPb {
+// 	display: flex;
+// 	width: 100%;
+// 	justify-content: space-evenly
+// }
+
+// .calendar_day__y0R2V {
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	outline: none;
+// 	cursor: pointer;
+// 	padding-left: 4px;
+// 	padding-right: 4px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.calendar_day__y0R2V {
+// 		margin-right: 0;
+// 		padding: 0 8px
+// 	}
+// }
+
+// .calendar_day__y0R2V.calendar_dayDisabled__DP_V1 {
+// 	cursor: not-allowed
+// }
+
+// .calendar_dayOfWeek__M1orO {
+// 	font-weight: 600;
+// 	font-size: 14px;
+// 	line-height: 16px;
+// 	color: #8490a1;
+// 	text-transform: uppercase;
+// 	margin-bottom: 8px
+// }
+
+// .calendar_dayDisabled__DP_V1 .calendar_dayOfWeek__M1orO {
+// 	color: #dfe3eb
+// }
+
+// .calendar_dayCurrent__38WPf .calendar_dayOfWeek__M1orO,
+// .calendar_dayCurrent__38WPf.calendar_daySelected___4uAF .calendar_dayOfWeek__M1orO {
+// 	color: #e04141
+// }
+
+// .calendar_dayOfMonth__eouoH {
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	font-weight: 600;
+// 	width: 36px;
+// 	height: 36px;
+// 	color: #242424
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.calendar_dayOfMonth__eouoH {
+// 		font-size: 20px;
+// 		line-height: 24px;
+// 		width: 48px;
+// 		height: 48px
+// 	}
+// }
+
+// .calendar_day__y0R2V:not(.calendar_dayDisabled__DP_V1):hover .calendar_dayOfMonth__eouoH {
+// 	border-radius: 50%;
+// 	background-color: #f9fafc
+// }
+
+// .calendar_day__y0R2V.calendar_dayCurrent__38WPf:hover .calendar_dayOfMonth__eouoH {
+// 	background-color: #faf0f0;
+// 	color: #e04141;
+// 	border-radius: 50%
+// }
+
+// .calendar_day__y0R2V.calendar_daySelected___4uAF:hover .calendar_dayOfMonth__eouoH {
+// 	background-color: #242424
+// }
+
+// .calendar_dayCurrent__38WPf .calendar_dayOfMonth__eouoH {
+// 	color: #e04141
+// }
+
+// .calendar_daySelected___4uAF .calendar_dayOfMonth__eouoH {
+// 	background-color: #242424;
+// 	color: #fff;
+// 	border-radius: 50%
+// }
+
+// .calendar_day__y0R2V.calendar_dayCurrent__38WPf.calendar_daySelected___4uAF .calendar_dayOfMonth__eouoH {
+// 	background-color: #e04141;
+// 	color: #fff;
+// 	border-radius: 50%
+// }
+
+// .calendar_day__y0R2V.calendar_dayCurrent__38WPf.calendar_daySelected___4uAF .calendar_dayOfMonth__eouoH:hover {
+// 	background-color: #e04141;
+// 	color: #fff
+// }
+
+// .calendar_dayDisabled__DP_V1 .calendar_dayOfMonth__eouoH,
+// .calendar_dayOfMonth__eouoH .calendar_dayDisabled__DP_V1 {
+// 	color: #dfe3eb;
+// 	pointer-events: none
+// }
+
+// .meal-banner_secondaryButton__SSIfw,
+// .meal-banner_uButton__IV2Ec {
+// 	border-radius: 32px;
+// 	background: #ccc;
+// 	padding: 12px 24px;
+// 	border: 0;
+// 	text-decoration: none;
+// 	font-weight: 800;
+// 	letter-spacing: 1px;
+// 	transition: all .2s;
+// 	outline: 0
+// }
+
+// .meal-banner_primaryButton__cjdiG,
+// .meal-banner_secondaryButton__SSIfw,
+// .meal-banner_uButton__IV2Ec {
+// 	color: #fff;
+// 	text-transform: uppercase;
+// 	font-size: 16px;
+// 	text-align: center;
+// 	cursor: pointer;
+// 	line-height: 1.5
+// }
+
+// .meal-banner_primaryButton__cjdiG {
+// 	background: #e04141;
+// 	border-radius: 32px;
+// 	font-weight: 600;
+// 	letter-spacing: .7px;
+// 	text-shadow: 0 1px 1px rgba(157, 46, 46, .2);
+// 	padding: 12px;
+// 	width: 100%;
+// 	max-width: 240px;
+// 	margin: auto;
+// 	box-shadow: 0 12px 23px rgba(224, 65, 65, .3);
+// 	transition: transform .35s
+// }
+
+// .meal-banner_primaryButton__cjdiG:hover {
+// 	background: #ca3536;
+// 	transform: scale(.97)
+// }
+
+// .meal-banner_primaryButton__cjdiG:active {
+// 	background: #9d2e2e
+// }
+
+// .meal-banner_secondaryButton__SSIfw {
+// 	width: 100%;
+// 	padding: 12px;
+// 	font-weight: 600;
+// 	font-size: 16px;
+// 	line-height: 1.5;
+// 	letter-spacing: .7px;
+// 	text-transform: uppercase;
+// 	color: #e04141;
+// 	background-color: #edeff4;
+// 	transition: background-color .35s
+// }
+
+// .meal-banner_secondaryButton__SSIfw:hover {
+// 	background-color: #dfe3eb
+// }
+
+// .meal-banner_container__JgqWq {
+// 	width: 100%;
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	align-items: center;
+// 	justify-content: center;
+// 	position: relative;
+// 	margin: 0 auto;
+// 	border-radius: 16px;
+// 	overflow: hidden;
+// 	color: #242424;
+// 	border: 1px solid
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-banner_container__JgqWq {
+// 		max-width: none;
+// 		flex-wrap: nowrap;
+// 		min-height: 240px;
+// 		justify-content: space-between
+// 	}
+// }
+
+// .meal-banner_content__wjSwP {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	flex-direction: column;
+// 	padding: 24px 20px 8px;
+// 	text-align: center
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-banner_content__wjSwP {
+// 		align-items: flex-start;
+// 		text-align: left;
+// 		padding: 24px 0 24px 24px
+// 	}
+// }
+
+// .meal-banner_title___HxwA {
+// 	font-weight: 600;
+// 	font-size: 20px;
+// 	line-height: 24px;
+// 	margin-bottom: 8px
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.meal-banner_title___HxwA {
+// 		width: 296px
+// 	}
+// }
+
+// .meal-banner_description__rwLh4 {
+// 	font-weight: 400;
+// 	margin-bottom: 20px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-banner_description__rwLh4 {
+// 		margin-bottom: 16px
+// 	}
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.meal-banner_description__rwLh4 {
+// 		width: 296px
+// 	}
+// }
+
+// .meal-banner_noButtonDescription__0KVSF {
+// 	margin-bottom: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-banner_noButtonDescription__0KVSF {
+// 		margin-bottom: 0
+// 	}
+// }
+
+// .meal-banner_imageContainer__UXkKJ {
+// 	display: flex;
+// 	justify-content: flex-end;
+// 	align-items: flex-end;
+// 	padding: 0 28px;
+// 	height: 200px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-banner_imageContainer__UXkKJ {
+// 		padding: 0;
+// 		height: 100%
+// 	}
+// }
+
+// .meal-banner_image__XOwHw {
+// 	width: auto;
+// 	height: 100%
+// }
+
+// .meal-banner_label__z7EHl {
+// 	margin-bottom: 8px
+// }
+
+// .meal-banner_buttonsContainer__BJGzs {
+// 	display: flex;
+// 	flex-direction: column;
+// 	padding: 0 8px
+// }
+
+// .meal-banner_buttonsContainer__BJGzs button {
+// 	white-space: nowrap
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-banner_buttonsContainer__BJGzs {
+// 		flex-direction: row;
+// 		padding: 0
+// 	}
+
+// 	.meal-banner_buttonsContainer__BJGzs button {
+// 		width: auto
+// 	}
+// }
+
+// .meal-banner_buttonsContainer__BJGzs button:first-child {
+// 	margin-bottom: 12px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-banner_buttonsContainer__BJGzs button:first-child {
+// 		margin-bottom: 0
+// 	}
+
+// 	.meal-banner_buttonsContainer__BJGzs button:nth-child(2) {
+// 		margin-left: 12px
+// 	}
+// }
+
+// .meal-banner_singleButtonContainer__l9aOA {
+// 	padding: 0
+// }
+
+// .meal-plan-state-banner_wrapper__9XqsB {
+// 	margin-bottom: 16px
+// }
+
+// .skeleton_wrapper__hKS3l {
+// 	animation-duration: 1s;
+// 	animation-fill-mode: forwards;
+// 	animation-iteration-count: infinite;
+// 	animation-name: skeleton_placeholderSkeleton__tNdtG;
+// 	animation-timing-function: linear;
+// 	background: #f7f8fa linear-gradient(90deg, #f7f8fa 0, rgba(230, 233, 240, .6) 20%, #f7f8fa 40%, #f7f8fa) no-repeat;
+// 	background-size: 1000px 1000px;
+// 	width: 100%;
+// 	height: 100%;
+// 	position: relative
+// }
+
+// @keyframes skeleton_placeholderSkeleton__tNdtG {
+// 	0% {
+// 		background-position: -1000px 0
+// 	}
+
+// 	to {
+// 		background-position: 1000px 0
+// 	}
+// }
+
+// @keyframes skeleton_skeletonAnimate__Ic2VT {
+// 	0% {
+// 		background-position: 0 0
+// 	}
+
+// 	to {
+// 		background-position: 100% 0
+// 	}
+// }
+
+// .footnote_footnote__GjTYs {
+// 	font-size: 14px
+// }
+
+// .footnote_footnote__GjTYs.footnote_regular__0iOoA {
+// 	line-height: 20px
+// }
+
+// .footnote_footnote__GjTYs.footnote_compact__pznLg {
+// 	line-height: 16px
+// }
+
+// .my-plan-statistic_grid__XqFjI {
+// 	display: grid;
+// 	grid-gap: 16px;
+// 	gap: 16px;
+// 	grid-template-columns: 1fr 1fr 1fr
+// }
+
+// @media only screen and (min-width:1440px) {
+// 	.my-plan-statistic_grid__XqFjI {
+// 		grid-template-columns: auto
+// 	}
+// }
+
+// @media only screen and (max-width:767px) {
+// 	.my-plan-statistic_grid__XqFjI {
+// 		overflow-x: scroll;
+// 		overflow-y: hidden;
+// 		margin-right: -20px;
+// 		margin-left: -20px;
+// 		padding-left: 20px;
+// 		padding-right: 20px;
+// 		padding-bottom: 50px;
+// 		margin-bottom: -50px
+// 	}
+// }
+
+// .my-plan-statistic_grid__XqFjI::-webkit-scrollbar {
+// 	display: none;
+// 	height: 0
+// }
+
+// @media only screen and (min-width:1440px) {
+// 	.my-plan-statistic_section____xdn {
+// 		height: 100%;
+// 		padding: 40px;
+// 		border-left: 1px solid #dfe3eb
+// 	}
+
+// 	.my-plan-statistic_section____xdn .my-plan-statistic_item__pJ5y9 {
+// 		width: 320px
+// 	}
+// }
+
+// .my-plan-statistic_sectionTitle__6CIv_ {
+// 	display: none;
+// 	margin-bottom: 16px
+// }
+
+// @media only screen and (min-width:1440px) {
+// 	.my-plan-statistic_sectionTitle__6CIv_ {
+// 		display: block
+// 	}
+// }
+
+// .my-plan-statistic_tooltip__SSr5V {
+// 	width: 100%
+// }
+
+// @media only screen and (min-width:1440px) {
+// 	.my-plan-statistic_tooltip__SSr5V {
+// 		width: 200px
+// 	}
+// }
+
+// .my-plan-statistic_item__pJ5y9 {
+// 	padding: 16px;
+// 	display: flex;
+// 	border: 1px solid #edeff4;
+// 	border-radius: 16px;
+// 	cursor: pointer
+// }
+
+// .my-plan-statistic_item__pJ5y9 .my-plan-statistic_content__SaimA {
+// 	flex: 1 1;
+// 	margin-left: 16px
+// }
+
+// .my-plan-statistic_item__pJ5y9 .my-plan-statistic_statistic__rAq2v {
+// 	white-space: nowrap
+// }
+
+// .my-plan-statistic_item__pJ5y9 .my-plan-statistic_title__IMByp {
+// 	white-space: nowrap;
+// 	margin-bottom: 4px
+// }
+
+// .my-plan-statistic_item__pJ5y9:focus {
+// 	border: 1px solid #edeff4
+// }
+
+// .my-plan-statistic_item__pJ5y9>span {
+// 	width: 100%
+// }
+
+// .my-plan-statistic_skeleton__FFE68 {
+// 	height: 72px;
+// 	border-radius: 16px;
+// 	overflow: hidden
+// }
+
+// @media only screen and (min-width:1440px) {
+// 	.my-plan-statistic_skeleton__FFE68 {
+// 		min-width: 320px
+// 	}
+// }
+
+// .my-plan-user-goal_wrapper__O9vSD {
+// 	display: flex;
+// 	margin-bottom: 24px
+// }
+
+// .my-plan-user-goal_item__k0kuO {
+// 	display: flex;
+// 	align-items: center;
+// 	width: 50%
+// }
+
+// .my-plan-user-goal_item__k0kuO:first-child {
+// 	margin-right: 12px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.my-plan-user-goal_item__k0kuO:first-child {
+// 		margin-right: 18px
+// 	}
+
+// 	.my-plan-user-goal_item__k0kuO {
+// 		padding: 16px;
+// 		border: 1px solid #e6e9f0;
+// 		border-radius: 16px
+// 	}
+// }
+
+// .my-plan-user-goal_item__k0kuO img {
+// 	width: 40px;
+// 	height: 40px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.my-plan-user-goal_item__k0kuO img {
+// 		width: 56px;
+// 		height: 56px
+// 	}
+// }
+
+// .my-plan-user-goal_subtitle__s_Qih {
+// 	margin-bottom: 4px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.my-plan-user-goal_subtitle__s_Qih {
+// 		margin-bottom: 8px
+// 	}
+// }
+
+// .my-plan-user-goal_content__fzaGN {
+// 	display: flex;
+// 	flex-direction: column;
+// 	margin-left: 12px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.my-plan-user-goal_content__fzaGN {
+// 		margin-left: 16px
+// 	}
+// }
+
+// .start-meal-plan-banner_wrapper__y0dv6 {
+// 	margin-bottom: 16px
+// }
+
+// .start-plan-popup_modalWrapper__vqeT5 {
+// 	background-color: #fff;
+// 	padding: 24px 20px;
+// 	text-align: center
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.start-plan-popup_modalWrapper__vqeT5 {
+// 		padding: 40px 48px
+// 	}
+// }
+
+// .start-plan-popup_modalWrapper__vqeT5 .start-plan-popup_title__kszko {
+// 	font-weight: 600;
+// 	font-size: 20px;
+// 	line-height: 24px;
+// 	margin-bottom: 12px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.start-plan-popup_modalWrapper__vqeT5 .start-plan-popup_title__kszko {
+// 		font-size: 28px;
+// 		line-height: 34px
+// 	}
+// }
+
+// .start-plan-popup_modalWrapper__vqeT5 .start-plan-popup_buttonsWrapper__sPLvD {
+// 	display: flex;
+// 	flex-direction: column;
+// 	padding-top: 20px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.start-plan-popup_modalWrapper__vqeT5 .start-plan-popup_buttonsWrapper__sPLvD {
+// 		padding-top: 24px
+// 	}
+// }
+
+// .start-plan-popup_modalWrapper__vqeT5 .start-plan-popup_buttonsWrapper__sPLvD button+button {
+// 	margin-top: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.water-tracker_wrapper__IeaPm {
+// 		border: 1px solid #e6e9f0;
+// 		padding: 16px 24px 16px 16px;
+// 		border-radius: 16px
+// 	}
+// }
+
+// .water-tracker_contentWrapper__eZEOq {
+// 	display: flex;
+// 	align-items: center
+// }
+
+// .water-tracker_content__8BzQl {
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: center;
+// 	width: 100%;
+// 	margin-left: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.water-tracker_content__8BzQl {
+// 		justify-content: flex-start;
+// 		margin-left: 24px
+// 	}
+// }
+
+// .water-tracker_title__PkXUf {
+// 	font-weight: 600;
+// 	font-size: 17px;
+// 	line-height: 20px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.water-tracker_title__PkXUf {
+// 		font-size: 20px;
+// 		line-height: 24px;
+// 		margin-bottom: 8px
+// 	}
+// }
+
+// .water-tracker_subtitle__ix4Np {
+// 	margin-top: 4px;
+// 	color: #6b7487
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.water-tracker_subtitle__ix4Np {
+// 		margin-top: 8px
+// 	}
+// }
+
+// .water-tracker_learnMoreWrapper__xi_c_ {
+// 	margin-top: 8px;
+// 	line-height: 100%
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.water-tracker_learnMoreWrapper__xi_c_ {
+// 		margin-top: 12px
+// 	}
+// }
+
+// .water-tracker_buttonWrapper__G_R_7 {
+// 	display: flex;
+// 	align-items: center;
+// 	gap: 16px;
+// 	white-space: nowrap
+// }
+
+// .water-tracker_buttonWrapper__G_R_7 button .water-tracker_children__lPGEj {
+// 	display: none
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.water-tracker_buttonWrapper__G_R_7 {
+// 		gap: 24px
+// 	}
+
+// 	.water-tracker_buttonWrapper__G_R_7 .water-tracker_children__lPGEj {
+// 		display: inline-flex
+// 	}
+// }
+
+// @media only screen and (min-width:768px)and (min-width:1024px) {
+// 	.water-tracker_buttonWrapper__G_R_7 {
+// 		gap: 32px
+// 	}
+// }
+
+// .water-tracker_iconWrapper__3Moxo {
+// 	margin-right: 4px;
+// 	color: #adb3bc;
+// 	transition: color .4s ease
+// }
+
+// .water-tracker_buttonWrapperMobile__GGnym {
+// 	display: inline-flex
+// }
+
+// .water-tracker_buttonWrapperMobile__GGnym span {
+// 	margin: 0
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.water-tracker_buttonWrapperMobile__GGnym {
+// 		display: none
+// 	}
+// }
+
+// .water-tracker_buttonWrapperDesktop__84pZW {
+// 	display: none
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.water-tracker_buttonWrapperDesktop__84pZW {
+// 		display: inline-flex
+// 	}
+// }
+
+// .water-tracker_checkCircleWrapper__kiyLG {
+// 	display: inline-flex
+// }
+
+// .water-tracker_checkCircleWrapper__kiyLG svg {
+// 	color: #38c75c
+// }
+
+// .water-tracker_mediaWrapper__jjqTY {
+// 	flex-shrink: 0;
+// 	width: 80px;
+// 	height: 80px;
+// 	border-radius: 8px;
+// 	overflow: hidden
+// }
+
+// .water-tracker_mediaWrapper__jjqTY img,
+// .water-tracker_mediaWrapper__jjqTY video {
+// 	max-width: 100%
+// }
+
+// .water-tracker_skeleton__kTqKV {
+// 	aspect-ratio: 6;
+// 	border-radius: 12px;
+// 	overflow: hidden
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.water-tracker_skeleton__kTqKV {
+// 		border: 1px solid #edeff4;
+// 		border-radius: 16px;
+// 		overflow: hidden
+// 	}
+// }
+
+// .tips-card_wrapper__rhYtg {
+// 	border: 1px solid #e6e9f0;
+// 	border-radius: 12px;
+// 	padding: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.tips-card_wrapper__rhYtg {
+// 		border-radius: 16px
+// 	}
+// }
+
+// .tips-card_contentWrapper__ItsXJ {
+// 	display: flex
+// }
+
+// .tips-card_content__sDvYw {
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: center;
+// 	width: 100%;
+// 	margin-left: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.tips-card_content__sDvYw {
+// 		justify-content: flex-start;
+// 		margin-left: 24px
+// 	}
+// }
+
+// @media only screen and (max-width:767px) {
+// 	.tips-card_hideMobile__0KLVB {
+// 		display: none
+// 	}
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.tips-card_hideDesktopAndTable__0EYyY {
+// 		display: none
+// 	}
+// }
+
+// .tips-card_title__haep6 {
+// 	font-weight: 600;
+// 	font-size: 17px;
+// 	line-height: 20px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.tips-card_title__haep6 {
+// 		font-size: 20px;
+// 		line-height: 24px;
+// 		margin-bottom: 8px
+// 	}
+// }
+
+// .tips-card_subtitle__ay4px {
+// 	margin-bottom: 4px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.tips-card_subtitle__ay4px {
+// 		margin-bottom: 8px
+// 	}
+// }
+
+// .tips-card_description__6USgT {
+// 	padding-top: 8px;
+// 	font-weight: 400;
+// 	font-size: 14px;
+// 	line-height: 20px;
+// 	color: #6b7487
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.tips-card_description__6USgT {
+// 		padding-top: 0
+// 	}
+// }
+
+// .tips-card_additionalContent__amTmf {
+// 	margin-top: 16px;
+// 	line-height: 0
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.tips-card_additionalContent__amTmf {
+// 		margin-top: 12px
+// 	}
+// }
+
+// .tips-card_mediaWrapper__hDN3P {
+// 	flex-shrink: 0;
+// 	width: 80px;
+// 	height: 80px;
+// 	border-radius: 8px;
+// 	overflow: hidden
+// }
+
+// @media only screen and (max-width:767px) {
+// 	.tips-card_mediaWrapper__hDN3P {
+// 		width: 48px;
+// 		height: 48px
+// 	}
+// }
+
+// .tips-card_mediaWrapper__hDN3P img,
+// .tips-card_mediaWrapper__hDN3P video {
+// 	max-width: 100%;
+// 	height: auto
+// }
+
+// .tips-card_skeleton__cvTEP {
+// 	aspect-ratio: 6.5;
+// 	border-radius: 12px;
+// 	overflow: hidden
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.tips-card_skeleton__cvTEP {
+// 		border: 1px solid #e6e9f0;
+// 		border-radius: 16px;
+// 		overflow: hidden
+// 	}
+// }
+
+// .select-accent_selectAccent__UijKY {
+// 	display: inline-flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	width: 24px;
+// 	height: 24px;
+// 	border: 1px solid #8490a1;
+// 	border-radius: 50%;
+// 	cursor: pointer
+// }
+
+// .select-accent_selectAccent__UijKY:hover {
+// 	border-color: #e04141
+// }
+
+// .select-accent_selectAccent__UijKY.select-accent_checked__uIhgm {
+// 	border-color: #e04141;
+// 	background-color: #e04141;
+// 	color: #fff
+// }
+
+// .select-accent_selectAccent__UijKY.select-accent_disabled__iBrsS {
+// 	border-color: #edeff4;
+// 	background-color: #edeff4;
+// 	color: #6b7487;
+// 	cursor: not-allowed
+// }
+
+// .selection-item_wrapper__fjl1U {
+// 	width: 100%;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	padding: 16px;
+// 	border: 1px solid #edeff4;
+// 	border-radius: 12px;
+// 	cursor: pointer;
+// 	transition: all .4s
+// }
+
+// .selection-item_wrapper__fjl1U.selection-item_selected__mXnWs {
+// 	border-color: #e04141
+// }
+
+// .selection-item_wrapper__fjl1U.selection-item_disabled__LAlDP {
+// 	color: #6b7487;
+// 	cursor: not-allowed
+// }
+
+// @media only screen and (max-width:767px) {
+// 	.selection-item_wrapper__fjl1U.selection-item_hasDescription__LBsWf {
+// 		align-items: stretch
+// 	}
+// }
+
+// .selection-item_wrapper__fjl1U:not(.selection-item_disabled__LAlDP, .selection-item_selected__mXnWs):hover {
+// 	border-color: transparent;
+// 	box-shadow: 0 0 3px rgba(36, 36, 36, .04), 0 2px 16px rgba(36, 36, 36, .08)
+// }
+
+// .selection-item_wrapper__fjl1U:not(.selection-item_disabled__LAlDP):active {
+// 	transform: scale(.98)
+// }
+
+// .selection-item_content__iMGrj {
+// 	display: flex;
+// 	flex-direction: row
+// }
+
+// .selection-item_imageWrapper__fjnZ8 {
+// 	display: flex;
+// 	align-items: center;
+// 	flex-shrink: 0
+// }
+
+// @media only screen and (max-width:767px) {
+// 	.selection-item_imageWrapper__fjnZ8 {
+// 		align-items: flex-start
+// 	}
+// }
+
+// .selection-item_imageWrapper__fjnZ8.selection-item_sm__bxGtr {
+// 	margin-right: 8px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.selection-item_imageWrapper__fjnZ8.selection-item_sm__bxGtr {
+// 		margin-right: 20px
+// 	}
+// }
+
+// .selection-item_imageWrapper__fjnZ8.selection-item_md__N4pdt {
+// 	margin-right: 16px;
+// 	width: 48px;
+// 	height: 48px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.selection-item_imageWrapper__fjnZ8.selection-item_md__N4pdt {
+// 		width: 80px;
+// 		height: 80px
+// 	}
+// }
+
+// .selection-item_image__lA7ht {
+// 	width: 100%
+// }
+
+// .selection-item_title__mV6Ua {
+// 	font-weight: 600
+// }
+
+// .selection-item_footnoteWrapper__kMhCG {
+// 	margin-top: 4px;
+// 	color: #6b7487
+// }
+
+// .selection-item_selectWrapper__UNDAk {
+// 	display: flex;
+// 	flex-shrink: 0;
+// 	margin-left: 16px
+// }
+
+// .selection-item_selectWrapper__UNDAk.selection-item_hidden__vhFn_ {
+// 	visibility: hidden
+// }
+
+// .selection-item_textContainer__IYJwx {
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: center
+// }
+
+// .workout-activity-popup_modal__etJmG {
+// 	background-color: #fff;
+// 	position: relative
+// }
+
+// .workout-activity-popup_modalHeader__8_xWL {
+// 	padding: 20px;
+// 	border-bottom: 1px solid #edeff4;
+// 	position: -webkit-sticky;
+// 	position: sticky;
+// 	top: 0;
+// 	background-color: #fff
+// }
+
+// .workout-activity-popup_closeButtonWrapper__X4QvR {
+// 	position: absolute;
+// 	top: 20px;
+// 	right: 20px
+// }
+
+// .workout-activity-popup_modalTitle__f1Qok {
+// 	font-size: 20px;
+// 	line-height: 24px;
+// 	font-weight: 600;
+// 	padding: 8px 0
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.workout-activity-popup_modalTitle__f1Qok {
+// 		text-align: center
+// 	}
+// }
+
+// .workout-activity-popup_modalContent__6Zbw6 {
+// 	padding: 20px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.workout-activity-popup_modalContent__6Zbw6 {
+// 		padding-left: 48px;
+// 		padding-right: 48px
+// 	}
+// }
+
+// .workout-activity-popup_selectionItemWrapper__GnOOw:not(:last-child) {
+// 	margin-bottom: 16px
+// }
+
+// .workout-activity-popup_modalFooter__kCld5 {
+// 	padding: 20px;
+// 	box-shadow: 0 -2px 8px rgba(36, 36, 36, .08);
+// 	position: -webkit-sticky;
+// 	position: sticky;
+// 	bottom: 0;
+// 	background-color: #fff
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.workout-activity-popup_modalFooter__kCld5 {
+// 		padding-left: 48px;
+// 		padding-right: 48px
+// 	}
+// }
+
+// .activity-tip_buttonsWrapper__yvtBx {
+// 	display: flex;
+// 	flex-direction: column
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.activity-tip_buttonsWrapper__yvtBx {
+// 		flex-direction: row
+// 	}
+// }
+
+// .activity-tip_buttonsWrapper__yvtBx button+button {
+// 	margin-top: 12px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.activity-tip_buttonsWrapper__yvtBx button+button {
+// 		margin-left: 16px;
+// 		margin-top: 0
+// 	}
+// }
+
+// .article-card_wrapper__5_Us0 {
+// 	background: #fff;
+// 	border: 1px solid #e6e9f0;
+// 	border-radius: 12px;
+// 	transition: transform .4s ease-in-out
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.article-card_wrapper__5_Us0 {
+// 		display: flex;
+// 		align-items: center;
+// 		justify-content: space-between;
+// 		border-radius: 16px
+// 	}
+// }
+
+// .article-card_link__sgxeG {
+// 	text-decoration: none
+// }
+
+// .article-card_link__sgxeG:not(.article-card_locked___Rpne):active {
+// 	transform: scale(.98)
+// }
+
+// .article-card_link__sgxeG.article-card_locked___Rpne {
+// 	cursor: default
+// }
+
+// .article-card_link__sgxeG:not(.article-card_locked___Rpne):hover .article-card_rightIcon__TlMFw {
+// 	color: #242424
+// }
+
+// .article-card_link__sgxeG:not(.article-card_locked___Rpne):hover img {
+// 	transform: scale(1.06)
+// }
+
+// .article-card_imageWrapper__T9zl_ {
+// 	height: 236px;
+// 	overflow: hidden;
+// 	border-top-left-radius: 12px;
+// 	border-top-right-radius: 12px;
+// 	position: relative
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.article-card_imageWrapper__T9zl_ {
+// 		width: 220px;
+// 		height: 176px;
+// 		border-top-left-radius: 16px;
+// 		border-bottom-left-radius: 16px;
+// 		border-top-right-radius: 0
+// 	}
+// }
+
+// .article-card_imageWrapper__T9zl_ img {
+// 	max-width: 100%;
+// 	height: auto;
+// 	transition: transform .4s ease-in-out;
+// 	transform: scale(1)
+// }
+
+// .article-card_content__Snyqn {
+// 	padding: 16px;
+// 	display: flex;
+// 	flex: 1 1;
+// 	justify-content: space-between;
+// 	align-items: center
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.article-card_content__Snyqn {
+// 		padding: 0;
+// 		margin-left: 24px
+// 	}
+// }
+
+// .article-card_subTitle__kyMIr {
+// 	margin-bottom: 4px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.article-card_subTitle__kyMIr {
+// 		margin-bottom: 8px
+// 	}
+// }
+
+// .article-card_title__73Y_O {
+// 	font-weight: 600;
+// 	font-size: 17px;
+// 	line-height: 24px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.article-card_title__73Y_O {
+// 		font-size: 20px
+// 	}
+// }
+
+// .article-card_rightIcon__TlMFw {
+// 	display: none;
+// 	color: #adb3bc;
+// 	transition: color .4s ease-in-out;
+// 	margin-left: 24px
+// }
+
+// .article-card_rightIcon__TlMFw.article-card_isLocked__u6pZO {
+// 	display: block
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.article-card_rightIcon__TlMFw {
+// 		display: block;
+// 		padding-right: 28px
+// 	}
+// }
+
+// .fasting-schedule-card_secondaryButton__V29Pn,
+// .fasting-schedule-card_uButton__hQWfl {
+// 	border-radius: 32px;
+// 	background: #ccc;
+// 	padding: 12px 24px;
+// 	border: 0;
+// 	color: #fff;
+// 	text-transform: uppercase;
+// 	text-decoration: none;
+// 	font-size: 16px;
+// 	font-weight: 800;
+// 	letter-spacing: 1px;
+// 	text-align: center;
+// 	transition: all .2s;
+// 	outline: 0;
+// 	cursor: pointer;
+// 	line-height: 1.5
+// }
+
+// .fasting-schedule-card_primaryButton__2LqHt {
+// 	background: #e04141;
+// 	border-radius: 32px;
+// 	font-weight: 600;
+// 	font-size: 16px;
+// 	line-height: 1.5;
+// 	text-align: center;
+// 	letter-spacing: .7px;
+// 	text-transform: uppercase;
+// 	color: #fff;
+// 	text-shadow: 0 1px 1px rgba(157, 46, 46, .2);
+// 	padding: 12px;
+// 	width: 100%;
+// 	max-width: 240px;
+// 	margin: auto;
+// 	cursor: pointer;
+// 	box-shadow: 0 12px 23px rgba(224, 65, 65, .3);
+// 	transition: transform .35s
+// }
+
+// .fasting-schedule-card_primaryButton__2LqHt:hover {
+// 	background: #ca3536;
+// 	transform: scale(.97)
+// }
+
+// .fasting-schedule-card_primaryButton__2LqHt:active {
+// 	background: #9d2e2e
+// }
+
+// .fasting-schedule-card_secondaryButton__V29Pn {
+// 	width: 100%;
+// 	padding: 12px;
+// 	font-weight: 600;
+// 	font-size: 16px;
+// 	line-height: 1.5;
+// 	letter-spacing: .7px;
+// 	text-transform: uppercase;
+// 	color: #e04141;
+// 	background-color: #edeff4;
+// 	transition: background-color .35s
+// }
+
+// .fasting-schedule-card_secondaryButton__V29Pn:hover {
+// 	background-color: #dfe3eb
+// }
+
+// .fasting-schedule-card_wrapper__yCg2y {
+// 	border: 1px solid #e6e9f0;
+// 	border-radius: 16px;
+// 	background-color: #f7f9fc;
+// 	padding: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.fasting-schedule-card_wrapper__yCg2y {
+// 		padding: 24px
+// 	}
+// }
+
+// .fasting-schedule-card_wrapper__yCg2y.fasting-schedule-card_loading__g35ug {
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	height: 299px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.fasting-schedule-card_wrapper__yCg2y.fasting-schedule-card_loading__g35ug {
+// 		height: 259px
+// 	}
+// }
+
+// .fasting-schedule-card_header__rZlME {
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	margin-bottom: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.fasting-schedule-card_header__rZlME {
+// 		flex-wrap: nowrap
+// 	}
+
+// 	.fasting-schedule-card_header__rZlME button {
+// 		order: 3
+// 	}
+// }
+
+// .fasting-schedule-card_scheduleLinesContainer__wezRo {
+// 	display: flex;
+// 	position: relative;
+// 	padding-bottom: 24px
+// }
+
+// .fasting-schedule-card_scheduleLinesContainer__wezRo.fasting-schedule-card_fastingTime__Fx8br {
+// 	flex-direction: row-reverse
+// }
+
+// .fasting-schedule-card_eatingTimeLeft__nvmPG {
+// 	margin-top: 16px;
+// 	margin-right: 16px;
+// 	width: 100%;
+// 	text-align: center
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.fasting-schedule-card_eatingTimeLeft__nvmPG {
+// 		margin-top: 0;
+// 		margin-left: auto;
+// 		width: auto;
+// 		text-align: right
+// 	}
+// }
+
+// .fasting-schedule-card_eatingTimeLeft__nvmPG .fasting-schedule-card_footnoteWrapper__rqP_X {
+// 	margin-top: 4px;
+// 	color: #6b7487
+// }
+
+// .fasting-schedule-card_startTime__kVmK3 {
+// 	position: absolute;
+// 	bottom: 0;
+// 	margin-top: 8px;
+// 	color: #6b7487
+// }
+
+// .fasting-schedule-card_fastingTime__Fx8br .fasting-schedule-card_startTime__kVmK3 {
+// 	left: 0
+// }
+
+// @media only screen and (max-width:480px) {
+// 	.fasting-schedule-card_longStartText__sUXhN .fasting-schedule-card_startTime__kVmK3 {
+// 		bottom: -16px;
+// 		width: 50%;
+// 		height: 32px
+// 	}
+// }
+
+// .fasting-schedule-card_eatingTime__yHN8g .fasting-schedule-card_scheduleLineLink__Q8quJ.fasting-schedule-card_fasting__iwZto,
+// .fasting-schedule-card_fastingTime__Fx8br .fasting-schedule-card_scheduleLineLink__Q8quJ.fasting-schedule-card_eating__nPWrp,
+// .fasting-schedule-card_rightSide__Pa1ot {
+// 	flex-shrink: 0;
+// 	width: 100%;
+// 	max-width: 80px
+// }
+
+// @media only screen and (min-width:768px) {
+
+// 	.fasting-schedule-card_eatingTime__yHN8g .fasting-schedule-card_scheduleLineLink__Q8quJ.fasting-schedule-card_fasting__iwZto,
+// 	.fasting-schedule-card_fastingTime__Fx8br .fasting-schedule-card_scheduleLineLink__Q8quJ.fasting-schedule-card_eating__nPWrp,
+// 	.fasting-schedule-card_rightSide__Pa1ot {
+// 		max-width: 200px
+// 	}
+// }
+
+// .fasting-schedule-card_scheduleLineLink__Q8quJ {
+// 	display: flex;
+// 	flex-direction: column;
+// 	width: 100%;
+// 	color: #6b7487;
+// 	text-decoration: none
+// }
+
+// .fasting-schedule-card_scheduleLineLink__Q8quJ>p {
+// 	display: -webkit-box;
+// 	-webkit-line-clamp: 1;
+// 	-webkit-box-orient: vertical;
+// 	overflow: hidden;
+// 	text-overflow: ellipsis
+// }
+
+// .fasting-schedule-card_timeSeparatorWrapper__IHnsO {
+// 	display: flex;
+// 	align-items: center;
+// 	margin: 8px 0;
+// 	color: #6b7487;
+// 	font-size: 14px;
+// 	line-height: 20px
+// }
+
+// .fasting-schedule-card_timeSeparatorWrapper__IHnsO:last-child {
+// 	margin-bottom: 0
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.fasting-schedule-card_timeSeparatorWrapper__IHnsO {
+// 		margin: 16px 0
+// 	}
+// }
+
+// .fasting-schedule-card_timeSeparatorWrapper__IHnsO:after {
+// 	display: block;
+// 	flex: 1 1;
+// 	margin-left: 16px;
+// 	background-color: #edeff4;
+// 	width: 100%;
+// 	height: 1px;
+// 	content: ""
+// }
+
+// .fasting-schedule-card_scheduleLine__3c8UY {
+// 	position: relative;
+// 	margin-top: 8px;
+// 	border-radius: 4px;
+// 	height: 24px;
+// 	overflow: hidden
+// }
+
+// .fasting-schedule-card_eating__nPWrp .fasting-schedule-card_scheduleLine__3c8UY {
+// 	background: rgba(78, 208, 154, .32)
+// }
+
+// .fasting-schedule-card_fasting__iwZto .fasting-schedule-card_scheduleLine__3c8UY {
+// 	background: rgba(120, 181, 249, .32)
+// }
+
+// .fasting-schedule-card_scheduleLineOverlay__hjS_X {
+// 	position: absolute;
+// 	top: 0;
+// 	bottom: 0;
+// 	left: 0
+// }
+
+// .fasting-schedule-card_eating__nPWrp .fasting-schedule-card_scheduleLineOverlay__hjS_X {
+// 	background: #4ed09a
+// }
+
+// .fasting-schedule-card_fasting__iwZto .fasting-schedule-card_scheduleLineOverlay__hjS_X {
+// 	background: #78b5f9
+// }
+
+// .fasting-schedule-card_horizontalTimeSeparator__2y7rF {
+// 	display: flex;
+// 	position: relative;
+// 	align-items: flex-end;
+// 	padding: 0 12px;
+// 	color: #6b7487
+// }
+
+// .fasting-schedule-card_horizontalTimeSeparator__2y7rF .fasting-schedule-card_verticalLine__ataLo {
+// 	background-color: #dfe3eb;
+// 	width: 1px;
+// 	height: 24px
+// }
+
+// .fasting-schedule-card_horizontalTimeSeparator__2y7rF .fasting-schedule-card_separatorText__lniax {
+// 	position: absolute;
+// 	top: calc(100% + 8px);
+// 	left: 50%;
+// 	transform: translateX(-50%);
+// 	white-space: nowrap
+// }
+
+// @media only screen and (max-width:480px) {
+// 	.fasting-schedule-card_longStartText__sUXhN .fasting-schedule-card_horizontalTimeSeparator__2y7rF .fasting-schedule-card_separatorText__lniax {
+// 		width: 96px;
+// 		white-space: wrap
+// 	}
+// }
+
+// .fasting-schedule-card_footer__Wbn28 {
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	margin-top: 16px;
+// 	border-top: 1px solid #edeff4;
+// 	padding-top: 16px
+// }
+
+// @media only screen and (max-width:480px) {
+// 	.fasting-schedule-card_footer__Wbn28.fasting-schedule-card_longStartText__sUXhN {
+// 		margin-top: 32px
+// 	}
+// }
+
+// .fasting-schedule-card_footer__Wbn28 .fasting-schedule-card_buttonWrapper__G_fGT {
+// 	display: none;
+// 	margin-left: 16px
+// }
+
+// .fasting-schedule-card_footer__Wbn28 .fasting-schedule-card_buttonWrapper__G_fGT.fasting-schedule-card_mobile__EWN42 {
+// 	display: block
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.fasting-schedule-card_footer__Wbn28 .fasting-schedule-card_buttonWrapper__G_fGT {
+// 		display: block
+// 	}
+
+// 	.fasting-schedule-card_footer__Wbn28 .fasting-schedule-card_buttonWrapper__G_fGT.fasting-schedule-card_mobile__EWN42 {
+// 		display: none
+// 	}
+// }
+
+// .workouts-to-app-popup_wrapper__ahDxj {
+// 	background: #fff
+// }
+
+// .workouts-to-app-popup_imgWrapper__ycd6v {
+// 	border: 1px solid rgba(14, 16, 20, .04);
+// 	border-radius: 20px 20px 0 0;
+// 	max-width: 360px;
+// 	max-height: 280px
+// }
+
+// .workouts-to-app-popup_imgWrapper__ycd6v img {
+// 	max-width: 100%
+// }
+
+// .workouts-to-app-popup_content__QbioM {
+// 	padding: 24px 20px
+// }
+
+// .workouts-to-app-popup_title__vx8W8 {
+// 	margin-bottom: 8px;
+// 	font-weight: 600;
+// 	font-size: 24px;
+// 	line-height: 32px;
+// 	text-align: center
+// }
+
+// .workouts-to-app-popup_subtitle__Za9pL {
+// 	margin-bottom: 20px;
+// 	text-align: center
+// }
+
+// .workouts-to-app-popup_desktopContent__1Q14P {
+// 	display: flex;
+// 	justify-content: space-between;
+// 	border-top: 1px solid #edeff4;
+// 	padding-top: 20px
+// }
+
+// .workouts-to-app-popup_desktopContentAside__3Rvf1 {
+// 	max-width: 176px
+// }
+
+// .workouts-to-app-popup_desktopContentTitle__zmcO1 {
+// 	margin-bottom: 8px;
+// 	font-weight: 600;
+// 	font-size: 14px;
+// 	line-height: 16px
+// }
+
+// .workouts-to-app-popup_desktopContentImg__ZYmxE {
+// 	display: flex;
+// 	cursor: pointer;
+// 	height: 40px
+// }
+
+// .workouts-to-app-popup_desktopContentImg__ZYmxE+.workouts-to-app-popup_desktopContentImg__ZYmxE {
+// 	margin-top: 8px
+// }
+
+// .workouts-to-app-popup_qrCodeArea__3BlXi {
+// 	border: 1px solid #edeff4;
+// 	border-radius: 8px;
+// 	padding: 10px;
+// 	width: 128px;
+// 	height: 128px
+// }
+
+// .general-workout-card_mainWrapper {
+// 	margin-bottom: 32px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.general-workout-card_mainWrapper {
+// 		margin-bottom: 16px
+// 	}
+// }
+
+
+
+// .general-workout-card_skeletonImgWrapper__qsWKV {
+// 	margin-bottom: 12px;
+// 	border-radius: 12px;
+// 	aspect-ratio: 1.42;
+// 	width: 100%;
+// 	overflow: hidden
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.general-workout-card_skeletonImgWrapper__qsWKV {
+// 		margin-bottom: 16px;
+// 		border: 1px solid #e6e9f0;
+// 		border-radius: 16px;
+// 		height: 178px;
+// 		overflow: hidden
+// 	}
+// }
+
+// .general-workout-card_skeletonTitleWrapper__n_uKR {
+// 	margin-bottom: 6px;
+// 	border-radius: 12px;
+// 	width: 100%;
+// 	height: 18px;
+// 	overflow: hidden
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.general-workout-card_skeletonTitleWrapper__n_uKR {
+// 		display: none
+// 	}
+// }
+
+// .general-workout-card_skeletonLabelWrapper__eax1q {
+// 	margin-bottom: 26px;
+// 	border-radius: 12px;
+// 	width: 40%;
+// 	height: 14px;
+// 	overflow: hidden
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.general-workout-card_skeletonLabelWrapper__eax1q {
+// 		display: none
+// 	}
+// }
+
+
+
+
+
+
+
+
+
+// .general-workout-card_subtitle__R_BHY {
+// 	margin-bottom: 4px
+// }
+
+// .general-workout-card_subtitle__R_BHY.general-workout-card_locked__LWqll {
+// 	margin-bottom: 0;
+// 	padding-left: 36px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.general-workout-card_subtitle__R_BHY {
+// 		margin-bottom: 8px
+// 	}
+// }
+
+
+
+
+
+// .general-workout-card_btnWrapper__46ZDt {
+// 	display: flex;
+// 	margin-top: 16px
+// }
+
+
+
+// .general-workout-card_trainingProgramContent__N97T_ {
+// 	margin-top: 0
+// }
+
+// .general-workout-card_mobileOnly__8_NEv {
+// 	display: block
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.general-workout-card_mobileOnly__8_NEv {
+// 		display: none
+// 	}
+// }
+
+// .general-workout-card_tabletOrDesktopOnly__ETPCc {
+// 	display: none
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.general-workout-card_tabletOrDesktopOnly__ETPCc {
+// 		display: block
+// 	}
+// }
+
+// .general-workout-card_checkIcon__fvlAE {
+// 	width: 24px;
+// 	height: 24px;
+// 	color: #38c75c
+// }
+
+// @media only screen and (max-width:767px) {
+// 	.general-workout-card_checkIcon__fvlAE {
+// 		margin-right: 4px
+// 	}
+// }
+
+// .general-workout-card_logWorkoutWrapper__HQE2I {
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	margin-top: 16px
+// }
+
+// .general-workout-card_logWorkoutWrapper__HQE2I .general-workout-card_lockIcon__Bmfcv {
+// 	color: #6b7487
+// }
+
+// .general-workout-card_logWorkoutContent__NPC6Q {
+// 	line-height: 0
+// }
+
+// .general-workout-card_logWorkoutContent__NPC6Q .general-workout-card_logWorkoutLabels__yz_wq {
+// 	display: inline-flex;
+// 	flex-wrap: wrap;
+// 	align-items: flex-start;
+// 	margin-right: 8px;
+// 	border-radius: 4px;
+// 	letter-spacing: .02em
+// }
+
+// .general-workout-card_logWorkoutContent__NPC6Q .general-workout-card_logWorkoutLabels__yz_wq .general-wellness-card_duration {
+// 	text-transform: lowercase
+// }
+
+// .general-workout-card_logWorkoutContent__NPC6Q .general-workout-card_logWorkoutLabels__yz_wq>span {
+// 	display: flex;
+// 	align-items: center;
+// 	color: #6b7487;
+// 	font-weight: 500;
+// 	font-size: 14px;
+// 	line-height: 16px
+// }
+
+
+
+
+// .selection-button_wrapper__rVHZE {
+// 	width: 100%;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	padding: 16px;
+// 	border: 1px solid #e6e9f0;
+// 	border-radius: 12px;
+// 	cursor: pointer;
+// 	transition: all .4s
+// }
+
+// .selection-button_wrapper__rVHZE:active,
+// .selection-button_wrapper__rVHZE:hover {
+// 	background-color: #f7f9fc
+// }
+
+// .selection-button_content__fZ6Sc {
+// 	display: flex;
+// 	flex-direction: row
+// }
+
+// .selection-button_iconWrapper__t7ipS {
+// 	text-align: center;
+// 	width: 24px;
+// 	height: 24px;
+// 	margin-right: 16px
+// }
+
+// .meal-plan-daily-status_wrapper__ZxEWf {
+// 	background: #fff;
+// 	border: 1px solid #e6e9f0;
+// 	border-radius: 12px;
+// 	padding: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan-daily-status_wrapper__ZxEWf {
+// 		padding: 16px 24px
+// 	}
+// }
+
+// .meal-plan-daily-status_header__2s5ND {
+// 	padding-bottom: 16px;
+// 	border-bottom: 1px solid #e6e9f0;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center
+// }
+
+// .meal-plan-daily-status_title__1vkYA {
+// 	font-weight: 600;
+// 	font-size: 17px;
+// 	line-height: 20px;
+// 	margin-top: 4px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan-daily-status_title__1vkYA {
+// 		margin-top: 8px;
+// 		font-size: 20px;
+// 		line-height: 24px
+// 	}
+// }
+
+// .meal-plan-daily-status_content__qr5UO {
+// 	padding-top: 16px
+// }
+
+// .meal-plan-daily-status_footer__2j_ZV {
+// 	padding-top: 16px;
+// 	border-top: 1px solid #e6e9f0
+// }
+
+// .meal-plan-daily-status_selectionButtonWrapper__ysJKu {
+// 	margin-bottom: 8px
+// }
+
+// .meal-plan-daily-status_statusContentWrapper__KHELC {
+// 	display: flex;
+// 	flex-direction: column
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan-daily-status_statusContentWrapper__KHELC {
+// 		flex-direction: row
+// 	}
+// }
+
+// .meal-plan-daily-status_statusContentWrapper__KHELC .meal-plan-daily-status_skeletonWrapper__8NzSK {
+// 	min-width: 80px;
+// 	min-height: 80px;
+// 	border-radius: 12px;
+// 	overflow: hidden;
+// 	margin-bottom: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan-daily-status_statusContentWrapper__KHELC .meal-plan-daily-status_skeletonWrapper__8NzSK {
+// 		min-width: 160px;
+// 		height: 160px;
+// 		border-radius: 16px;
+// 		margin-bottom: 0
+// 	}
+// }
+
+// .meal-plan-daily-status_statusContentWrapper__KHELC img {
+// 	display: none;
+// 	visibility: hidden;
+// 	width: 80px;
+// 	height: 80px;
+// 	border-radius: 12px;
+// 	margin-bottom: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan-daily-status_statusContentWrapper__KHELC img {
+// 		width: 160px;
+// 		height: 160px;
+// 		border-radius: 16px;
+// 		margin-bottom: 0
+// 	}
+// }
+
+// .meal-plan-daily-status_statusContentWrapper__KHELC img.meal-plan-daily-status_imageVisible__XJUae {
+// 	display: block;
+// 	visibility: visible
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan-daily-status_statusTextContent__JDmlY {
+// 		margin-left: 16px
+// 	}
+// }
+
+// .meal-plan-daily-status_statusQuestion__grLDX {
+// 	margin-bottom: 16px
+// }
+
+// .additional-content-card_wrapper__CRSAf {
+// 	display: flex;
+// 	align-items: center;
+// 	text-decoration: none;
+// 	transition: all .4s ease
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.additional-content-card_wrapper__CRSAf {
+// 		padding-right: 24px;
+// 		border: 1px solid #edeff4;
+// 		border-radius: 16px
+// 	}
+// }
+
+// .additional-content-card_wrapper__CRSAf:not(.additional-content-card_locked__NYr71):active {
+// 	transform: scale(.98)
+// }
+
+// .additional-content-card_wrapper__CRSAf.additional-content-card_locked__NYr71 {
+// 	cursor: default
+// }
+
+// .additional-content-card_imageContainer__3bLKU {
+// 	flex-shrink: 0;
+// 	width: 80px;
+// 	height: 80px;
+// 	border-radius: 12px;
+// 	overflow: hidden;
+// 	position: relative
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.additional-content-card_imageContainer__3bLKU {
+// 		width: 144px;
+// 		height: 144px;
+// 		border-top-right-radius: 0;
+// 		border-bottom-right-radius: 0
+// 	}
+// }
+
+// .additional-content-card_image__Xczvb {
+// 	max-width: 100%;
+// 	height: auto;
+// 	transition: transform .4s ease
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.additional-content-card_image__Xczvb {
+// 		border-top-left-radius: 16px;
+// 		border-bottom-left-radius: 16px
+// 	}
+// }
+
+// .additional-content-card_wrapper__CRSAf:not(.additional-content-card_locked__NYr71):hover .additional-content-card_image__Xczvb {
+// 	transform: scale(1.06)
+// }
+
+// .additional-content-card_content__N53J_ {
+// 	width: 100%;
+// 	padding-left: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.additional-content-card_content__N53J_ {
+// 		padding-left: 24px
+// 	}
+// }
+
+// .additional-content-card_caption___aisb {
+// 	font-weight: 500;
+// 	font-size: 14px;
+// 	line-height: 16px;
+// 	text-transform: capitalize;
+// 	margin-bottom: 4px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.additional-content-card_caption___aisb {
+// 		margin-bottom: 8px
+// 	}
+// }
+
+// .additional-content-card_title__so6N1 {
+// 	font-weight: 600;
+// 	line-height: 20px;
+// 	margin-bottom: 4px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.additional-content-card_title__so6N1 {
+// 		font-size: 20px;
+// 		line-height: 24px;
+// 		margin-bottom: 8px
+// 	}
+// }
+
+// .additional-content-card_subtitle__1Geu0 {
+// 	font-weight: 500;
+// 	font-size: 14px;
+// 	line-height: 16px;
+// 	color: #6b7487
+// }
+
+// .additional-content-card_iconWrapper__k0qKd {
+// 	display: flex;
+// 	align-items: center;
+// 	margin-left: auto;
+// 	padding: 4px;
+// 	color: #adb3bc;
+// 	transition: color .4s ease
+// }
+
+// .additional-content-card_wrapper__CRSAf:not(.additional-content-card_locked__NYr71):hover .additional-content-card_iconWrapper__k0qKd {
+// 	color: #0e1014
+// }
+
+// .additional-content-card_skeletonContentCard__KQ85j {
+// 	aspect-ratio: 5;
+// 	margin-bottom: 12px;
+// 	border-radius: 12px;
+// 	overflow: hidden
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.additional-content-card_skeletonContentCard__KQ85j {
+// 		margin-bottom: 16px;
+// 		border: 1px solid #e6e9f0;
+// 		border-radius: 16px;
+// 		overflow: hidden
+// 	}
+// }
+
+// .my-plan-dishes-list_cardWrapper__shPHr:not(:last-child) {
+// 	margin-bottom: 16px
+// }
+
+// .my-plan-dishes-list_cardSubtitle__fMETF {
+// 	display: flex;
+// 	align-items: center
+// }
+
+// .my-plan-dishes-list_cardSubtitle__fMETF span {
+// 	display: flex;
+// 	text-transform: lowercase
+// }
+
+// .my-plan-dishes-list_cardSubtitle__fMETF span:first-child:after {
+// 	content: "";
+// 	display: flex;
+// 	height: 12px;
+// 	width: 1px;
+// 	margin: 2px 8px;
+// 	background-color: #dfe3eb
+// }
+
+// .my-plan-dishes-list_checkIcon__rBgs_ {
+// 	color: #38c75c;
+// 	margin-right: -4px
+// }
+
+// .my-plan-tracked-workout-list_cardSubtitle__ZNF6C {
+// 	font-size: 14px;
+// 	line-height: 16px;
+// 	display: flex
+// }
+
+// .my-plan-tracked-workout-list_checkIcon__3KIQC {
+// 	color: #38c75c
+// }
+
+// .my-plan-tracked-workout-list_calories__8Iid6 {
+// 	text-transform: lowercase;
+// 	display: flex
+// }
+
+// .my-plan-tracked-workout-list_calories__8Iid6:before {
+// 	content: "";
+// 	display: flex;
+// 	height: 12px;
+// 	width: 1px;
+// 	margin: 2px 8px;
+// 	background-color: #ced4e0
+// }
+
+// .my-plan-tracked-workout-list_list__2fSGp {
+// 	max-height: 0;
+// 	overflow: hidden;
+// 	transition: max-height .25s linear
+// }
+
+// .my-plan-tracked-workout-list_list__2fSGp.my-plan-tracked-workout-list_expanded__1a1eX {
+// 	max-height: 999px
+// }
+
+// .my-plan-tracked-workout-list_listItem__hMRdj {
+// 	margin-bottom: 16px
+// }
+
+// .my-plan-tracked-workout-list_expandWorkoutsButtonWrapper__xmNEh {
+// 	display: flex;
+// 	align-items: center;
+// 	margin-top: 8px;
+// 	margin-bottom: 24px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.my-plan-tracked-workout-list_expandWorkoutsButtonWrapper__xmNEh {
+// 		justify-content: center
+// 	}
+// }
+
+// .my-plan-tracked-workout-list_upIcon__c3iCh {
+// 	transform: rotate(180deg)
+// }
+
+// .progress-bar_wrapper__D_Fvd {
+// 	width: 100%;
+// 	height: 4px;
+// 	border-radius: 2px;
+// 	background: #e6e9f0;
+// 	position: relative
+// }
+
+// .progress-bar_progressLine__W1H5B {
+// 	position: absolute;
+// 	left: 0;
+// 	height: 100%;
+// 	background: #e03f3f;
+// 	border-radius: 40px
+// }
+
+// .my-plan-upsell-list_cardWrapper__KRf19:not(:last-child) {
+// 	margin-bottom: 16px
+// }
+
+// .my-plan-upsell-list_sectionTitle__p9g4u {
+// 	font-weight: 600;
+// 	font-size: 14px;
+// 	line-height: 16px;
+// 	letter-spacing: .03em;
+// 	text-transform: uppercase;
+// 	padding: 24px 0 16px
+// }
+
+// .my-plan-upsell-list_progressBarWrapper___256W {
+// 	margin-top: 16px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.my-plan-upsell-list_progressBarWrapper___256W {
+// 		margin-top: 20px
+// 	}
+// }
+
+// .fasting-meal-plan_mealPlanWrapper__3F_q_ {
+// 	margin-bottom: 16px
+// }
+
+// .fasting-meal-plan_separatorWrapper__Z4CIm {
+// 	font-size: 14px;
+// 	display: flex;
+// 	align-items: center;
+// 	color: #6b7487;
+// 	line-height: 20px;
+// 	margin: 8px 0;
+// 	scroll-margin-top: 8px
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.fasting-meal-plan_separatorWrapper__Z4CIm {
+// 		margin: 16px 0
+// 	}
+// }
+
+// .fasting-meal-plan_separatorWrapper__Z4CIm:after {
+// 	content: "";
+// 	display: block;
+// 	flex: 1 1;
+// 	height: 1px;
+// 	width: 100%;
+// 	background-color: #edeff4;
+// 	margin-left: 16px
+// }
+
+// .fasting-meal-plan_dailyReadingWrapper__bDA0v,
+// .fasting-meal-plan_tipWrapper___xz2C {
+// 	margin-bottom: 16px
+// }
+
+// @media only screen and (max-width:767px) {
+// 	.fasting-meal-plan_tipBeforeSeparator__p_WBc {
+// 		margin-bottom: 0
+// 	}
+// }
+
+// .fasting-meal-plan_activityTipWrapper__4Ccf0,
+// .fasting-meal-plan_waterTipWrapper__cpAdL {
+// 	margin-top: 16px
+// }
+
+// .fasting-meal-plan_groupHeaderWrapper__KTJ_q {
+// 	padding-top: 16px;
+// 	padding-bottom: 16px;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.fasting-meal-plan_groupHeaderWrapper__KTJ_q {
+// 		padding-top: 8px
+// 	}
+// }
+
+// .fasting-meal-plan_groupTitle__YzfrP {
+// 	font-weight: 600;
+// 	font-size: 14px;
+// 	line-height: 16px;
+// 	text-transform: uppercase
+// }
+
+// .general-meal-plan_waterTipWrapper__jMdYV {
+// 	margin-bottom: 16px
+// }
+
+// .general-meal-plan_shoppingListTipWrapper__U0Axb {
+// 	margin-top: 16px
+// }
+
+// .general-meal-plan_activityTipWrapper__i7cEi {
+// 	margin-bottom: 16px
+// }
+
+// .meal-plan_section__ObILK {
+// 	visibility: hidden;
+// 	padding: 0 0 72px
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.meal-plan_section__ObILK {
+// 		padding-bottom: 80px
+// 	}
+// }
+
+// .meal-plan_section__ObILK.meal-plan_visible__lhFjq {
+// 	visibility: visible
+// }
+
+// .meal-plan_header__3D2i_ {
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: flex-start
+// }
+
+// .meal-plan_selectedDate__zpyjZ {
+// 	display: block;
+// 	margin-bottom: 16px;
+// 	color: #6b7487;
+// 	font-weight: 600;
+// 	font-size: 14px;
+// 	line-height: 16px;
+// 	text-transform: uppercase
+// }
+
+// .meal-plan_separatorMobile__nwl9X,
+// .meal-plan_separator__XKZvw {
+// 	margin-bottom: 24px;
+// 	border-top: 1px solid #edeff4;
+// 	border-bottom: 0
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan_separatorMobile__nwl9X {
+// 		display: none
+// 	}
+// }
+
+// .meal-plan_separator__XKZvw {
+// 	display: none
+// }
+
+// @media only screen and (min-width:768px) {
+// 	.meal-plan_separator__XKZvw {
+// 		display: block
+// 	}
+// }
+
+// .meal-plan_startButtonWrapper__ie49V {
+// 	display: flex;
+// 	position: fixed;
+// 	right: 0;
+// 	bottom: 56px;
+// 	justify-content: center;
+// 	transition: all .3s ease;
+// 	padding-bottom: 24px;
+// 	width: 100%
+// }
+
+// .meal-plan_startButtonWrapper__ie49V.meal-plan_hidden__eWCMy {
+// 	visibility: hidden;
+// 	opacity: 0
+// }
+
+// @media only screen and (min-width:1024px) {
+// 	.meal-plan_startButtonWrapper__ie49V {
+// 		bottom: 0;
+// 		width: calc(100% - 248px)
+// 	}
+// }
+
+// @media only screen and (min-width:1440px) {
+// 	.meal-plan_wrapper__fbJ4x {
+// 		display: flex
+// 	}
+// }
+
+// .meal-plan_wrapper__fbJ4x .meal-plan_section__ObILK {
+// 	flex: 1 1
+// }
+
+// .meal-plan_wrapper__fbJ4x .meal-plan_statisticWrapperDesktop__ItYLh {
+// 	display: none
+// }
+
+// @media only screen and (min-width:1440px) {
+// 	.meal-plan_wrapper__fbJ4x .meal-plan_statisticWrapperDesktop__ItYLh {
+// 		display: block
+// 	}
+// }
+
+// .meal-plan_wrapper__fbJ4x .meal-plan_statisticWrapperMobile__TQzfr {
+// 	margin-bottom: 16px
+// }
+
+// @media only screen and (min-width:1440px) {
+// 	.meal-plan_wrapper__fbJ4x .meal-plan_statisticWrapperMobile__TQzfr {
+// 		display: none
+// 	}
+// }
