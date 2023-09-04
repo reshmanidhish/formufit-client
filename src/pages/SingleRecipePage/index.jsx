@@ -9,6 +9,7 @@ import CommentForm from "pages/CreateCommentPage/Comments";
 
 function SingleRecipe() {
   const [recipe, setRecipe] = useState([]);
+  const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading]= useState(false);
   const {recipeId} = useParams();
 
@@ -16,7 +17,8 @@ function SingleRecipe() {
     formufitService
       .getRecipe(recipeId)
       .then((response) => {
-        setRecipe(response.data)
+        setRecipe(response.data.singleRecipe)
+        setComments(response.data.comments)
         setIsLoading(true);
       })
       .catch((error) => {
@@ -41,6 +43,7 @@ function SingleRecipe() {
         <p>{recipe.ingredients}</p>
         <p>{recipe.instructions}</p>
         <CommentForm recipeId={recipe._id}/>
+        
     </div>
    </Container>  
 </>

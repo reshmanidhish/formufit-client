@@ -11,6 +11,7 @@ import SingleRecipe from "pages/SingleRecipePage";
 import EditRecipePage from "pages/editRecipePage";
 import AllWorkoutPage from"./pages/AllWorkoutPage";
 import WorkoutVideoUploadPage from "./pages/WorkoutVideoUploadPage";
+import CommentForm from "pages/CreateCommentPage/Comments";
 
 const routes = [
   {
@@ -69,6 +70,13 @@ const routes = [
     name: "My Account 2",
     icon: "fas fa-user",
     component: <MyAccount />,
+    layout: "/main",
+    bodyTypeAvailable: true
+  },{
+    path: "/comment/create",
+    name: "Create comment",
+    icon: "fas fa-user",
+    component: <CommentForm />,
     layout: "/main",
     bodyTypeAvailable: true
   },
