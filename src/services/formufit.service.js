@@ -81,6 +81,13 @@ class FormuFitService {
   getWellness = async () => {
     return this.api.get(`/profile/wellness`);
   };
+  createComment = async (requestBody) => {
+    return this.api.post(`/comment/create`, requestBody );
+  };
+  getComments = async (recipeId) => {
+    return this.api.get(`/recipes/${recipeId}`);
+  };
+
 }
 
 const formuFitService = new FormuFitService();

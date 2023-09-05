@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import formufitService from "../../services/formufit.service";
 
 function CommentForm({ recipeId }) {
     const [comment, setComment] = useState("");
@@ -7,25 +8,40 @@ function CommentForm({ recipeId }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try{
-            const commentData = new FormData();
-            commentData.append("recipeId", recipeId);
-            commentData.append("comment", comment);
-            await axios.post("http://localhost:5005/comment/create", commentData)
-            setComment("");
-            fetchComments();
-        } catch (error) {
-            console.log("Error posting comment:", error);
-        }
-    };
+
+        //if (validateForm()) {
+            formufitService
+            .createComment({recipeId, comment })
+            .then((allComments) => {
+              setComment("")
+              setComments("")
+            })
+            .catch((error) => {
+              // If the server sends an error response (invalid token) ❌
+            });
+          //}
+
+    //     try{
+    //         const commentData = new FormData();
+    //         commentData.append("recipeId", recipeId);
+    //         commentData.append("comment", comment);
+    //         await axios.post("http://localhost:5005/comment/create", commentData)
+    //         setComment("");
+    //         fetchComments();
+    //     } catch (error) {
+    //         console.log("Error posting comment:", error);
+    //     }
+     };
 
     const fetchComments = async () => {
-        try {
-            const response = await axios.get(`http://localhost:5005/recipes/${recipeId}/comments`);
-            setComments(response.data);
-        } catch (error) {
-            console.log("error fetching comments", error);
-        }
+        formufitService
+        .getComments(recipeId)
+        .then((allComments) => {
+            setComments(allComments.data.comments)
+          })
+          .catch((error) => {
+            // If the server sends an error response (invalid token) ❌
+          });
     };
 
     useEffect(() => {
@@ -48,7 +64,7 @@ function CommentForm({ recipeId }) {
         </div>
         <div className="comment-list">
             <h3>Comments</h3>
-            {comments.map((comment)=> (
+            {comments?.map((comment)=> (
                 <div key={comment._id}>
                     <p>{comment.comment}</p>
                     <p>Posted by: {comment.user.username}</p>
