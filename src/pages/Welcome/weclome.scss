@@ -1,12 +1,12 @@
 .welcome-page {
-  background: black;
+  background: #1b110d !important;
   position: relative;
   width: 100vw; /* Take full viewport width */
   height: 100vh; /* Take full viewport height */
   overflow: hidden;
   .section-left {
     flex: 0 0 30%;
-    background: white;
+    background: #1b110d !important;
   }
   .section-right {
     flex: 1;

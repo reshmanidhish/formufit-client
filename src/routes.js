@@ -12,6 +12,7 @@ import EditRecipePage from "pages/editRecipePage";
 import AllWorkoutPage from"./pages/AllWorkoutPage";
 import WorkoutVideoUploadPage from "./pages/WorkoutVideoUploadPage";
 import CommentForm from "pages/CreateCommentPage/Comments";
+import Payment from "pages/Payment";
 
 const routes = [
   {
@@ -104,6 +105,15 @@ const routes = [
     layout: "/main",
     bodyTypeAvailable: true,
     hidden: true,
+    ut: 0
+  },
+  {
+    path: "/payment",
+    name: "Payment",
+    icon: "ni ni-single-02 text-yellow",
+    component: <Payment />,
+    layout: "/main",
+    bodyTypeAvailable: true,
     ut: 0
   },
   // {

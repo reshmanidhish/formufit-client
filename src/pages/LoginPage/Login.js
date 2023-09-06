@@ -15,15 +15,12 @@ import {
   Alert,
 } from "reactstrap";
 
-
-import { useState, useContext } from "react";
+import { GoogleLogin } from 'react-google-login';
+import { useState, useContext, useEffect } from "react";
 // import axios from "axios";
 import authService from "../../services/auth.service";
 import { AuthContext } from "../../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
-
-
-// const API_URL = "http://localhost:5005";
 
 
 function Login(props) {
@@ -33,10 +30,30 @@ function Login(props) {
   const { storeToken, authenticateUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
-
+  // const history = useHistory();
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
+  let params = new URLSearchParams(window.location.hash);
+  let token = params.get('id_token');
 
+  useEffect(() => {
+    if(token) {
+      // storeToken(token)
+      // authenticateUser()
+    }
+  }, [token])
+
+
+  const onLoginSuccess = (response) => {
+    const { tokenId } = response; // You can also get user information from the response.
+    // Send the tokenId to your server for verification.
+    // Redirect to another route after successful login.
+    // history.push('/dashboard');
+  };
+
+  const onLoginFailure = (error) => {
+    console.error('Login failed:', error);
+  };
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
@@ -81,7 +98,7 @@ function Login(props) {
                 </span>
                 <span className="btn-inner--text">Github</span>
               </Button>
-              <Button
+              {/* <Button
                 className="btn-neutral btn-icon"
                 color="default"
                 href="#pablo"
@@ -97,7 +114,16 @@ function Login(props) {
                   />
                 </span>
                 <span className="btn-inner--text">Google</span>
-              </Button>
+              </Button> */}
+              <GoogleLogin 
+                clientId="76749120259-gndi3iit0n8fsm9qfoelk2bl3du0a8jo.apps.googleusercontent.com"
+                buttonText="Google"
+                onSuccess={onLoginSuccess}
+                onFailure={onLoginFailure}
+                cookiePolicy={'single_host_origin'}
+                uxMode="redirect" // Set the ux_mode to 'redirect'
+                redirectUri="http://localhost:3000/auth/login" // Replace with your redirect URI
+              />
             </div>
           </CardHeader>
           <CardBody className="px-lg-5 py-lg-5">

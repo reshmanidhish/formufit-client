@@ -88,6 +88,15 @@ class FormuFitService {
     return this.api.get(`/recipes/${recipeId}`);
   };
 
+
+  getPaymentConfig = async () => {
+    return this.api.get(`/payment/config`);
+  };
+
+  paymentIntent = async () => {
+    return this.api.post(`/payment/create-payment-intent`);
+  };
+ 
 }
 
 const formuFitService = new FormuFitService();

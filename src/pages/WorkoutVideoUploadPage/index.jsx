@@ -90,7 +90,7 @@ function WorkoutVideoUploadPage() {
 
 
             <FormGroup>
-              <Label for="videoUrl">YouTube Video URL</Label>
+              <Label for="videoUrl">Video URL</Label>
               <Input
                 type="text"
                 id="videoUrl"
