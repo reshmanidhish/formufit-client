@@ -88,6 +88,10 @@ class FormuFitService {
     return this.api.get(`/recipes/${recipeId}`);
   };
 
+  createRating = async (requestBody) => {
+    return this.api.post(`/rating`, requestBody );
+  };
+
 
   getPaymentConfig = async () => {
     return this.api.get(`/payment/config`);
