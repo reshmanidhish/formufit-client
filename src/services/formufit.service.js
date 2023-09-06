@@ -81,6 +81,15 @@ class FormuFitService {
   getWellness = async () => {
     return this.api.get(`/profile/wellness`);
   };
+
+  getPaymentConfig = async () => {
+    return this.api.get(`/payment/config`);
+  };
+
+  paymentIntent = async () => {
+    return this.api.post(`/payment/create-payment-intent`);
+  };
+ 
 }
 
 const formuFitService = new FormuFitService();
