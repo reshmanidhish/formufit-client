@@ -359,7 +359,7 @@ const Profile = () => {
 
                       <div
                         className="general-workout-card_mainWrapper"
-                        onClick={() => navigate("/payment")}
+                        onClick={() => navigate("/pricingplan")}
                       >
                         <div
                           role="button"
@@ -438,7 +438,7 @@ const Profile = () => {
                                   </svg>
                                 </span>
                                 <span className="button_children">
-                                  Click to pay
+                                  Subscription Plans
                                 </span>
                               </button>
                             </div>

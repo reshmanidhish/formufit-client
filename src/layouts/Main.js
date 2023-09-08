@@ -19,8 +19,8 @@ const Main = (props) => {
     }, [location]);
 
     const getFilteredRoutes = (routes) => {
-        return routes
-         .filter(route => user?.bodyType!=="" ? route.bodyTypeAvailable===true : route.bodyTypeAvailable===false)
+        const allRoutes = routes.filter(route => user?.bodyType!=="" ? route.bodyTypeAvailable===true : route.bodyTypeAvailable===false)
+        return allRoutes.filter(route => user.pu >= route.pu )
     }
 
     const getRoutes = (routes) => {
