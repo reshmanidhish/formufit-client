@@ -11,7 +11,11 @@ import SingleRecipe from "pages/SingleRecipePage";
 import EditRecipePage from "pages/editRecipePage";
 import AllWorkoutPage from"./pages/AllWorkoutPage";
 import WorkoutVideoUploadPage from "./pages/WorkoutVideoUploadPage";
-
+import CheckoutForm from "./pages/Payment/CheckoutForm";
+import Trainer from "./pages/Trainer"
+import PricingPlan from "./pages/Payment/PricingPlan"
+import Payment from "pages/Payment/index1";
+import SuccessMessage from "pages/Payment/SuccessMessage";
 const routes = [
   {
     path: "/dashboard",
@@ -21,7 +25,8 @@ const routes = [
     component: <Profile/>,
     layout: "/main",
     bodyTypeAvailable: true,
-    ut: 0
+    ut: 0,
+    pu: 0
   }, {
     path: "/workouts",
     name: "Workouts",
@@ -29,7 +34,8 @@ const routes = [
     component: <AllWorkoutPage />,
     layout: "/main",
     bodyTypeAvailable: true,
-    ut: 0
+    ut: 0,
+    pu: 0
   },{
     path: "/recipe/create",
     name: "Create recipes",
@@ -37,7 +43,8 @@ const routes = [
     component: <CreateRecipes/>,
     layout: "/main",
     bodyTypeAvailable: true,
-    ut: 1
+    ut: 1,
+    pu: 0
   },{
     path: "/recipes",
     name: "Diet recipes",
@@ -45,7 +52,8 @@ const routes = [
     component: <Recipes/>,
     layout: "/main",
     bodyTypeAvailable: true,
-     ut:0
+     ut:0,
+     pu: 0
   },{
     path: "/recipes/:recipeId",
     name: "Single recipe",
@@ -54,6 +62,7 @@ const routes = [
     layout: "/main",
     bodyTypeAvailable: true,
      ut:0,
+     pu: 0,
      hidden: true,
   },{
     path: "/recipes/edit/:recipeId",
@@ -63,6 +72,7 @@ const routes = [
     layout: "/main",
     bodyTypeAvailable: true,
      ut:1,
+     pu: 0,
      hidden: true,
   },{
     path: "/account",
@@ -70,7 +80,8 @@ const routes = [
     icon: "fas fa-user",
     component: <MyAccount />,
     layout: "/main",
-    bodyTypeAvailable: true
+    bodyTypeAvailable: true,
+    pu: 0
   },
   // {
   //   path: "/account",
@@ -96,7 +107,51 @@ const routes = [
     layout: "/main",
     bodyTypeAvailable: true,
     hidden: true,
-    ut: 0
+    ut: 0,
+    pu: 0
+  },
+  {
+    path: "/checkout/:id",
+    name: "Payment",
+    icon: "ni ni-single-02 text-yellow",
+    component: <Payment/>,
+    layout: "/main",
+    bodyTypeAvailable: true,
+    hidden: true,
+    ut: 0,
+    pu: 0
+  },
+  {
+    path: "/success",
+    name: "Success",
+    icon: "ni ni-single-02 text-yellow",
+    component: <SuccessMessage/>,
+    layout: "/main",
+    bodyTypeAvailable: true,
+    hidden: true,
+    ut: 0,
+    pu: 0
+  },
+
+  {
+    path: "/pricingplan",
+    name: "Subscription Plans",
+    icon: "ni ni-single-02 text-yellow",
+    component: <PricingPlan/>,
+    layout: "/main",
+    bodyTypeAvailable: true,
+    ut: 0,
+    pu: 0
+  },
+  {
+    path: "/trainer",
+    name: "Trainer",
+    icon: "ni ni-single-02 text-yellow",
+    component: <Trainer/>,
+    layout: "/main",
+    bodyTypeAvailable: true,
+    ut: 0,
+    pu: 1
   },
   // {
   //   path: "/questionare",
@@ -122,7 +177,8 @@ const routes = [
     component: <WorkoutVideoUploadPage/>,
     layout: "/main",
     bodyTypeAvailable: true,
-    ut: 1
+    ut: 1,
+    pu: 0
   }
 ];
 export default routes;

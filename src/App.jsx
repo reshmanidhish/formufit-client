@@ -6,7 +6,6 @@ import IsAnon from "./components/IsAnon/IsAnon";
 import MainLayout from "./layouts/Main";
 import AuthLayout from "./layouts/Auth";
 import Welcome from "./pages/Welcome";
-import SingleRecipe from "pages/SingleRecipePage";
 import Questionare from "pages/QuestionarePage";
 
 function App() {
@@ -52,16 +51,6 @@ function App() {
         />
 
         <Route path="*" element={<Navigate to="/" replace />} />
-
-        {/*The below code is from IronLauncher which we will be using it later for Auth Guard (page protection)*/}
-        {/* <Route
-                    path="/profile"
-                    element={
-                        <IsPrivate>
-                             <Profile />
-                        </IsPrivate>
-                    }
-                /> */}
       </Routes>
     </div>
   );

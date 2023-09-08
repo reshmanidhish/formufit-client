@@ -1,0 +1,38 @@
+.checkout-page {
+    .payment-total {
+        font-family: 'FormuFit-Semibold';
+        font-size: 18px;
+    }
+    
+    #payment-form {
+        #submit {
+            color: #000;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            height: 45px;
+            border-radius: 5.5px;
+            transition: all 0.4s;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+            background-color: #10bb87;
+            color: #fff;
+            margin-top: 10px;
+        }
+    
+        #payment-message {
+            color: #df1c41;
+        }
+    }
+    .card {
+        .card-header {
+            font-family: 'FormuFit-Medium';
+            font-weight: bold;
+         
+        }
+    }
+}
