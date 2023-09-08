@@ -8,6 +8,17 @@ function AuthProviderWrapper(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
 
+  const [subscription, setSubscription] = useState({
+    monthly: {
+      id: "ebd1d",
+      amount: 1999
+    },
+    yearly: {
+      id: "89bbf",
+      amount: 22999
+    }
+  });
+
   const storeToken = (token) => {
     localStorage.setItem("authToken", token);
   };
@@ -75,6 +86,7 @@ function AuthProviderWrapper(props) {
         isLoggedIn,
         isLoading,
         user,
+        subscription,
         storeToken,
         authenticateUser,
         logOutUser,
