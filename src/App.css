@@ -4,7 +4,7 @@
     border-color: #f5c2c7;
 }
 .bg-darkbrown {
-    background-color: #1b110d !important
+    background-color: #000000 !important
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -99,5 +99,9 @@ button {
 }
 
 .nav-link.active .fas:hover {
+    color: black !important;
+}
+
+.text-black {
     color: black !important;
 }

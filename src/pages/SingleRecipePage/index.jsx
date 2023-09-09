@@ -49,9 +49,8 @@ function SingleRecipe() {
       });
   }, [recipeId]);
 
-
-  if(!isLoading) {
-    return <p>Loading...</p>;
+  if (!isLoading) {
+    return <p></p>;
   }
   if (!recipe) {
     return <p>Recipe not found</p>;
@@ -60,7 +59,7 @@ function SingleRecipe() {
     <Container className="challenges_section">
       <div className="page-title-header_wrapper page-title-header_hasProfileLink">
         <div className="page-title-header_titleWrapper">
-            <h1 className="page-title-header_title">{recipe.title}</h1>
+            <h1 className="page-title-header_title">{recipe.title} ({recipe.mealType})</h1>
         </div>
       </div>
       <Card className="card_container ">
@@ -82,8 +81,14 @@ function SingleRecipe() {
           </Row>
         </CardHeader>
         <CardBody className="card_content">
+        <div className="how-to-make-title-cookingtime">Cooking Time: {recipe.cookingTime} min</div>
+          
           <div className="how-to-make-title">Ingredients:</div>
-          <p>{recipe.ingredients}</p>
+          <ul>
+            {recipe.ingredients.map((ingredient, index) => (
+            <li key = {index}>{ingredient}</li> 
+          ))}  
+          </ul>
           <div className="how-to-make-title">Instructions:</div>
           <p>{recipe.instructions}</p>
           <StarRating
@@ -98,8 +103,7 @@ function SingleRecipe() {
     </Container>
   );
 }
-  
-  
+
 export default SingleRecipe;
 
 
