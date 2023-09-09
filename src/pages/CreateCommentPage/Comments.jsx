@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import formufitService from "../../services/formufit.service";
+import "../CreateCommentPage/comment.css";
 
 function CommentForm({ recipeId }) {
     const [comment, setComment] = useState("");
@@ -66,9 +66,10 @@ function CommentForm({ recipeId }) {
             <h3>Comments</h3>
             {comments?.map((comment)=> (
                 <div key={comment._id}>
-                    <p>{comment.comment}</p>
-                    <p>Posted by: {comment.user.username}</p>
-                    <p>Date: {new Date(comment.createdAt).toLocaleDateString()}</p>
+                    <p className="Post"> {comment.user.username}</p>
+                    <p className="date"> {new Date(comment.createdAt).toLocaleDateString()}</p>
+                    <p className="comment-box">{comment.comment}</p>
+                    
                 </div>
             ))}
         </div>

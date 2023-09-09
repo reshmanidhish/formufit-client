@@ -8,6 +8,7 @@ import formufitService from "../../services/formufit.service";
 import CommentForm from "pages/CreateCommentPage/Comments";
 import StarRating from "components/Rating/StarRating";
 
+
 function SingleRecipe() {
   const [recipe, setRecipe] = useState([]);
   const [comments, setComments] = useState([]);
