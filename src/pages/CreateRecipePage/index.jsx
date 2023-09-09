@@ -16,8 +16,6 @@ import {
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
-import formufitService from "../../services/formufit.service";
 import Loading from "components/Loading/Loading";
 import "./styles.scss";
 
