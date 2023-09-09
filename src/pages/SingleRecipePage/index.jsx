@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
-import { Container } from "reactstrap";
+import { Card, CardBody, CardHeader, Col, Container, Row } from "reactstrap";
 import Header from "components/Headers/Header";
 import "./singleRecipe.css";
 import formufitService from "../../services/formufit.service";
 import CommentForm from "pages/CreateCommentPage/Comments";
-import StarRating from "components/Rating/StarRating";
+import StarRating from "pages/RatingPage/createRating";
 
 
 function SingleRecipe() {
@@ -14,6 +13,27 @@ function SingleRecipe() {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading]= useState(false);
   const {recipeId} = useParams();
+  const [averageRating, setAverageRating] = useState (0);
+
+  const onUpdateRating = async (newRating) => {
+    console.log("New rating:", newRating);
+    try {
+      const response = await formufitService.createRating({
+        recipeId,
+        rating: newRating,
+      })
+
+      const updatedResponse = await formufitService.getRecipe(recipeId);
+      const updatedAverageRating = updatedResponse.data.averageRating;
+
+      setAverageRating(updatedAverageRating);
+
+      console.log("New rating:", newRating);
+      console.log("Updated average rating:", updatedAverageRating);
+    } catch (error) {
+      console.log("error submitting rating:", error);
+    }
+  };
 
   useEffect(() => {
     formufitService
@@ -21,6 +41,7 @@ function SingleRecipe() {
       .then((response) => {
         setRecipe(response.data.singleRecipe)
         setComments(response.data.comments)
+        setAverageRating(response.data.averageRating);
         setIsLoading(true);
       })
       .catch((error) => {
@@ -36,22 +57,49 @@ function SingleRecipe() {
     return <p>Recipe not found</p>;
   }
   return (
-    <> 
-    <Header breadcrumbName="Icon" breadcrumbIcon="fas fa-user" />
-    <Container fluid className="container-body">
-    <div className="single_recipe">
-        <h2>{recipe.title}</h2>
-        <img src={recipe.recipeImage} alt="recipe_image" className="img-thumbnail" style={{ width: "200px", height: "150px" }}/>
-        <p>{recipe.ingredients}</p>
-        <p>{recipe.instructions}</p>
-        <StarRating/>
+    <Container className="challenges_section">
+      <div className="page-title-header_wrapper page-title-header_hasProfileLink">
+        <div className="page-title-header_titleWrapper">
+            <h1 className="page-title-header_title">{recipe.title}</h1>
+        </div>
+      </div>
+      <Card className="card_container ">
+        <CardHeader className="br-16">
+          <Row>
+            <Col md="6">
+              <div className="card_imageContainerOuter">
+                <div className="card_imageContainer__kgi1d">
+                  <img
+                    width={450}
+                    height={350}
+                    src={recipe.recipeImage}
+                    className="br-16"
+                  />
+                </div>
+              </div>
+            </Col>
+            <Col md="6"></Col>
+          </Row>
+        </CardHeader>
+        <CardBody className="card_content">
+          <div className="how-to-make-title">Ingredients:</div>
+          <p>{recipe.ingredients}</p>
+          <div className="how-to-make-title">Instructions:</div>
+          <p>{recipe.instructions}</p>
+          <StarRating
+          recipeId={recipe._id}
+          currentRating={averageRating}
+          onUpdateRating={onUpdateRating}
+          />
+          
         <CommentForm recipeId={recipe._id}/>
-        
-    </div>
-   </Container>  
-</>
+        </CardBody>
+      </Card>
+    </Container>
   );
 }
   
   
 export default SingleRecipe;
+
+

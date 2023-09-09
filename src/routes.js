@@ -16,6 +16,7 @@ import Trainer from "./pages/Trainer"
 import PricingPlan from "./pages/Payment/PricingPlan"
 import Payment from "pages/Payment/index1";
 import SuccessMessage from "pages/Payment/SuccessMessage";
+import CommentForm from "pages/CreateCommentPage/Comments";
 const routes = [
   {
     path: "/dashboard",
@@ -87,7 +88,9 @@ const routes = [
     icon: "fas fa-user",
     component: <CommentForm />,
     layout: "/main",
-    bodyTypeAvailable: true
+    bodyTypeAvailable: true,
+    ut: 0,
+    pu: 0
   },
   // {
   //   path: "/account",

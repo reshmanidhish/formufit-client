@@ -14,7 +14,7 @@ function CommentForm({ recipeId }) {
             .createComment({recipeId, comment })
             .then((allComments) => {
               setComment("")
-              setComments("")
+              setComments([...comments, allComments.data]);
             })
             .catch((error) => {
               // If the server sends an error response (invalid token) ❌
@@ -66,9 +66,15 @@ function CommentForm({ recipeId }) {
             <h3>Comments</h3>
             {comments?.map((comment)=> (
                 <div key={comment._id}>
-                    <p className="Post"> {comment.user.username}</p>
-                    <p className="date"> {new Date(comment.createdAt).toLocaleDateString()}</p>
-                    <p className="comment-box">{comment.comment}</p>
+                    <p className="Post"> 
+                    {comment.user.username}
+                    </p>
+                    <p className="date"> 
+                    {new Date(comment.createdAt).toLocaleDateString()}
+                    </p>
+                    <p className="comment-box">
+                        {comment.comment}
+                        </p>
                     
                 </div>
             ))}
