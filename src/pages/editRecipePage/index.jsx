@@ -10,7 +10,6 @@ import {
 } from "reactstrap";
 import "./editRecipe.css";
 import { useState } from 'react';
-import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from "components/Headers/Header";
 import formuFitService from "services/formufit.service";
