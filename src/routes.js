@@ -30,15 +30,16 @@ const routes = [
     ut: 0,
     pu: 0
   }, {
-    path: "/edit-profile",
-    name: "Dashboard",
+    path: "/profile/edit/:id",
+    name: "EditProfile",
     icon: "fas fa-home",
     // component: <Index />,
     component: <EditProfile/>,
     layout: "/main",
     bodyTypeAvailable: true,
     ut: 0,
-    pu: 0
+    pu: 0,
+    hidden: true
   },{
     path: "/workouts",
     name: "Workouts",

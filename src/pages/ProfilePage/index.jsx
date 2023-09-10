@@ -49,7 +49,7 @@ const Profile = () => {
               <Row className="justify-content-center">
                 <Col className="order-lg-2" lg="3">
                   <div className="card-profile-image">
-                      <Link to = {`/edit-profile/${user.id}`}> {EditProfile}
+                      <Link to = {`/profile/edit/${user.id}`}> {EditProfile}
                       <img
                         alt="..."
                         className="rounded-circle"
