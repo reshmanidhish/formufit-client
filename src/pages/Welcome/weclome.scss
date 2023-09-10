@@ -18,4 +18,25 @@
     height: 100%;
     object-fit: cover;
   }
+  .title-content-wrapper{
+  color:aliceblue;
+  size:0dvb
+  }
+
+  .login {
+    border: 2px solid rgb(255 255 255 / 72%);
+    background: none;
+    border-radius: 32px !important;
+    padding: 13px 70px !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    text-decoration: none;
+    background: none;
+  }
+  .navbar-welcome-top {
+    background-color: #ffffff00;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+  }
 }
