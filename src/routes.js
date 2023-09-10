@@ -89,8 +89,9 @@ const routes = [
     component: <CommentForm />,
     layout: "/main",
     bodyTypeAvailable: true,
-    ut: 0,
-    pu: 0
+    ut: 1,
+    pu: 0,
+    hidden: true
   },
   // {
   //   path: "/account",

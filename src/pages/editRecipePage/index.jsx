@@ -29,6 +29,7 @@ function EditRecipePage () {
     useEffect (() => {
       formuFitService.getRecipe(recipeId)
       .then(({data}) => {
+        console.log ("fetched data:", data);
         setTitle(data.title);
         setIngredients(data.ingredients || []);
         setInstructions(data.instructions);
