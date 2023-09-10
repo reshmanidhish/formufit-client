@@ -17,6 +17,7 @@ import PricingPlan from "./pages/Payment/PricingPlan"
 import Payment from "pages/Payment/index1";
 import SuccessMessage from "pages/Payment/SuccessMessage";
 import CommentForm from "pages/CreateCommentPage/Comments";
+import EditProfile from "pages/EditProfilePage";
 const routes = [
   {
     path: "/dashboard",
@@ -29,6 +30,16 @@ const routes = [
     ut: 0,
     pu: 0
   }, {
+    path: "/edit-profile",
+    name: "Dashboard",
+    icon: "fas fa-home",
+    // component: <Index />,
+    component: <EditProfile/>,
+    layout: "/main",
+    bodyTypeAvailable: true,
+    ut: 0,
+    pu: 0
+  },{
     path: "/workouts",
     name: "Workouts",
     icon: "fas fa-dumbbell text-red",

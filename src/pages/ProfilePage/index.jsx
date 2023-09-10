@@ -10,7 +10,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
-
+import { Link } from "react-router-dom";
 import UserHeader from "components/Headers/UserHeader.js";
 import { AuthContext } from "../../context/auth.context";
 import { useContext, useEffect, useState } from "react";
@@ -19,6 +19,7 @@ import "./styles.scss";
 import formufitService from "../../services/formufit.service";
 import { useNavigate } from "react-router-dom";
 import dietician from "../../assets/img/dietician.jpg"
+import EditProfile from "pages/EditProfilePage";
 const Profile = () => {
   const [wellness, setWellness] = useState([]);
   const [loader, setLoader] = useState(true);
@@ -48,13 +49,14 @@ const Profile = () => {
               <Row className="justify-content-center">
                 <Col className="order-lg-2" lg="3">
                   <div className="card-profile-image">
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <Link to = {`/edit-profile/${user.id}`}> {EditProfile}
                       <img
                         alt="..."
                         className="rounded-circle"
                         src={require("../../assets/img/theme/team-4-800x800.jpg")}
                       />
-                    </a>
+                      </Link>
+                    
                   </div>
                 </Col>
               </Row>
