@@ -39,8 +39,6 @@ function SingleRecipe() {
             {recipe.title} ({recipe.mealType})
           </h1>
         </div>
-        
-         {/* <div class="course-stats_courseStats__ynW6t"><span>9 lessons</span><span class="course-stats_separator__aSPod">|</span><span>1h 15m</span></div> */}
         <Rating
                 className="mb-3"
                 initialRating={averageRating}
