@@ -3,16 +3,16 @@ import { useParams } from "react-router-dom";
 import { Card, CardBody, CardHeader, Col, Container, Row } from "reactstrap";
 import "./styles.css";
 import formufitService from "../../services/formufit.service";
-import CommentForm from "pages/CreateCommentPage/Comments";
 import Rating from "react-rating";
 import emptyStar from "../../assets/img/star-empty.png";
 import filledStar from "../../assets/img/star-full.png";
+import CommentRatingForm from "pages/CommentRatingFormPage/CommentRatingForm";
 
 function SingleRecipe() {
-  const [recipe, setRecipe] = useState([]);
+  const [recipe, setRecipe] = useState({});
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { recipeId } = useParams();
+  const {recipeId} = useParams(); // get the path param recipeId
   const [averageRating, setAverageRating] = useState(0);
   const [isUserRatedAndCommented, setIsUserRatedAndCommented] = useState(false);
 
@@ -85,7 +85,7 @@ function SingleRecipe() {
           </div>
           <div className="how-to-make-title">Instructions:</div>
           <p className="text-justify">{recipe.instructions}</p>
-          <CommentForm showRatingCommentForm={!isUserRatedAndCommented} allComments={comments} recipeId={recipe._id} />
+          <CommentRatingForm showRatingCommentForm={!isUserRatedAndCommented} allComments={comments} recipeId={recipe._id} />
         </CardBody>
       </Card>
     </Container>

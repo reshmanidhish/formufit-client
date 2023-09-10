@@ -78,27 +78,29 @@ class FormuFitService {
   deleteRecipe = async (recipeId) => {
     return this.api.delete(`/recipes/delete/${recipeId}`);
   };
+
   getWellness = async () => {
     return this.api.get(`/profile/wellness`);
   };
   createCommentAndRating = async (requestBody) => {
-    return this.api.post(`/comment-rating`, requestBody );
+    return this.api.post(`/comment-rating`, requestBody);
   };
   getComments = async (recipeId) => {
     return this.api.get(`/recipes/${recipeId}`);
   };
 
   createRating = async (requestBody) => {
-    return this.api.post(`/rating`, requestBody );
+    return this.api.post(`/rating`, requestBody);
   };
-
 
   getPaymentConfig = async () => {
     return this.api.get(`/payment/config`);
   };
 
   paymentIntent = async (subscriptionId) => {
-    return this.api.post(`/payment/create-payment-intent?subscriptionId=${subscriptionId}`);
+    return this.api.post(
+      `/payment/create-payment-intent?subscriptionId=${subscriptionId}`
+    );
   };
 
   subscribeUser = async () => {
