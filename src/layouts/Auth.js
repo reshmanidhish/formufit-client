@@ -25,12 +25,12 @@ const Auth = (props) => {
 
   return (
     <>
-      <div className="main-cosntent" ref={mainContent}>
+      <div className="main-cosntent auth-background" ref={mainContent}>
         <AuthNavbar />
-        <div className="header bg-gradient-info py-3 py-lg-7">
-        </div>
-        <Container className="mt--8 pb-5">
-          <Row className="justify-content-center">
+        {/* <div className="header bg-gradient-info py-3 py-lg-7">
+        </div> */}
+        <Container className="py-6">
+          <Row className=" d-flex justify-content-center align-items-center  row">
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
@@ -39,7 +39,7 @@ const Auth = (props) => {
           </Row>
         </Container>
       </div>
-      <AuthFooter />
+      {/* <AuthFooter /> */}
     </>
   );
 };

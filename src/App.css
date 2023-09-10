@@ -1,107 +1,192 @@
 .alert-danger {
-    color: #842029;
-    background-color: #f8d7da;
-    border-color: #f5c2c7;
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
 }
 .bg-darkbrown {
-    background-color: #000000 !important
+  background-color: #000000 !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: rgb(255 255 255);
+  color: rgb(255 255 255);
 }
 
 @font-face {
-    font-family: 'FormuFit-Bold';
-    src: url('./assets/fonts/gilroy-bold.woff2') format('woff2');
-    /* You can also specify other font formats here */
-  }
-  @font-face {
-    font-family: 'FormuFit-Medium';
-    src: url('./assets/fonts/gilroy-medium.woff2') format('woff2');
-    /* You can also specify other font formats here */
-  }
-  @font-face {
-    font-family: 'FormuFit-Regular';
-    src: url('./assets/fonts/gilroy-regular.woff2') format('woff2');
-    /* You can also specify other font formats here */
-  }
-  @font-face {
-    font-family: 'FormuFit-Semibold';
-    src: url('./assets/fonts/gilroy-semibold.woff2') format('woff2');
-    /* You can also specify other font formats here */
-  }
+  font-family: "FormuFit-Bold";
+  src: url("./assets/fonts/gilroy-bold.woff2") format("woff2");
+  /* You can also specify other font formats here */
+}
+@font-face {
+  font-family: "FormuFit-Medium";
+  src: url("./assets/fonts/gilroy-medium.woff2") format("woff2");
+  /* You can also specify other font formats here */
+}
+@font-face {
+  font-family: "FormuFit-Regular";
+  src: url("./assets/fonts/gilroy-regular.woff2") format("woff2");
+  /* You can also specify other font formats here */
+}
+@font-face {
+  font-family: "FormuFit-Semibold";
+  src: url("./assets/fonts/gilroy-semibold.woff2") format("woff2");
+  /* You can also specify other font formats here */
+}
 
-  body {
-    font-family: 'FormuFit-Regular', sans-serif;
-  }
-
+body {
+  font-family: "FormuFit-Regular", sans-serif;
+}
 
 .formufit-button.button_accent {
-    box-shadow: 0 4px 20px rgba(224,63,63,.3);
-    background-color: #e03f3f;
-    color: #fff;
+  box-shadow: 0 4px 20px rgba(224, 63, 63, 0.3);
+  background-color: #e03f3f;
+  color: #fff;
 }
 .formufit-button.button_sm {
-    padding-right: 16px;
-    padding-left: 16px;
-    font-size: 14px;
-    line-height: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .formufit-button {
-    display: inline-flex;
-    position: relative;
-    justify-content: center;
-    transition: .4s;
-    cursor: pointer;
-    border-radius: 24px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    font-weight: 600;
-    letter-spacing: .02em;
-    text-transform: uppercase;
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+  transition: 0.4s;
+  cursor: pointer;
+  border-radius: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 button {
-    border: none;
-    background-color: transparent;
+  border: none;
+  background-color: transparent;
 }
 
 .button_leftIcon {
-    margin-right: 8px;
+  margin-right: 8px;
 }
-.button_leftIcon, .button_rightIcon {
-    display: flex;
-    align-self: center;
+.button_leftIcon,
+.button_rightIcon {
+  display: flex;
+  align-self: center;
 }
 
 .button_children {
-    display: inline-flex;
+  display: inline-flex;
 }
-
 
 .workouts_subtitle {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 32px;
-    margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 24px;
 }
-
 
 .nav-link:hover {
-    color: white !important;
-    background-color: rgba(255, 255, 255, 0.274) !important 
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.274) !important;
 }
 .nav-link.active:hover {
-    color: black !important;
-    background-color: white !important;
-    
+  color: black !important;
+  background-color: white !important;
 }
 
 .nav-link.active .fas:hover {
-    color: black !important;
+  color: black !important;
 }
 
 .text-black {
-    color: black !important;
+  color: black !important;
+}
+
+
+.navbar-welcome-top {
+  background-color: #ffffff00;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+
+  .menu_toggle span {
+    display: block;
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #f7f7f7;
+    margin-top: 1px;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 101;
+    visibility: hidden;
+    opacity: 0;
+    padding-bottom: 100px;
+  }
+  .menu.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  .menu_content {
+    width: 100%;
+    height: 100%;
+  }
+  .menu_content ul li:not(:last-child) {
+    margin-bottom: 3px;
+  }
+  .menu_content ul li {
+    display: block;
+  }
+  .menu_content ul li a {
+    display: block;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+    letter-spacing: 0.075em;
+  }
+  .menu_content ul:hover li a {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .menu_content ul li a:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+  .menu_phone {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 40px;
+    height: 43px;
+    padding-left: 23px;
+    padding-right: 20px;
+    border-radius: 22px;
+    border: solid 1px #ff9711;
+    box-shadow: 0 0 1px 0 #ff9711 inset, 0 0 1px 0 #ff9711;
+  }
+  .menu_phone i {
+    font-size: 18px;
+    color: #ff9711;
+    margin-right: 12px;
+  }
+}
+
+
+.header-auth {
+  position: relative !important;
 }
