@@ -144,7 +144,7 @@ const Welcome = () => {
                   <div className="home_content text-center">
                     <div className="home_title">Get fit with us</div>
                     <div className="home_subtitle">
-                      Pilates, Yoga, Fitness, Spinning & many more
+                      DietPlan, workouts & many more
                     </div>
                     <div className="button home_button ml-auto mr-auto">
                       <a href="/auth/login">Join Now</a>
@@ -174,7 +174,7 @@ const Welcome = () => {
                   </div>
                   <div className="box">
                     <div className="box_icon d-flex flex-column align-items-center justify-content-center">
-                      <img src={icon2Img} alt="" />
+                    <img src={icon1Img} alt="" />
                     </div>
                     <div className="box_title">Personalised Trainer</div>
                     <div className="box_text">
@@ -213,12 +213,10 @@ const Welcome = () => {
                     </div>
                   </div>
                   <div className="text_highlight">
-                    Etiam commodo justo nec aliquam feugiat. Donec a leo eget
-                    eget augue porttitor sollicitudin augue porttitor
-                    sollicitudin.
+                  FormuFit revolutionizes fitness and nutrition by analyzing your unique body type and lifestyle to provide customized diet recipes and workout plans. Our platform offers a subscription-based service with the added benefit of personalized trainer assistance, ensuring you achieve your health goals efficiently and effectively. Start your journey to a healthier you with FormuFit today!
                   </div>
                   <div className="about_text">
-                    <p>
+                    {/* <p>
                       Morbi sed varius risus, vitae molestie lectus. Donec id
                       hendrerit velit, eu fringilla neque. Etiam id finibus
                       sapien. Donec sollicitudin luctus ex non pharetra. Aenean
@@ -228,7 +226,7 @@ const Welcome = () => {
                       nulla urna, lacinia ut tempor facilisis, congue dignissim
                       tellus. Phasellus sit amet justo ullamcorper, elementum
                       ipsum nec.
-                    </p>
+                    </p> */}
                   </div>
                   <div className="button about_button">
                     <a href="/auth/login">Join Now</a>
@@ -279,11 +277,7 @@ const Welcome = () => {
                     <div className="test_title">client</div>
                     <div className="test_text">
                       <p>
-                        Etiam nec odio vestibulum est mattis effic iturut magna.
-                        Pellentesque sit amet tellus blandit. Etiam nec odio
-                        vestibulum est mattis effic iturut magna. Pellentesque
-                        sit am et tellus blandit. Etiam nec odio vestibul. Etiam
-                        nec odio vestibulum est mat tis effic iturut magna.
+                      "I've tried numerous fitness and diet apps, but FormuFit is truly a game-changer! It's incredible how the app tailors everything to my body type and lifestyle. The diet recipes are delicious, and the workouts are challenging yet manageable. The personalized trainer's guidance keeps me motivated and accountable. Worth every penny!"
                       </p>
                     </div>
                     <div className="rating rating_4 test_rating">
@@ -310,11 +304,7 @@ const Welcome = () => {
                     <div className="test_title">client</div>
                     <div className="test_text">
                       <p>
-                        Etiam nec odio vestibulum est mattis effic iturut magna.
-                        Pellentesque sit amet tellus blandit. Etiam nec odio
-                        vestibulum est mattis effic iturut magna. Pellentesque
-                        sit am et tellus blandit. Etiam nec odio vestibul. Etiam
-                        nec odio vestibulum est mat tis effic iturut magna.
+                      "As a busy professional, FormuFit has been a lifesaver. It takes the guesswork out of maintaining a healthy lifestyle. The app's recommendations, based on my body type and schedule, have been spot on. I've seen significant improvements in my fitness level and overall well-being. Highly recommend!"
                       </p>
                     </div>
                     <div className="rating rating_4 test_rating">
@@ -340,11 +330,7 @@ const Welcome = () => {
                     <div className="test_title">client</div>
                     <div className="test_text">
                       <p>
-                        Etiam nec odio vestibulum est mattis effic iturut magna.
-                        Pellentesque sit amet tellus blandit. Etiam nec odio
-                        vestibulum est mattis effic iturut magna. Pellentesque
-                        sit am et tellus blandit. Etiam nec odio vestibul. Etiam
-                        nec odio vestibulum est mat tis effic iturut magna.
+                      "I've been using FormuFit for a few months now, and I'm amazed at the results. The recipes are not only healthy but also delicious. The workouts are designed to push me just the right amount. Having a personal trainer at my fingertips is like having a fitness buddy cheering me on. This app is a game-changer for anyone serious about their health and fitness journey."
                       </p>
                     </div>
                     <div className="rating rating_4 test_rating">
@@ -400,7 +386,7 @@ const Welcome = () => {
               <div className="col">
                 <div className="section_title_container">
                   <div className="section_subtitle">welcome to FormuFit</div>
-                  <div className="section_title">Our Courses</div>
+                  <div className="section_title">Our Courses by Trainer</div>
                 </div>
               </div>
             </div>
@@ -417,9 +403,9 @@ const Welcome = () => {
                   </div>
                   <div className="service_text">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Donec malesuada lorem maximus mauris scelerisque, at
-                      rutrum.
+                    Shed those extra pounds and reach your weight loss goals in our motivating weight loss classes.
+
+Join our supportive community for effective workouts and expert guidance on your journey to a healthier you.
                     </p>
                   </div>
                 </div>
@@ -437,9 +423,9 @@ const Welcome = () => {
                   </div>
                   <div className="service_text">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Donec malesuada lorem maximus mauris scelerisque, at
-                      rutrum.
+                    Join our rejuvenating yoga classes to find inner peace and enhance your flexibility.
+
+Experience a holistic approach to wellness with our expert instructors guiding you through mindful poses and calming techniques.
                     </p>
                   </div>
                 </div>
@@ -457,9 +443,9 @@ const Welcome = () => {
                   </div>
                   <div className="service_text">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Donec malesuada lorem maximus mauris scelerisque, at
-                      rutrum.
+                    Get ready to pedal your way to fitness in our high-energy spinning classes.
+
+Join our spin sessions for an intense cardiovascular workout that will leave you feeling invigorated and empowered.
                     </p>
                   </div>
                 </div>
@@ -477,9 +463,9 @@ const Welcome = () => {
                   </div>
                   <div className="service_text">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Donec malesuada lorem maximus mauris scelerisque, at
-                      rutrum.
+                    Elevate your fitness journey with our personalized private fit classes tailored to your goals and preferences.
+
+Experience one-on-one sessions with our expert trainers to achieve the results you desire in a focused and supportive environment.
                     </p>
                   </div>
                 </div>
@@ -497,9 +483,9 @@ const Welcome = () => {
                   </div>
                   <div className="service_text">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Donec malesuada lorem maximus mauris scelerisque, at
-                      rutrum.
+                    Dive into the world of healthy eating and wellness with our informative nutrition classes.
+
+Join us to learn the fundamentals of balanced nutrition and make informed choices for a healthier lifestyle.
                     </p>
                   </div>
                 </div>
@@ -517,9 +503,9 @@ const Welcome = () => {
                   </div>
                   <div className="service_text">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Donec malesuada lorem maximus mauris scelerisque, at
-                      rutrum.
+                    Strengthen your core and improve flexibility in our dynamic Pilates classes.
+
+Join us to discover the benefits of controlled movements and mind-body connection for a toned and balanced physique.
                     </p>
                   </div>
                 </div>
@@ -564,9 +550,9 @@ const Welcome = () => {
                   </div>
                   <div className="blog_post_text">
                     <p>
-                      Etiam nec odio vestibulum est mattis effic iturut magna.
-                      Pellentesque sit amet tellus blandit. Odio vestibulum est
-                      mattis effic iturut.
+                    Achieving your ideal physique requires a balanced approach, including both regular exercise and a nutritious diet.
+
+Stay committed, stay hydrated, and focus on consistency rather than rapid results to attain your version of a perfect body.
                     </p>
                   </div>
                   <div className="blog_post_link">
@@ -588,9 +574,9 @@ const Welcome = () => {
                   </div>
                   <div className="blog_post_text">
                     <p>
-                      Etiam nec odio vestibulum est mattis effic iturut magna.
-                      Pellentesque sit amet tellus blandit. Odio vestibulum est
-                      mattis effic iturut.
+                    Incorporate a variety of workouts to target different muscle groups and prevent plateaus in your fitness journey.
+
+Prioritize quality sleep and manage stress to support your body's natural healing and growth processes for a healthier, fitter you.
                     </p>
                   </div>
                   <div className="blog_post_link">
@@ -612,9 +598,9 @@ const Welcome = () => {
                   </div>
                   <div className="blog_post_text">
                     <p>
-                      Etiam nec odio vestibulum est mattis effic iturut magna.
-                      Pellentesque sit amet tellus blandit. Odio vestibulum est
-                      mattis effic iturut.
+                    Pilates is a fantastic low-impact exercise for beginners, focusing on core strength, flexibility, and body awareness.
+
+Start with basic mat exercises and gradually progress to more challenging moves as you build confidence and stamina in your Pilates practice.
                     </p>
                   </div>
                   <div className="blog_post_link">
