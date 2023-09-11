@@ -53,9 +53,9 @@ function AllRecipes() {
         ) : (
           <div className="challenges_cardsContainer">
             {recipes?.map((recipe, index) => (
-              <div>
-                <Card className="card_container">
-                  <div className="card_imageContainerOuter">
+              <div key={index}>
+                <Card className="card_container"> 
+                  <div className="card_imageContainerOuter"> 
                     <div className="card_imageContainer__kgi1d">
                       <img width={350} height={280} src={recipe?.recipeImage} />
                       {user.ut === 1 && (
@@ -79,7 +79,7 @@ function AllRecipes() {
                   <CardBody className="card_content">
                     <div className="card_info">
                       <CardTitle className="card_title">
-                        {recipe.title}
+                        {recipe.title} ({recipe.mealType})
                       </CardTitle>
                       <div className="calendar-icon_container">
                         <div className="calendar-icon_inner">

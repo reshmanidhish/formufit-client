@@ -22,10 +22,12 @@ import "./styles.scss";
 function CreateRecipePage() {
   const [loader, setLoader] = useState(false);
   const [title, setTitle] = useState("");
-  const [ingredients, setIngredients] = useState("");
+  const [ingredients, setIngredients] = useState([]); //change to empty array form string
   const [instructions, setInstructions] = useState("");
   const [image, setImage] = useState("");
   const [bodyType, setBodyType] = useState("");
+  const [cookingTime, setCookingTime] = useState(0); //added cooking time
+  const [mealType, setMealType] = useState(""); //added mealtype
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
 
@@ -34,10 +36,15 @@ function CreateRecipePage() {
     if (validateForm()) {
       const formData = new FormData();
       formData.append("title", title);
-      formData.append("ingredients", ingredients);
+      
+      ingredients.forEach((ingredient, index) => {
+      formData.append(`ingredients[${index}]`, ingredient);
+    });
       formData.append("instructions", instructions);
       formData.append("recipeImage", image);
       formData.append("bodyType", bodyType);
+      formData.append("cookingTime", cookingTime); //added
+      formData.append("mealType", mealType); //added
 
       axios
         .post("http://localhost:5005/recipes/create", formData)
@@ -47,10 +54,12 @@ function CreateRecipePage() {
           navigate("/recipes");
           //clear form data
           setTitle("");
-          setIngredients("");
+          setIngredients([]);
           setInstructions("");
           setImage("");
           setBodyType("");
+          setMealType(""); //added  
+          setCookingTime(0); //added
         })
         .catch((error) => {
           console.log("error creating recipe:", error);
@@ -70,7 +79,7 @@ function CreateRecipePage() {
       errors.title = "Recipe name is required";
     }
 
-    if (!ingredients.trim()) {
+    if (ingredients.length === 0) {
       isValid = false;
       errors.ingredients = "Ingredients is required";
     }
@@ -90,9 +99,31 @@ function CreateRecipePage() {
       errors.bodyType = "Body Type is required";
     }
 
+    if (!mealType.trim()) {
+      isValid = false;
+      errors.mealType = "Meal Type is required";
+    }
+
+    if (!cookingTime.trim()) {
+      isValid = false;
+      errors.cookingTime = "Cooking Time is required";
+    }
+
     setFormErrors(errors);
     return isValid;
   };
+
+  const addIngredient = () => {
+    setIngredients([...ingredients, ""]); //added
+
+  }
+
+  const handleIngredientChange = (event, idx) => { //added
+    const {value} = event.target;
+    const updatedIngredients = [...ingredients];
+    updatedIngredients[idx] = value;
+    setIngredients(updatedIngredients);
+  }
 
   return (
     <>
@@ -128,18 +159,22 @@ function CreateRecipePage() {
                           />
                           <FormFeedback>{formErrors.title}</FormFeedback>
                         </FormGroup>
-                        <FormGroup>
+                        <FormGroup> 
                           <Label for="ingredients">Ingredients</Label>
-                          <Input
+                          {ingredients.map((ingredient, idx) => (
+                            <Input
                             type="text"
                             name="ingredients"
-                            id="recipe_ing"
-                            value={ingredients}
+                            id={`recipe_ing_${idx}`}
+                            value={ingredient}
                             invalid={formErrors.ingredients !== undefined}
-                            onChange={(e) => setIngredients(e.target.value)}
+                            onChange={(e) => handleIngredientChange(e, idx)}
                           />
+                          ))} 
+                          <Button onClick={addIngredient} type="button">Add Ingredient</Button>
+
                           <FormFeedback>{formErrors.ingredients}</FormFeedback>
-                        </FormGroup>
+                        </FormGroup> 
                         <FormGroup>
                           <Label for="instructions">Instructions</Label>
                           <Input
@@ -174,6 +209,30 @@ function CreateRecipePage() {
                             onChange={(e) => setBodyType(e.target.value)}
                           />
                           <FormFeedback>{formErrors.bodyType}</FormFeedback>
+                          </FormGroup>
+                          <FormGroup>
+                          <Label for="mealtype">Meal Type</Label>
+                          <Input
+                            type="text"
+                            name="mealtype"
+                            id="mealtype"
+                            value={mealType}
+                            invalid={formErrors.mealType !== undefined}
+                            onChange={(e) => setMealType(e.target.value)}
+                          />
+                          <FormFeedback>{formErrors.mealType}</FormFeedback>
+                          </FormGroup>
+                          <FormGroup>
+                          <Label for="cookingtime">Cooking Time</Label>
+                          <Input
+                            type="number"
+                            name="cookingtime"
+                            id="cookingtime"
+                            value={cookingTime}
+                            invalid={formErrors.cookingTime !== undefined}
+                            onChange={(e) => setCookingTime(e.target.value)}
+                          />
+                          <FormFeedback>{formErrors.cookingTime}</FormFeedback>
                         </FormGroup>
                         <Row>
                           <Col sm="6">
