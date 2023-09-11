@@ -17,8 +17,11 @@ import { Link, useNavigate } from "react-router-dom";
 // import axios from "axios";
 import authService from "../../services/auth.service";
 // import Register from "../../views/examples";
+
 export default Register;
 function Register(props) {
+  import('./../LoginPage/styles.scss') 
+  import('./../Welcome/styles.scss') 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUserName] = useState("");

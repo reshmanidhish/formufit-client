@@ -18,8 +18,8 @@ function Payment(props) {
   return (
     <main>
     <div className="container">
-      <h5 className="text-center pricing-table-subtitle">PRICING PLAN</h5>
-      <h1 className="text-center pricing-table-title">Pricing Table</h1>
+      {/* <h1 className="text-center pricing-table-title">Pricing Plan</h1> */}
+      <h1 className="text-center page-title-header_title m-6">Pricing Table</h1>
       <div className="row">
         <div className="col-md-4">
           <div className="card pricing-card pricing-plan-basic">
@@ -28,7 +28,8 @@ function Payment(props) {
               <p className="pricing-plan-title">Basic</p>
               <h3 className="pricing-plan-cost ml-auto">FREE</h3>
               <ul className="pricing-plan-features">
-                <li>access to 12 recipes as your DietPlan</li>
+                <li>With our Free Plan</li>
+                <li>access to 5 recipes as your DietPlan</li>
                 <li>5 workouts for daily practise</li>
                 {/* <li></li>
                 <li>10 participants max</li> */}
@@ -41,11 +42,11 @@ function Payment(props) {
           <div className="card pricing-card pricing-card-highlighted  pricing-plan-pro">
             <div className="card-body">
                 <i className="fas fa-trophy pricing-plan-icon"></i>
-              <p className="pricing-plan-title">Pro</p>
-              <h3 className="pricing-plan-cost ml-auto">19Euros</h3>
+              <p className="pricing-plan-title">Monthly</p>
+              <h3 className="pricing-plan-cost ml-auto">19 Euros</h3>
               <ul className="pricing-plan-features">
                 <li>Assistance of our personal Trainer</li>
-                <li>access to 25recipes as your DietPlan</li>
+                <li>access to 25 recipes as your DietPlan</li>
                 <li>15 workouts for daily practise</li>
                 {/* <li>10 participants max</li> */}
               </ul>
@@ -57,7 +58,7 @@ function Payment(props) {
           <div className="card pricing-card pricing-plan-enterprise">
             <div className="card-body">
               <i className="fas fa-gift pricing-plan-icon"></i>
-              <p className="pricing-plan-title">Enterprise</p>
+              <p className="pricing-plan-title">Yearly</p>
               <h3 className="pricing-plan-cost ml-auto">24 Euros</h3>
               <ul className="pricing-plan-features">
                 <li>Assistance of our personal Trainer</li>

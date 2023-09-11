@@ -16,23 +16,12 @@ import {
 const AdminNavbar = (props) => {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
-      // <Navbar className="navbar-top navbar-expand border-bottom navbar-dark bg-gradient-default fixed-top">
-      // <Navbar className="navbar-expand-md navbar-dark bg-gradient-default fixed-top" expand="md" id="navbar-main">
         <Navbar className="navbar-top navbar-expand border-bottom navbar-light fixed-top"  id="navbar-main">
           <Container fluid>
-            {/* <button
-                className="navbar-toggler d-block"
-                type="button"
-                onClick={props.toggleCollapse}
-            >
-              <span className="navbar-toggler-icon" />
-            </button> */}
           <Link
               className="navbar-brand"
               to="/"
           >
-
-            {/*{props.brandText}*/}
           </Link>
           <Nav className="align-items-center d-none d-md-flex" navbar>
             <UncontrolledDropdown nav>
@@ -45,7 +34,7 @@ const AdminNavbar = (props) => {
                     />
                   </span>
                   <Media className="ml-2 d-none d-lg-block">
-                    <span className="mb-0 text-sm font-weight-bold">
+                    <span className="mb-0 text-sm font-weight-bold text-black">
                     {user.username}
                     </span>
                   </Media>
@@ -72,9 +61,9 @@ const AdminNavbar = (props) => {
                   <span>Support</span>
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                <DropdownItem href="#pablo" onClick={logOutUser}>
                   <i className="ni ni-user-run" />
-                  <span onClick={logOutUser}>Logout</span>
+                  <span>Logout</span>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

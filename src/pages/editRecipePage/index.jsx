@@ -10,7 +10,6 @@ import {
 } from "reactstrap";
 import "./editRecipe.css";
 import { useState } from 'react';
-import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from "components/Headers/Header";
 import formuFitService from "services/formufit.service";
@@ -18,10 +17,12 @@ import formuFitService from "services/formufit.service";
 function EditRecipePage () { 
   const { recipeId } = useParams();  
   const [title, setTitle] = useState("");
-  const [ingredients, setIngredients] = useState("");
+  const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState("");
   const [image, setImage] = useState("");
   const [bodyType, setBodyType] = useState("");    
+  const [cookingTime, setCookingTime] = useState(0); //added cooking time
+  const [mealType, setMealType] = useState(""); //added mealtype
   
   const navigate = useNavigate();  
      
@@ -29,10 +30,12 @@ function EditRecipePage () {
       formuFitService.getRecipe(recipeId)
       .then(({data}) => {
         setTitle(data.title);
-        setIngredients(data.ingredients);
+        setIngredients(data.ingredients || []);
         setInstructions(data.instructions);
         setImage(data.image);
         setBodyType(data.bodyType);
+        setMealType(data.mealType);
+        setCookingTime(data.cookingTime);
       })
       .catch (error => {
         console.log("error getting recipe details:", error);
@@ -43,10 +46,14 @@ function EditRecipePage () {
         e.preventDefault ();
         const formData = new FormData();
         formData.append("title", title);
-        formData.append("ingredients", ingredients);
+        ingredients.forEach((ingredient, index) => {
+          formData.append(`ingredients[${index}]`, ingredient);
+        });
         formData.append("instructions", instructions);
         formData.append("recipeImage", image);
         formData.append("bodyType", bodyType);
+        formData.append("cookingTime", cookingTime); //added
+        formData.append("mealType", mealType); //added
 
         formuFitService.updateRecipe(recipeId, formData)
             .then(({data}) => {
@@ -54,10 +61,12 @@ function EditRecipePage () {
                 console.log("post response data", data);
                 navigate("/recipes");
                 setTitle("");
-                setIngredients("");
+                setIngredients([]);
                 setInstructions("");
                 setImage("");
                 setBodyType("");
+                setMealType(""); //added  
+                setCookingTime(0); //added
             })
             .catch (error => {
                 console.log("Error updating recipe:", error);
@@ -66,6 +75,19 @@ function EditRecipePage () {
                 }
             });
         }
+
+        const addIngredient = () => {
+          setIngredients([...ingredients, ""]); //added
+      
+        }
+      
+        const handleIngredientChange = (event, idx) => { //added
+          const {value} = event.target;
+          const updatedIngredients = [...ingredients];
+          updatedIngredients[idx] = value;
+          setIngredients(updatedIngredients);
+        }
+
     return (
       <>
       <Header breadcrumbName="Create Recipe" breadcrumbIcon="fas fa-utensils"/>
@@ -81,8 +103,11 @@ function EditRecipePage () {
         <FormGroup row>
           <Label for="ingredients" >Ingredients</Label>
           <Col >
-            <Input type="text" name="ingredients" id="recipe_ing" onChange={(e) => setIngredients(e.target.value)} value={ingredients} />
+          {ingredients && ingredients.map((ingredient, idx) => (
+            <Input type="text" name="ingredients" id={`recipe_ing_${idx}`} onChange={(e) => handleIngredientChange(e, idx)} value={ingredient} />
+            ))} 
           </Col>
+          <Button onClick={addIngredient} type="button">Add Ingredient</Button>
         </FormGroup>
         <FormGroup row>
           <Label for="instructions" >Instructions</Label>
@@ -100,6 +125,18 @@ function EditRecipePage () {
           <Label for="bodytype" >Body Type</Label>
           <Col >
             <Input type="text" name="bodytype" id="bodytype" onChange={(e) => setBodyType(e.target.value)} value={bodyType}/>
+          </Col>
+        </FormGroup>
+        <FormGroup row>
+          <Label for="mealtype" >Meal Type</Label>
+          <Col >
+            <Input type="text" name="mealtype" id="mealtype" onChange={(e) => setMealType(e.target.value)} value={mealType}/>
+          </Col>
+        </FormGroup>
+        <FormGroup row>
+          <Label for="cooking Time" >Cooking Time</Label>
+          <Col >
+            <Input type="number" name="cookingtime" id="cookingtime" onChange={(e) => setCookingTime(e.target.value)} value={cookingTime}/>
           </Col>
         </FormGroup>
         <FormGroup check row>

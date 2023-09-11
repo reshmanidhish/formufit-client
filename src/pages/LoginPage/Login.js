@@ -17,13 +17,13 @@ import {
 
 import { GoogleLogin } from 'react-google-login';
 import { useState, useContext, useEffect } from "react";
-// import axios from "axios";
 import authService from "../../services/auth.service";
 import { AuthContext } from "../../context/auth.context";
-import { Link, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 function Login(props) {
+  import('./styles.scss') 
+  import('./../Welcome/styles.scss') 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(false);
