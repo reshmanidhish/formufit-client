@@ -44,6 +44,16 @@ class FormuFitService {
     return this.api.delete(`/api/examples/${id}`);
   };
 
+  uploadProfilePicture = async (userId, file) => {
+    const formData = new FormData();
+    formData.append("profileImage", file);
+    return this.api.post(`/profile/upload/${userId}`, formData)
+  };
+
+  getUserProfileById = async (userId) => {
+    return this.api.get(`/profile/${userId}`);
+  };
+
   // GET /workouts
   getWorkouts = async () => {
     return this.api.get("/workouts");
@@ -78,27 +88,29 @@ class FormuFitService {
   deleteRecipe = async (recipeId) => {
     return this.api.delete(`/recipes/delete/${recipeId}`);
   };
+
   getWellness = async () => {
     return this.api.get(`/profile/wellness`);
   };
   createCommentAndRating = async (requestBody) => {
-    return this.api.post(`/comment-rating`, requestBody );
+    return this.api.post(`/comment-rating`, requestBody);
   };
   getComments = async (recipeId) => {
     return this.api.get(`/recipes/${recipeId}`);
   };
 
   createRating = async (requestBody) => {
-    return this.api.post(`/rating`, requestBody );
+    return this.api.post(`/rating`, requestBody);
   };
-
 
   getPaymentConfig = async () => {
     return this.api.get(`/payment/config`);
   };
 
   paymentIntent = async (subscriptionId) => {
-    return this.api.post(`/payment/create-payment-intent?subscriptionId=${subscriptionId}`);
+    return this.api.post(
+      `/payment/create-payment-intent?subscriptionId=${subscriptionId}`
+    );
   };
 
   subscribeUser = async () => {

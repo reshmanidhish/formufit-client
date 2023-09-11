@@ -1,8 +1,4 @@
-import Index from "views/Index.js";
 import Profile from "./pages/ProfilePage";
-import Tables from "views/examples/Tables.js";
-import Icons from "./pages/IconsPage";
-import Questionare from "./pages/QuestionarePage";
 import React from "react";
 import MyAccount from "./pages/MyAccount";
 import CreateRecipes from "./pages/CreateRecipePage";
@@ -11,13 +7,13 @@ import SingleRecipe from "pages/SingleRecipePage";
 import EditRecipePage from "pages/editRecipePage";
 import AllWorkoutPage from"./pages/AllWorkoutPage";
 import WorkoutVideoUploadPage from "./pages/WorkoutVideoUploadPage";
-import CheckoutForm from "./pages/Payment/CheckoutForm";
 import Trainer from "./pages/Trainer"
 import PricingPlan from "./pages/Payment/PricingPlan"
 import Payment from "pages/Payment/index1";
 import SuccessMessage from "pages/Payment/SuccessMessage";
-import CommentForm from "pages/CreateCommentPage/Comments";
 import EditProfile from "pages/EditProfilePage";
+import CommentRatingForm from "pages/CommentRatingFormPage/CommentRatingForm";
+
 const routes = [
   {
     path: "/dashboard",
@@ -98,12 +94,12 @@ const routes = [
     path: "/comment/create",
     name: "Create comment",
     icon: "fas fa-user",
-    component: <CommentForm />,
+    component: <CommentRatingForm />,
     layout: "/main",
     bodyTypeAvailable: true,
-    ut: 1,
+    ut: 0,
     pu: 0,
-    hidden: true
+    hidden:true,
   },
   // {
   //   path: "/account",

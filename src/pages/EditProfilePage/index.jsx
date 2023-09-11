@@ -6,7 +6,7 @@ import Loading from "components/Loading/Loading";
 
 const EditProfile = () => {
   const { userId } = useParams();
-  const navigate = useNavigate(); // Get the navigate function from React Router
+  const navigate = useNavigate();
 
   const [userProfile, setUserProfile] = useState({
     username: "",
@@ -15,7 +15,7 @@ const EditProfile = () => {
     country: "",
     weight: 0,
     height: 0,
-    profileImage: null,
+    profileImage: null, // Store the selected profile image file
   });
   const [loader, setLoader] = useState(true);
 
@@ -30,7 +30,7 @@ const EditProfile = () => {
     e.preventDefault();
     try {
       await formufitService.updateUserProfile(userId, userProfile);
-      navigate("/profile"); // Use navigate to redirect the user
+      navigate("/profile");
     } catch (error) {
       console.error(error);
     }
@@ -42,6 +42,24 @@ const EditProfile = () => {
       ...userProfile,
       [name]: value,
     });
+  };
+
+  const handleProfilePictureChange = (e) => {
+    const file = e.target.files[0];
+    setUserProfile({ ...userProfile, profileImage: file });
+  };
+
+  const handleUploadProfilePicture = async () => {
+    try {
+      if (userProfile.profileImage) {
+        await formufitService.uploadProfilePicture(userId, userProfile.profileImage);
+        // Optionally, you can update the user's profile with the new profile picture
+        // await formufitService.updateUserProfile(userId, userProfile);
+        // ...
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -59,7 +77,16 @@ const EditProfile = () => {
               onChange={handleChange}
               placeholder="Username"
             />
-            {/* Add other input fields for password, city, country, weight, height, profile image */}
+            {/* Add other input fields for password, city, country, weight, height */}
+            <Input
+              type="file"
+              accept="image/*"
+              name="profileImage"
+              onChange={handleProfilePictureChange}
+            />
+            <Button type="button" onClick={handleUploadProfilePicture} color="primary">
+              Upload Profile Picture
+            </Button>
             <Button type="submit" color="primary">
               Save Changes
             </Button>

@@ -53,7 +53,7 @@ function AllRecipes() {
         ) : (
           <div className="challenges_cardsContainer">
             {recipes?.map((recipe, index) => (
-              <div>
+              <div key={index}>
                 <Card className="card_container"> 
                   <div className="card_imageContainerOuter"> 
                     <div className="card_imageContainer__kgi1d">

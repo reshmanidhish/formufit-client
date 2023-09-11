@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import Rating from "react-rating";
 import formufitService from "../../services/formufit.service";
-import "../CreateCommentPage/comment.css";
+import "./styles.css";
 import emptyStar from "../../assets/img/star-empty.png";
 import filledStar from "../../assets/img/star-full.png";
 
-function CommentForm({ recipeId, showRatingCommentForm, allComments }) {
+function CommentRatingForm({ recipeId, showRatingCommentForm, allComments }) {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState(allComments);
   const [rating, setRating] = useState(null);
@@ -17,6 +17,8 @@ function CommentForm({ recipeId, showRatingCommentForm, allComments }) {
     formufitService
       .createCommentAndRating({ recipeId, comment, rating })
       .then((newComment) => {
+        // when succesful
+
         formufitService.getRecipe(recipeId).then((comments) => {
           setComment("");
           setComments(comments.data.commentsAndRatings);
@@ -26,34 +28,11 @@ function CommentForm({ recipeId, showRatingCommentForm, allComments }) {
       .catch((error) => {
         // If the server sends an error response (invalid token) ❌
       });
-    //}
-
-    //     try{
-    //         const commentData = new FormData();
-    //         commentData.append("recipeId", recipeId);
-    //         commentData.append("comment", comment);
-    //         await axios.post("http://localhost:5005/comment/create", commentData)
-    //         setComment("");
-    //         fetchComments();
-    //     } catch (error) {
-    //         console.log("Error posting comment:", error);
-    //     }
   };
 
   const handleChange = (value) => {
     setRating(value);
   };
-
-  //   const fetchComments = async () => {
-  //     formufitService
-  //       .getComments(recipeId)
-  //       .then((allComments) => {
-  //         setComments(allComments.data.commentsAndRatings);
-  //       })
-  //       .catch((error) => {
-  //         // If the server sends an error response (invalid token) ❌
-  //       });
-  //   };
 
   useEffect(() => {
     // fetchComments();
@@ -83,33 +62,37 @@ function CommentForm({ recipeId, showRatingCommentForm, allComments }) {
         </div>
       )}
       <div className="comment-list">
-        {comments?.map((comment) => (
+        {comments.length > 0 && (
           <>
             <div className="how-to-make-title">All Comments:</div>
-            <div key={comment._id}>
-              <Rating
-                className="mb-3"
-                initialRating={comment.rating}
-                readonly
-                value={comment.rating}
-                emptySymbol={
-                  <img src={emptyStar} width="18" className="star" />
-                }
-                fullSymbol={
-                  <img src={filledStar} width="18" className="star" />
-                }
-              />
-              <p className="Post">{comment.user.username}</p>
-              <p className="date">
-                {new Date(comment.createdAt).toLocaleDateString()}
-              </p>
-              <p className="comment-box">{comment.comment}</p>
-            </div>
+            {comments?.map((comment) => (
+              <>
+                <div key={comment._id}>
+                  <Rating
+                    className="mb-3"
+                    initialRating={comment.rating}
+                    readonly
+                    value={comment.rating}
+                    emptySymbol={
+                      <img src={emptyStar} width="18" className="star" />
+                    }
+                    fullSymbol={
+                      <img src={filledStar} width="18" className="star" />
+                    }
+                  />
+                  <p className="Post">{comment.user.username}</p>
+                  <p className="date">
+                    {new Date(comment.createdAt).toLocaleDateString()}
+                  </p>
+                  <p className="comment-box">{comment.comment}</p>
+                </div>
+              </>
+            ))}
           </>
-        ))}
+        )}
       </div>
     </div>
   );
 }
 
-export default CommentForm;
+export default CommentRatingForm;
