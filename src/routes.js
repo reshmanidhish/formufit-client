@@ -86,7 +86,8 @@ const routes = [
     layout: "/main",
     bodyTypeAvailable: true,
     ut: 0,
-    pu: 0
+    pu: 0,
+    hidden:true,
   },
   // {
   //   path: "/account",
