@@ -21,9 +21,11 @@ import authService from "../../services/auth.service";
 import { AuthContext } from "../../context/auth.context";
 import { useNavigate } from "react-router-dom";
 
+import './styles.scss'
+import './../Welcome/styles.scss'
+
 function Login(props) {
-  import('./styles.scss') 
-  import('./../Welcome/styles.scss') 
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(false);
@@ -35,13 +37,6 @@ function Login(props) {
   const handlePassword = (e) => setPassword(e.target.value);
   let params = new URLSearchParams(window.location.hash);
   let token = params.get('id_token');
-
-  useEffect(() => {
-    if(token) {
-      // storeToken(token)
-      // authenticateUser()
-    }
-  }, [token])
 
 
   const onLoginSuccess = (response) => {
