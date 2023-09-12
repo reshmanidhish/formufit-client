@@ -99,10 +99,10 @@ const Profile = () => {
                         <span className="heading">{user.bodyType}</span>
                         <span className="description">Body Type</span>
                       </div>
-                      <div>
+                      {/* <div>
                         <span className="heading">{user.lifestyle}</span>
                         <span className="description">Lifestyle</span>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </Row>
