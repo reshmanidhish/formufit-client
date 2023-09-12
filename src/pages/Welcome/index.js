@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import videoBg from "../../assets/videos/formufit-food.mp4";
 
 import dotImg from "../../assets/img/welcome-page/dot.png";
@@ -23,11 +23,16 @@ import blog2Img from "../../assets/img/welcome-page/blog_2.jpg";
 import blog3Img from "../../assets/img/welcome-page/blog_3.jpg";
 import footerImg from "../../assets/img/welcome-page/footer.png";
 import AuthNavbar from "components/Navbars/AuthNavbar.js";
-
+import './styles.scss'
 const Welcome = () => {
-  import('./styles.scss') 
+  useEffect(() => {
+
+    document.body.style.backgroundImage = 'none';
+    return () => {
+    };
+  }, []); 
   return (
-    <div id="welcome-page">
+    <div class="welcome-page">
       <div className="super_container">
         <AuthNavbar />
         {/* <header className="header">

@@ -12,13 +12,14 @@ function IsAnon({ children }) {
   }
 
   if (isLoggedIn) {
+    document.body.classList.remove('formufit-anon');
     // If the user is logged in, navigate to home page ❌
     if(user?.bodyType === '') {
       return <Navigate to="/questionare" />;
     }
     return <Navigate to="/dashboard" />;
   }
-
+  document.body.classList.add('formufit-anon');
   // If the user is not logged in, allow to see the page ✅
   return children;
 }

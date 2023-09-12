@@ -1,9 +1,8 @@
-body {
-    background-image: url(https://images.pexels.com/photos/326279/pexels-photo-326279.jpeg) !important;
-    background-size: cover  !important;
-    background-repeat: no-repeat  !important;
-    background-attachment: fixed !important; 
-    background-position: center center !important;
-    height: 100vh !important;
-  }
-  
+body.formufit-anon {
+  background-image: url(https://images.pexels.com/photos/326279/pexels-photo-326279.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  height: 100vh;
+}
