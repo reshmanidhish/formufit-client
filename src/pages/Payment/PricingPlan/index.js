@@ -59,7 +59,7 @@ function Payment(props) {
             <div className="card-body">
               <i className="fas fa-gift pricing-plan-icon"></i>
               <p className="pricing-plan-title">Yearly</p>
-              <h3 className="pricing-plan-cost ml-auto">24 Euros</h3>
+              <h3 className="pricing-plan-cost ml-auto">240Euros</h3>
               <ul className="pricing-plan-features">
                 <li>Assistance of our personal Trainer</li>
                 <li>access to 50 recipes as your DietPlan</li>
