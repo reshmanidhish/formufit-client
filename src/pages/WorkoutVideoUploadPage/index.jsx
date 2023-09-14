@@ -10,6 +10,10 @@ import {
   Input,
   Container,
   FormFeedback,
+  Card,
+  CardBody,
+  CardTitle,
+  Row,
 } from "reactstrap";
 import "./WorkoutVideoUploadPage.css";
 import formufitService from "../../services/formufit.service";
@@ -19,23 +23,22 @@ function WorkoutVideoUploadPage() {
   const [videoUrl, setVideoUrl] = useState("");
   const [bodyType, setBodyType] = useState("");
   const [formErrors, setFormErrors] = useState({});
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
 
-   
     if (validateForm()) {
       formufitService
-      .createWorkouts({title:title, videoUrl,bodyType })
-      .then((allWorkouts) => {
-        setTitle("")
-        setVideoUrl("")
-        setBodyType("")
-        navigate('/workouts');
-      })
-      .catch((error) => {
-        // If the server sends an error response (invalid token) ❌
-      });
+        .createWorkouts({ title: title, videoUrl, bodyType })
+        .then((allWorkouts) => {
+          setTitle("");
+          setVideoUrl("");
+          setBodyType("");
+          navigate("/workouts");
+        })
+        .catch((error) => {
+          // If the server sends an error response (invalid token) ❌
+        });
     }
   };
 
@@ -59,51 +62,86 @@ function WorkoutVideoUploadPage() {
   };
   return (
     <>
-      <Header breadcrumbName="Icon" breadcrumbIcon="fas fa-user" />
-      <Container fluid className="container-body">
-        <div className="form-container">
-          <Form onSubmit={handleSubmit}>
-            <FormGroup>
-              <Label for="title">Workout Name</Label>
-              <Input
-                type="text"
-                id="workoutName"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                invalid={formErrors.title !== undefined}
-              />
-              <FormFeedback>{formErrors.workoutName}</FormFeedback>
-            </FormGroup>
+      <Container className="challenges_section">
+        <div className="page-title-header_wrapper page-title-header_hasProfileLink">
+          <div className="page-title-header_titleWrapper">
+            <h1 className="page-title-header_title">Create Workout</h1>
+          </div>
+        </div>
+        <h4 className="workouts_subtitle">
+          Provide informations for creating workout
+        </h4>
 
-            <FormGroup>
-              <Label for="bodyType">Bodytype</Label>
-              <Input
-                type="text"
-                id="bodyType"
-                value={bodyType}
-                onChange={(e) => setBodyType(e.target.value)}
-                invalid={formErrors.bodyType !== undefined}
-              />
-              <FormFeedback>{formErrors.bodyType}</FormFeedback>
-            </FormGroup>
+        <div className="">
+          <div>
+            <Card className="card_container">
+              <CardBody className="card_content">
+                <CardTitle className="card_title"></CardTitle>
+                <div className="card_info">
+                  <Container fluid className="container-body">
+                    <div>
+                      <Form onSubmit={handleSubmit}>
+                        <FormGroup>
+                          <Label for="title">Workout Name</Label>
+                          <Input
+                            type="text"
+                            id="workoutName"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            invalid={formErrors.title !== undefined}
+                          />
+                          <FormFeedback>{formErrors.workoutName}</FormFeedback>
+                        </FormGroup>
 
+                        <FormGroup>
+                          <Label for="bodyType">Bodytype</Label>
+                          <Input
+                            type="text"
+                            id="bodyType"
+                            value={bodyType}
+                            onChange={(e) => setBodyType(e.target.value)}
+                            invalid={formErrors.bodyType !== undefined}
+                          />
+                          <FormFeedback>{formErrors.bodyType}</FormFeedback>
+                        </FormGroup>
 
-
-            <FormGroup>
-              <Label for="videoUrl">Video URL</Label>
-              <Input
-                type="text"
-                id="videoUrl"
-                value={videoUrl}
-                onChange={(e) => setVideoUrl(e.target.value)}
-                invalid={formErrors.videoUrl !== undefined}
-              />
-              <FormFeedback>{formErrors.videoUrl}</FormFeedback>
-            </FormGroup>
-            <Button color="primary" type="submit">
-              Upload
-            </Button>
-          </Form>
+                        <FormGroup>
+                          <Label for="videoUrl">Video URL</Label>
+                          <Input
+                            type="text"
+                            id="videoUrl"
+                            value={videoUrl}
+                            onChange={(e) => setVideoUrl(e.target.value)}
+                            invalid={formErrors.videoUrl !== undefined}
+                          />
+                          <FormFeedback>{formErrors.videoUrl}</FormFeedback>
+                        </FormGroup>
+                        <Row className="pt-4">
+                            <Col sm="6">
+                              <Button
+                                className="button_button"
+                                data-test="btn-challenge-start"
+                              >
+                                Upload
+                              </Button>
+                            </Col>
+                            <Col sm="6">
+                              <Button
+                                type="reset"
+                                className="button_button"
+                                data-test="btn-challenge-start"
+                              >
+                                CLEAR
+                              </Button>
+                            </Col>
+                          </Row>
+                      </Form>
+                    </div>
+                  </Container>
+                </div>
+              </CardBody>
+            </Card>
+          </div>
         </div>
       </Container>
     </>
