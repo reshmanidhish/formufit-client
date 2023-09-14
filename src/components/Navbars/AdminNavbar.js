@@ -35,7 +35,9 @@ const AdminNavbar = (props) => {
                   </span>
                   <Media className="ml-2 d-none d-lg-block">
                     <span className="mb-0 text-sm font-weight-bold text-black">
-                    {user.username}
+                      <span className="username">
+                      {user.username}
+                        </span>
                     </span>
                   </Media>
                 </Media>

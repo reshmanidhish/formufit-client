@@ -66,7 +66,7 @@ function CommentRatingForm({ recipeId, showRatingCommentForm, allComments }) {
           <>
             <div className="how-to-make-title">All Comments:</div>
             {comments?.map((comment) => (
-              <>
+              <span className="rating-comments">
                 <div key={comment._id}>
                   <Rating
                     className="mb-3"
@@ -86,7 +86,7 @@ function CommentRatingForm({ recipeId, showRatingCommentForm, allComments }) {
                   </p>
                   <p className="comment-box">{comment.comment}</p>
                 </div>
-              </>
+              </span>
             ))}
           </>
         )}

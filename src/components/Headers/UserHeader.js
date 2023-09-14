@@ -21,10 +21,10 @@ const UserHeader = () => {
         <span className="mask bg-gradient-default opacity-8" />
         {/* Header container */}
         <Container className="d-flex align-items-center" fluid>
-          <Row>
+          <Row className="welome-username">
             <Col lg="7" md="10">
-              <h1 className="display-2 text-white">Hello {user.username}</h1>
-              <p className="text-white mt-0 mb-5">
+              <h1 className="display-3 text-bold text-black"><span className="username">Hello {user.username}</span></h1>
+              <p className="mt-0 mb-5 text-black">
                 This is your profile page. You can see  your personalized dietplans and workouts according to your bodytype and lifestyle
               </p>
             
