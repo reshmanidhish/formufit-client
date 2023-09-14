@@ -14,10 +14,11 @@ import {
   FormFeedback,
 } from "reactstrap";
 
-import axios from "axios";
+import toastr from "toastr";
 import { useNavigate } from "react-router-dom";
 import Loading from "components/Loading/Loading";
 import "./styles.scss";
+import formuFitService from "services/formufit.service";
 
 function CreateRecipePage() {
   const [loader, setLoader] = useState(false);
@@ -30,6 +31,10 @@ function CreateRecipePage() {
   const [mealType, setMealType] = useState(""); //added mealtype
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
+
+  useEffect(()=> {
+    toastr.clear()
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,27 +51,26 @@ function CreateRecipePage() {
       formData.append("cookingTime", cookingTime); //added
       formData.append("mealType", mealType); //added
 
-      axios
-        .post("http://localhost:5005/recipes/create", formData)
-        .then(({ data }) => {
-          alert("Recipe created");
-          console.log("post response data", data);
-          navigate("/recipes");
-          //clear form data
-          setTitle("");
-          setIngredients([]);
-          setInstructions("");
-          setImage("");
-          setBodyType("");
-          setMealType(""); //added  
-          setCookingTime(0); //added
-        })
-        .catch((error) => {
-          console.log("error creating recipe:", error);
+      formuFitService
+      .createRecipe(formData)
+      .then(({ data }) => {
+        toastr.success('Recipe created succesfully', 'Created!')
+        console.log("post response data", data);
+        navigate("/recipes");
+        setTitle("");
+        setIngredients([]);
+        setInstructions("");
+        setImage("");
+        setBodyType("");
+        setMealType(""); //added  
+        setCookingTime(0); //added
+      })
+      .catch((error) => {
+        console.log("error creating recipe:", error);
           if (error.response) {
             console.log("server response data:", error.response.data);
           }
-        });
+      });
     }
   };
 
@@ -223,7 +227,7 @@ function CreateRecipePage() {
                           <FormFeedback>{formErrors.mealType}</FormFeedback>
                           </FormGroup>
                           <FormGroup>
-                          <Label for="cookingtime">Cooking Time</Label>
+                          <Label for="cookingtime">Cooking Time (In Minutes)</Label>
                           <Input
                             type="number"
                             name="cookingtime"

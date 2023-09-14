@@ -79,6 +79,11 @@ class FormuFitService {
     return this.api.delete(`/recipes/delete/${recipeId}`);
   };
 
+  // CREATE /recipes/delete/:recipeId
+  createRecipe = async (newRecipe) => {
+    return this.api.post(`/recipes/create`, newRecipe);
+  };
+
   getWellness = async () => {
     return this.api.get(`/profile/wellness`);
   };

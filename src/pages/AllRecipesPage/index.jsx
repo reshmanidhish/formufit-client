@@ -5,6 +5,7 @@ import Loading from "components/Loading/Loading";
 import "./styles.scss";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "context/auth.context";
+import toastr from "toastr";
 
 function AllRecipes() {
   const [recipes, setRecipes] = useState([]);
@@ -31,6 +32,7 @@ function AllRecipes() {
         setRecipes((otherRecipes) =>
           otherRecipes.filter((recipe) => recipe._id !== recipeId)
         );
+        toastr.success('Recipe deleted succesfully', 'Deleted!')
       })
       .catch((error) => {});
   };
@@ -57,7 +59,7 @@ function AllRecipes() {
                 <Card className="card_container"> 
                   <div className="card_imageContainerOuter"> 
                     <div className="card_imageContainer__kgi1d">
-                      <img width={350} height={280} src={recipe?.recipeImage} />
+                      <img width={350} height={280} src={recipe?.recipeImage} className="cursor-pointer" onClick={() => navigate(`/recipes/${recipe._id}`)}/>
                       {user.ut === 1 && (
                         <div className="button-container">
                           <button

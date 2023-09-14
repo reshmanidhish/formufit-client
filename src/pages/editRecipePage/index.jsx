@@ -17,6 +17,7 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import formuFitService from "services/formufit.service";
 import Loading from "components/Loading/Loading";
+import toastr from "toastr";
 
 function EditRecipePage() {
   const { recipeId } = useParams();
@@ -66,7 +67,7 @@ function EditRecipePage() {
     formuFitService
       .updateRecipe(recipeId, formData)
       .then(({ data }) => {
-        console.log("post response data", data);
+        toastr.success('Recipe updated succesfully', 'Updated!')
         navigate("/recipes");
         setTitle("");
         setIngredients([]);

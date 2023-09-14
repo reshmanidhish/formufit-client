@@ -93,23 +93,6 @@ function Login(props) {
                 </span>
                 <span className="btn-inner--text">Github</span>
               </Button>
-              {/* <Button
-                className="btn-neutral btn-icon"
-                color="default"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                <span className="btn-inner--icon">
-                  <img
-                    alt="..."
-                    src={
-                      require("../../assets/img/icons/common/google.svg")
-                        .default
-                    }
-                  />
-                </span>
-                <span className="btn-inner--text">Google</span>
-              </Button> */}
               <GoogleLogin 
                 clientId="76749120259-gndi3iit0n8fsm9qfoelk2bl3du0a8jo.apps.googleusercontent.com"
                 buttonText="Google"

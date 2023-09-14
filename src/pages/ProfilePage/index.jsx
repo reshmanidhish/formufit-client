@@ -368,19 +368,6 @@ const Profile = () => {
                         >
                           <div className="general-wellness-card_imageContainer">
                               <img src ={dietician}/>
-                            {/* <video
-                              controls
-                              width="400"
-                              className="general-wellness-card_image"
-                            >
-                                  
-                              <source
-                                // src={wellness?.workout?.videoUrl}
-                                 
-                                type="video/mp4"
-                              />
-                              Your browser does not support the video tag.
-                            </video> */}
                           </div>
                           <div className="general-wellness-card_content">
                             <p className="general-wellness-card_title">
@@ -393,28 +380,6 @@ const Profile = () => {
                               <span className="general-wellness-card_labelsCapitalized general-wellness-card_labelDivider">
                               Get personalized diet and fitness advice from our renowned dietician turned fitness trainer for just 19 euros! Achieve your health goals with expert guidance tailored specifically to you. Don't miss this exclusive opportunity to transform your lifestyle and well-being.
                               </span>
-                              {/* <span className="general-wellness-card_labelsCapitalized general-wellness-card_labelDivider">
-                                <svg
-                                  width="16"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M9.76776 1.98959L10.4749 1.28249C10.8654 0.891962 11.4986 0.891962 11.8891 1.28249L14.7175 4.11091C15.108 4.50144 15.108 5.1346 14.7175 5.52513L14.0104 6.23223L9.76776 1.98959ZM6.23224 2.69672L6.93935 1.98961C7.32987 1.59909 7.96304 1.59909 8.35356 1.98961L14.0104 7.64646C14.4009 8.03699 14.4009 8.67015 14.0104 9.06068L13.3033 9.76778L6.23224 2.69672ZM1.98961 6.93935C1.59909 7.32987 1.59909 7.96304 1.98961 8.35356L7.64646 14.0104C8.03699 14.4009 8.67015 14.4009 9.06068 14.0104L9.76778 13.3033L2.69672 6.23224L1.98961 6.93935ZM1.28249 11.8891C0.891962 11.4986 0.891962 10.8654 1.28249 10.4749L1.98959 9.76776L6.23223 14.0104L5.52513 14.7175C5.1346 15.108 4.50144 15.108 4.11091 14.7175L1.28249 11.8891ZM8.35356 6.23226L6.23224 8.35358L7.64645 9.76779L9.76777 7.64647L8.35356 6.23226Z"
-                                    fill="currentColor"
-                                  />
-                                </svg>
-                              </span>
-                              <span className="general-wellness-card_labelsCapitalized general-wellness-card_commaDivider">
-                                Yoga mat
-                              </span>
-                              <span className="general-wellness-card_labelsCapitalized general-wellness-card_commaDivider">
-                                Dumbbells
-                              </span> */}
                             </div>
                             <div className="general-wellness-card_startWorkoutWrapper">
                               <button
@@ -462,12 +427,6 @@ const Profile = () => {
                           </div>
                         </div>
                       </div>
-                      {/* <div className="general-meal-plan_waterTipWrapper__jMdYV">
-                    <div className="water-tracker_wrapper__IeaPm">
-                      Water tracker
-                    </div>
-                  </div>
-                  <section> Additional content cards </section> */}
                     </Container>
 
               </CardBody>
