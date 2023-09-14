@@ -197,3 +197,9 @@ button {
   border-bottom-left-radius: 0px !important;
   border-bottom-right-radius: 0px;
 }
+
+.form-control {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #000000;
+}
